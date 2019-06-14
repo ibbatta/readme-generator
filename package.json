@@ -1,0 +1,40 @@
+{
+    "name": "readme-generator",
+    "version": "0.0.1",
+    "description": "Personal generator to simply create cool and efficients README.md",
+    "main": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ibbatta/readme-generator.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ibbatta/readme-generator/issues"
+    },
+    "author": "Maurizio Battaghini <maurizio.battaghini+tech@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "engines": {
+        "node": ">= 9.10.x",
+        "yarn": ">= 1.9.x",
+        "npm": ">= 6.3.x"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 10"
+    ],
+    "scripts": {
+        "start": "",
+        "start:dev": ""
+    },
+    "dependencies": {
+        "chalk": "^2.4.2"
+    },
+    "devDependencies": {
+        "eslint": "^5.14.1",
+        "eslint-config-airbnb": "17.1.0",
+        "eslint-plugin-import": "^2.12.0",
+        "eslint-plugin-jsx-a11y": "^6.0.3",
+        "eslint-plugin-react": "^7.9.1"
+    }
+}
