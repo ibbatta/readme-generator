@@ -24,7 +24,7 @@
         "not ie <= 10"
     ],
     "scripts": {
-        "start": "babel-node -- ./index.js",
+        "start": "clear && babel-node -- ./index.js",
         "build": "--- work in progress ---",
         "test": "lint-staged && echo '--- work in progress ---'"
     },
