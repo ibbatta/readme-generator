@@ -24,17 +24,30 @@
         "not ie <= 10"
     ],
     "scripts": {
-        "start": "",
-        "start:dev": ""
+        "start": "NODE_ENV=production node index.js",
+        "start:dev": "NODE_ENV=development node index.js",
+        "test": "lint-staged"
     },
     "dependencies": {
-        "chalk": "^2.4.2"
+        "chalk": "^2.4.2",
+        "commander": "^2.20.0",
+        "figlet": "^1.2.3",
+        "inquirer": "^6.3.1",
+        "shelljs": "^0.8.3",
+        "validator": "^11.0.0"
     },
     "devDependencies": {
+        "@babel/core": "^7.3.4",
+        "@babel/plugin-transform-runtime": "^7.3.4",
+        "@babel/preset-env": "^7.3.4",
+        "@babel/register": "^7.0.0",
+        "babel-eslint": "^10.0.1",
+        "babel-jest": "^24.1.0",
+        "babel-loader": "^8.0.5",
         "eslint": "^5.14.1",
         "eslint-config-airbnb": "17.1.0",
         "eslint-plugin-import": "^2.12.0",
         "eslint-plugin-jsx-a11y": "^6.0.3",
-        "eslint-plugin-react": "^7.9.1"
+        "lint-staged": "^8.2.1"
     }
 }
