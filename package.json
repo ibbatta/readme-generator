@@ -2,7 +2,7 @@
     "name": "readme-generator",
     "version": "0.0.1",
     "description": "Personal generator to simply create cool and efficients README.md",
-    "main": "",
+    "main": "index.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/ibbatta/readme-generator.git"
@@ -24,9 +24,9 @@
         "not ie <= 10"
     ],
     "scripts": {
-        "start": "NODE_ENV=production node index.js",
-        "start:dev": "NODE_ENV=development node index.js",
-        "test": "lint-staged"
+        "start": "babel-node -- ./index.js",
+        "build": "--- work in progress ---",
+        "test": "lint-staged && echo '--- work in progress ---'"
     },
     "dependencies": {
         "chalk": "^2.4.2",
@@ -38,9 +38,8 @@
     },
     "devDependencies": {
         "@babel/core": "^7.3.4",
-        "@babel/plugin-transform-runtime": "^7.3.4",
+        "@babel/node": "^7.4.5",
         "@babel/preset-env": "^7.3.4",
-        "@babel/register": "^7.0.0",
         "babel-eslint": "^10.0.1",
         "babel-jest": "^24.1.0",
         "babel-loader": "^8.0.5",
