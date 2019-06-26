@@ -1,7 +1,18 @@
 # **PERSONAL GITHUB REPOSITORY TEMPLATE**
 
-<img alt="License: MIT" src="https://img.shields.io/david/ibbatta/readme-generator.svg" />
-<img alt="Repository size" src="https://img.shields.io/github/repo-size/ibbatta/readme-generator.svg">
+![Node version](https://img.shields.io/badge/node-%3E%3D9.10.x-brightgreen.svg)
+![Yarn version](https://img.shields.io/badge/yarn-%3E%3D1.9.x-brightgreen.svg)
+![Npm version](https://img.shields.io/badge/npm-%3E%3D6.2.x-brightgreen.svg)
+![Nvm version](https://img.shields.io/badge/nvm-%3E%3D0.33.x-brightgreen.svg)
+---
+![Version](https://img.shields.io/github/package-json/v/ibbatta/readme-generator.svg)
+![License: MIT](https://img.shields.io/github/license/ibbatta/readme-generator.svg)
+![Repository size](https://img.shields.io/github/repo-size/ibbatta/readme-generator.svg)
+![Opened issues](https://img.shields.io/bitbucket/issues/ibbatta/readme-generator.svg)
+![Activity](https://img.shields.io/github/commit-activity/m/ibbatta/readme-generator.svg)
+---
+![Twitter follower](https://img.shields.io/twitter/follow/battago.svg?style=social)
+---
 
 > CLI that generates beautiful and professional README.md files
 
