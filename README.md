@@ -1,5 +1,7 @@
 # **PERSONAL GITHUB REPOSITORY TEMPLATE**
 
+| <img alt="License: MIT" src="https://img.shields.io/david/ibbatta/readme-generator.svg" target="_blank" /> | <img alt="Repository size" src="https://img.shields.io/github/repo-size/ibbatta/readme-generator.svg"> |
+
 > CLI that generates beautiful and professional README.md files
 
 This project was born mainly to satisfy my desire for knowledge and to simplify my workflow.
@@ -9,11 +11,11 @@ Being a curious (and also lazy) developer I have always wondered how avoid to wa
 
 ## **What this boilerplate contains**
 
-<img src="./.readme-assets/logo-npm.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./.readme-assets/logo-node.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./.readme-assets/logo-es6.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./.readme-assets/logo-jest.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./.readme-assets/logo-yarn.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img alt="logo npm" src="./.readme-assets/logo-npm.png" height="55" >&nbsp;&nbsp;
+<img alt="logo node" src="./.readme-assets/logo-node.png" height="55" >&nbsp;&nbsp;
+<img alt="logo es6" src="./.readme-assets/logo-es6.png" height="55" >&nbsp;&nbsp;
+<img alt="logo jest" src="./.readme-assets/logo-jest.png" height="55" >&nbsp;&nbsp;
+<img alt="logo yarn" src="./.readme-assets/logo-yarn.png" height="55" >&nbsp;&nbsp;
 
 #### **Features**
 

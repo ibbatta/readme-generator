@@ -2,10 +2,14 @@
     "name": "readme-generator",
     "version": "0.0.1",
     "description": "CLI that generates beautiful and professional README.md files",
-    "main": "index.js",
+    "main": "./index.js",
+    "bin": {
+        "generate-readme": "./index.js"
+    },
+    "homepage": "https://github.com/ibbatta/readme-generator",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ibbatta/readme-generator.git"
+        "url": "git+https://github.com/ibbatta/readme-generator.git"
     },
     "bugs": {
         "url": "https://github.com/ibbatta/readme-generator/issues"
@@ -13,6 +17,13 @@
     "author": "Maurizio Battaghini <maurizio.battaghini+tech@gmail.com>",
     "license": "MIT",
     "private": true,
+    "keywords": [
+        "readme",
+        "md",
+        "cli",
+        "generator",
+        "template"
+    ],
     "engines": {
         "node": ">= 9.10.x",
         "yarn": ">= 1.9.x",
