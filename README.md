@@ -8,19 +8,19 @@ Small project description about the repository, what it does and what to do next
 
 ## **What this boilerplate contains**
 
-<img src="./.readme-assets/default-icon.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./.readme-assets/default-icon.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./.readme-assets/default-icon.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./.readme-assets/default-icon.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./.readme-assets/default-icon.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-npm.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-node.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-es6.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-jest.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-yarn.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 
 #### **Features**
 
-- [x] Feature / Framework I have added to the project
-- [x] Feature / Framework I have added to the project
-- [x] Feature / Framework I have added to the project
-- [x] Feature / Framework I have added to the project
-- [x] Feature / Framework I have added to the project
+- [x] Babel (ES6 / ES7)
+- [x] Develpment / Production environment ready
+- [x] Airbnb javascript linter
+- [x] Test environment with Jest
+- [x] Full node package realeased on npm (local and global installation available)
 
 ---
 
@@ -36,7 +36,7 @@ Before cloning the repo **be sure** you have installed:
 Then:
 
 - Choose a folder project in your system and switch in `cd [folder path]`
-- Clone the repo in your folder `git clone [**INSERT YOUR REPO URL HERE**]`
+- Clone the repo in your folder `git clone https://github.com/ibbatta/readme-generator.git`
 
 ---
 
@@ -62,19 +62,35 @@ yarn
 
 ##### Run the project to develop:
 
-```bash
-npm start:dev
-# or
-yarn start:dev
-```
-
-##### Run the project to production:
+It will run the cli of the project locally
 
 ```bash
 npm start
-#or
+# or
 yarn start
 ```
+
+##### Build the project for production:
+
+It will create a folder `/lib` and compile the es6 / es7 js syntax
+
+```bash
+npm build
+#or
+yarn build
+```
+
+You can add the `--watch` flag if you want keep watching changes for test files.
+
+##### Run the tests:
+
+```bash
+npm test
+#or
+yarn test
+```
+
+You can add the `--watch` flag if you want keep watching changes for test files.
 
 ---
 
@@ -98,11 +114,9 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Todo**
 
-- [x] Todo checked
-- [x] Todo checked
-- [ ] Todo in waiting list
-- [ ] Todo in waiting list
-- [ ] Todo in waiting list
+- [ ] Define a developing path for the project
+- [ ] DOCKER: container creation
+- [ ] NPM: local package creation (and publish)
 
 ---
 
@@ -118,13 +132,13 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Credits**
 
-- [User name]() (why I say thanks)
+- [Pietro Siccardi](https://github.com/psiccardi) (for docker and template development)
 
 ---
 
 ### **Troubleshootings**
 
-This is just a personal project created for study / demonstration purpose only, it may or may not be a good fit for your project(s).
+This is just a personal project created for study / demonstration purpose and to simplify my working life, it may or may not be a good fit for your project(s).
 
 ---
 

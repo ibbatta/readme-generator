@@ -25,13 +25,14 @@
     ],
     "scripts": {
         "start": "clear && babel-node -- ./index.js",
-        "build": "--- work in progress ---",
-        "test": "lint-staged && echo '--- work in progress ---'"
+        "build": "",
+        "test": "lint-staged && exit 1"
     },
     "dependencies": {
         "chalk": "^2.4.2",
         "commander": "^2.20.0",
         "figlet": "^1.2.3",
+        "husky": "^2.6.0",
         "inquirer": "^6.3.1",
         "shelljs": "^0.8.3",
         "validator": "^11.0.0"
