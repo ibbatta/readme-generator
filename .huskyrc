@@ -1,5 +1,6 @@
 {
     "hooks": {
-        "pre-commit": "lint-staged && yarn test"
+        "pre-commit": "lint-staged && yarn test",
+        "pre-push": "auto-changelog -p && git add CHANGELOG.md && git commit -m 'update changelog'"
     }
 }

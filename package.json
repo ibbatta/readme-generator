@@ -37,7 +37,8 @@
     "scripts": {
         "start": "clear && babel-node -- ./index.js",
         "build": "",
-        "test": "lint-staged && exit 1"
+        "test": "lint-staged && exit 1",
+        "version": "auto-changelog -p && git add CHANGELOG.md"
     },
     "dependencies": {
         "chalk": "^2.4.2",
@@ -52,6 +53,7 @@
         "@babel/core": "^7.3.4",
         "@babel/node": "^7.4.5",
         "@babel/preset-env": "^7.3.4",
+        "auto-changelog": "^1.13.0",
         "babel-eslint": "^10.0.1",
         "babel-jest": "^24.1.0",
         "babel-loader": "^8.0.5",
