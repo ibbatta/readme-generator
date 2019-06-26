@@ -1,6 +1,7 @@
 # **PERSONAL GITHUB REPOSITORY TEMPLATE**
 
-| <img alt="License: MIT" src="https://img.shields.io/david/ibbatta/readme-generator.svg" target="_blank" /> | <img alt="Repository size" src="https://img.shields.io/github/repo-size/ibbatta/readme-generator.svg"> |
+<img alt="License: MIT" src="https://img.shields.io/david/ibbatta/readme-generator.svg" />
+<img alt="Repository size" src="https://img.shields.io/github/repo-size/ibbatta/readme-generator.svg">
 
 > CLI that generates beautiful and professional README.md files
 
