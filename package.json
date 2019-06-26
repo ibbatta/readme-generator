@@ -1,7 +1,7 @@
 {
     "name": "readme-generator",
     "version": "0.0.1",
-    "description": "Personal generator to simply create cool and efficients README.md",
+    "description": "CLI that generates beautiful and professional README.md files",
     "main": "index.js",
     "repository": {
         "type": "git",
@@ -48,6 +48,7 @@
         "eslint-config-airbnb": "17.1.0",
         "eslint-plugin-import": "^2.12.0",
         "eslint-plugin-jsx-a11y": "^6.0.3",
+        "jest": "^24.8.0",
         "lint-staged": "^8.2.1"
     }
 }

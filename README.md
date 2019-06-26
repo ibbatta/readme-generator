@@ -1,8 +1,9 @@
 # **PERSONAL GITHUB REPOSITORY TEMPLATE**
 
-> Personal configuration for a Github repository template
+> CLI that generates beautiful and professional README.md files
 
-Small project description about the repository, what it does and what to do next.
+This project was born mainly to satisfy my desire for knowledge and to simplify my workflow.
+Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.
 
 ---
 
@@ -60,7 +61,7 @@ yarn
 
 ## **Run the project**
 
-##### Run the project to develop:
+### Run the project to develop
 
 It will run the cli of the project locally
 
@@ -70,7 +71,7 @@ npm start
 yarn start
 ```
 
-##### Build the project for production:
+### Build the project for production
 
 It will create a folder `/lib` and compile the es6 / es7 js syntax
 
@@ -82,7 +83,7 @@ yarn build
 
 You can add the `--watch` flag if you want keep watching changes for test files.
 
-##### Run the tests:
+### Run the tests
 
 ```bash
 npm test
@@ -98,15 +99,15 @@ You can add the `--watch` flag if you want keep watching changes for test files.
 
 To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every project using some editors plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
 
-#### Basic Editor Configuration
+### Basic Editor Configuration
 
 I chose to use [EditorConfig](http://editorconfig.org/) to share the basic configuration like indentation and charset. It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin. You can find a list of downloads [here](http://editorconfig.org/#download). The choice to keep the indentation with 2 spaces is to be compliant with actual standards (major frameworks use this configuration both for JS and CSS).
 
-#### Auto correction on save
+### Auto correction on save
 
 I have chose to use [js-beautify](https://github.com/beautify-web/js-beautify). Despite of his name it works as a beautifier also for HTML and CSS. Every editor has a plugin that implement it, es. [Sublime](https://github.com/victorporof/Sublime-HTMLPrettify), [Atom](https://atom.io/packages/atom-beautify) or [Visual studio](https://www.visualstudio.com/it/?rr=https%3A%2F%2Fwww.google.it%2F). The setup for js-beautify is controlled within a `.jsbeautifyrc` file that have to be included in the root directory of the project (.hbs are not completely supported yet).
 
-#### Eslint
+### Eslint
 
 To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.org/). The rules to detect errors are written in a `.eslintrc` file included in the root directory of the project (for best practices use `airbnb linter`).
 
@@ -115,6 +116,7 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 ## **Todo**
 
 - [ ] Define a developing path for the project
+- [ ] Define and configure tests
 - [ ] DOCKER: container creation
 - [ ] NPM: local package creation (and publish)
 
@@ -132,7 +134,7 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Credits**
 
-- [Pietro Siccardi](https://github.com/psiccardi) (for docker and template development)
+- [Pietro Siccardi](https://github.com/psiccardi) (for docker and template development) work in progress
 
 ---
 
