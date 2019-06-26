@@ -38,7 +38,7 @@
         "start": "clear && babel-node -- ./index.js",
         "build": "",
         "test": "lint-staged && exit 1",
-        "changelog": "auto-changelog --output CHANGELOG.md",
+        "changelog": "auto-changelog",
         "version": "auto-changelog -p && git add CHANGELOG.md"
     },
     "dependencies": {
@@ -68,7 +68,7 @@
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged && yarn test",
-            "pre-push": "auto-changelog && git add CHANGELOG.md"
+            "pre-push": "auto-changelog && git add CHANGELOG.md && git commit -m 'update changelog'"
         }
     },
     "auto-changelog": {
