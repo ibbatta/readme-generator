@@ -82,8 +82,9 @@
         "output": "CHANGELOG.md",
         "template": "keepachangelog",
         "unreleased": true,
-        "commitLimit": 5,
+        "commitLimit": 10,
         "includeBranch": [
+            "master",
             "develop"
         ]
     }
