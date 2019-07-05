@@ -67,8 +67,8 @@
     },
     "husky": {
         "hooks": {
-            "precommit": "lint-staged && yarn test",
-            "prepush": "auto-changelog && git add CHANGELOG.md && git commit -m 'update changelog'"
+            "pre-commit": "lint-staged && yarn test",
+            "pre-push": "auto-changelog && git add CHANGELOG.md && git commit -m 'update changelog'"
         }
     },
     "lint-staged": {
