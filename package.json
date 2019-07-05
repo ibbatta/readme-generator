@@ -36,7 +36,7 @@
     ],
     "scripts": {
         "start": "clear && babel-node -- ./index.js",
-        "build": "",
+        "build": "exit 1",
         "test": "lint-staged && exit 1",
         "changelog": "auto-changelog",
         "version": "auto-changelog -p && git add CHANGELOG.md"
@@ -70,6 +70,9 @@
             "pre-commit": "lint-staged && yarn test",
             "pre-push": "auto-changelog && git add CHANGELOG.md && git commit -m 'update changelog'"
         }
+    },
+    "lint-staged": {
+        "*.js": ["eslint --fix", "git add"]
     },
     "auto-changelog": {
         "output": "CHANGELOG.md",

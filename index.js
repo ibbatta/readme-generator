@@ -20,7 +20,7 @@ const firstQuestion = () => {
 };
 
 const generateReadmeFile = (...restData) => {
-  console.log(restData);
+  console.log(restData); // test
 };
 
 const run = async () => {
