@@ -67,6 +67,7 @@
     },
     "husky": {
         "hooks": {
+            "commit-msg": "echo $HUSKY_GIT_PARAMS",
             "pre-commit": "yarn test",
             "pre-push": "auto-changelog && git add CHANGELOG.md"
         }
