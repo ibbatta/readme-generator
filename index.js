@@ -15,7 +15,7 @@ const firstQuestion = () => {
 };
 
 const generateReadmeFile = (...restData) => {
-  console.log(restData);
+  console.log(restData); //
 };
 
 const run = async () => {
