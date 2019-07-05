@@ -24,6 +24,8 @@
 This project was born mainly to satisfy my desire for knowledge and to simplify my workflow.
 Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.
 
+Click [HERE](https://docs.google.com/document/d/1vzkwiTBsGISRgkNOaUZm3eEx-Tx_z88X1ZhtNx8eKj8/edit?usp=sharing) to follow the develop process and share some ideas
+
 ---
 
 ## **What this boilerplate contains**
