@@ -5,9 +5,20 @@ import figlet from 'figlet';
 const firstQuestion = () => {
   const firstQuestion = [
     {
+<<<<<<< Updated upstream
       name: 'Name',
       type: 'input',
       message: 'Insert name:'
+=======
+      name: 'firstname',
+      type: 'input',
+      message: 'Insert first name:'
+    },
+    {
+      name: 'lastname',
+      type: 'input',
+      message: 'Insert last name:'
+>>>>>>> Stashed changes
     }
   ];
   console.log(chalk.blueBright('First settings:'));
