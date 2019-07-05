@@ -8,11 +8,6 @@ const firstQuestion = () => {
       name: 'firstname',
       type: 'input',
       message: 'Insert first name:'
-    },
-    {
-      name: 'lastname',
-      type: 'input',
-      message: 'Insert last name:'
     }
   ];
   console.log(chalk.blueBright('First settings:'));
