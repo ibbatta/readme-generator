@@ -1,4 +1,10 @@
 export default {
-  name: 'test', // TODO: remember to rename in README
-  ext: 'md'
+    readme: {
+        name: 'README',
+        ext: 'md'
+    },
+    package: {
+        name: 'package',
+        ext: 'json'
+    }
 };

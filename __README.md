@@ -135,8 +135,10 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 ## **Todo**
 
 - [ ] Define a developing path for the project
+- [ ] Update README specifing best way to write a package.json to be parsed correctly
+- [ ] Store data from previosly read package.json (in JSON format, to be used further)
+- [ ] Update README specifing how to use the tool and best way to set up
 - [ ] Define and configure tests
-- [ ] DOCKER: container creation
 - [ ] NPM: local package creation (and publish)
 
 ---
