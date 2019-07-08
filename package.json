@@ -37,7 +37,7 @@
     "scripts": {
         "start": "clear && babel-node -- ./index.js",
         "build": "exit 1",
-        "test": "lint-staged && exit 1",
+        "test": "lint-staged",
         "changelog": "auto-changelog",
         "version": "auto-changelog -p && git add CHANGELOG.md"
     },
@@ -71,7 +71,7 @@
         "hooks": {
             "pre-commit": "yarn test",
             "pre-push": "auto-changelog && git add CHANGELOG.md",
-            "commit-msg": "echo $HUSKY_GIT_PARAMS"
+            "commit-msg": "echo --- $HUSKY_GIT_PARAMS"
         }
     },
     "lint-staged": {
