@@ -9,35 +9,38 @@
     "homepage": "https://github.com/ibbatta/readme-generator",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ibbatta/readme-generator.git"
+        "url": "https://github.com/ibbatta/readme-generator.git"
     },
     "bugs": {
-        "url": "https://github.com/ibbatta/readme-generator/issues"
+        "url": "https://github.com/ibbatta/readme-generator/issues",
+        "email": "maurizio.battaghini+tech@gmail.com"
     },
-    "author": "Maurizio Battaghini <maurizio.battaghini+tech@gmail.com>",
-    "license": "MIT",
-    "private": true,
+    "author": {
+        "name": "Maurizio Battaghini",
+        "email": "maurizio.battaghini+tech@gmail.com",
+        "url": "http://twitter.com/battago"
+    },
     "keywords": [
         "readme",
-        "md",
-        "cli",
+        "readme-template",
+        "readme-generator",
+        "readme-md",
         "generator",
-        "template"
+        "cli",
+        "readme-standard",
+        "readme-quality"
     ],
     "engines": {
         "node": ">= 9.10.x",
         "yarn": ">= 1.9.x",
         "npm": ">= 6.3.x"
     },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions",
-        "not ie <= 10"
-    ],
+    "license": "MIT",
+    "private": true,
     "scripts": {
         "start": "clear && babel-node -- ./index.js",
         "build": "exit 1",
-        "test": "lint-staged && exit 1",
+        "test": "lint-staged",
         "changelog": "auto-changelog",
         "version": "auto-changelog -p && git add CHANGELOG.md"
     },
@@ -45,7 +48,9 @@
         "chalk": "^2.4.2",
         "commander": "^2.20.0",
         "figlet": "^1.2.3",
+        "handlebars": "^4.1.2",
         "inquirer": "^6.3.1",
+        "lodash": "^4.17.11",
         "shelljs": "^0.8.3",
         "validator": "^11.0.0"
     },
@@ -68,8 +73,7 @@
     "husky": {
         "hooks": {
             "pre-commit": "yarn test",
-            "pre-push": "auto-changelog && git add CHANGELOG.md",
-            "commit-msg": "echo $HUSKY_GIT_PARAMS"
+            "pre-push": "auto-changelog && git add CHANGELOG.md"
         }
     },
     "lint-staged": {
