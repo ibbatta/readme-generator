@@ -1,10 +1,10 @@
 export default {
-    readme: {
-        name: 'README',
-        ext: 'md'
-    },
-    package: {
-        name: 'package',
-        ext: 'json'
-    }
+  readme: {
+    name: 'README',
+    ext: 'md'
+  },
+  package: {
+    name: 'package',
+    ext: 'json'
+  }
 };

@@ -22,10 +22,13 @@
     },
     "keywords": [
         "readme",
-        "md",
-        "cli",
+        "readme-template",
+        "readme-generator",
+        "readme-md",
         "generator",
-        "template"
+        "cli",
+        "readme-standard",
+        "readme-quality"
     ],
     "engines": {
         "node": ">= 9.10.x",
