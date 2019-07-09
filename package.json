@@ -90,7 +90,8 @@
         "commitLimit": 10,
         "includeBranch": [
             "master",
-            "develop"
+            "develop",
+            "*"
         ]
     }
 }
