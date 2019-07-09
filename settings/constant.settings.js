@@ -12,6 +12,6 @@ export default {
     'description',
     'homepage',
     'author',
-    'license'
+    'engines'
   ]
 };
