@@ -1,4 +1,5 @@
 import fs from 'fs';
+import Handlebar from 'handlebars';
 
 import { constantSettings } from '../settings';
 
@@ -20,7 +21,22 @@ const readFilePromise = async file =>
     });
   });
 
+const writeFilePromise = async (file, data) => {
+  await new Promise((resolve, reject) => {
+    fs.writeFile(file, data, err => {
+      err ? reject(err) : resolve(file);
+    });
+  });
+};
+
+const convertHandlebarTemplate = (wrapper, ...answers) => {
+  const template = Handlebar.compile(wrapper);
+  return template(...answers);
+};
+
 export default {
   accessFilePromise,
-  readFilePromise
+  readFilePromise,
+  writeFilePromise,
+  convertHandlebarTemplate
 };

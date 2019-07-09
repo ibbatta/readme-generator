@@ -11,7 +11,6 @@ export default {
     'version',
     'description',
     'homepage',
-    'repository',
     'author',
     'license'
   ]

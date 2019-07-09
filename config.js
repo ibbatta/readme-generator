@@ -10,5 +10,9 @@ export default {
   readmeMdFile: path.join(
     pathSettings.root,
     `${fileSettings.readme.name}.${fileSettings.readme.ext}`
+  ),
+  readmeMdTemplate: path.join(
+    pathSettings.templates,
+    `${fileSettings.template.name}.${fileSettings.template.ext}`
   )
 };

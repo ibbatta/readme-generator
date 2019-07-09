@@ -36,7 +36,7 @@ Click [HERE](https://docs.google.com/document/d/1vzkwiTBsGISRgkNOaUZm3eEx-Tx_z88
 <img alt="logo jest" src="./.readme-assets/logo-jest.png" height="55" >&nbsp;&nbsp;
 <img alt="logo yarn" src="./.readme-assets/logo-yarn.png" height="55" >&nbsp;&nbsp;
 
-#### **Features**
+### **Features**
 
 - [x] Babel (ES6 / ES7)
 - [x] Develpment / Production environment ready
@@ -140,8 +140,11 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 - [ ] Update README specifing best way to write a package.json to be parsed correctly
 - [ ] Store data from previosly read package.json (in JSON format, to be used further)
 - [ ] Update README specifing how to use the tool and best way to set up
+- [ ] Configure `commander` + `shelljs` + `validator` to manage extra user's options
+- [ ] Validate prompt commands
 - [ ] Define and configure tests
 - [ ] NPM: local package creation (and publish)
+- [ ] Provide translations for readme and configuration tools
 
 ---
 
