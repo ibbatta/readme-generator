@@ -31,9 +31,9 @@
         "readme-quality"
     ],
     "engines": {
-        "node": ">=9.10.x",
-        "yarn": ">=1.9.x",
-        "npm": ">=6.3.x"
+        "node": ">= 9.10.x",
+        "yarn": ">= 1.9.x",
+        "npm": ">= 6.3.x"
     },
     "license": "MIT",
     "private": true,

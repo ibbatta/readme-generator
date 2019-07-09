@@ -1,9 +1,25 @@
-# **{{ name }}** (version {{ version }})
+# **{{upperCase name}}**
+
+{{#each engines}}
+![{{@key}} version](https://img.shields.io/badge/{{@key}}-{{{removeAllSpaces this}}}-brightgreen.svg)
+{{/each}}
 
 ---
 
-> {{ description }}
-{{#if longDescription}}{{ longDescription }}{{/if}}
-{{#each engines}}
-  ![{{@key}} version](https://img.shields.io/badge/{{@key}}-{{{this}}}-brightgreen.svg)
+> {{description}}
+
+{{#if longDescription}}
+{{~longDescription}}
+{{/if}}
+
+---
+
+{{#if dependencies}}
+## **Features**
+
+{{#each dependencies}}
+- [x] {{@key}}
 {{/each}}
+
+---
+{{/if}}
