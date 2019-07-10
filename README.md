@@ -1,15 +1,16 @@
 # **README-GENERATOR**
 
-![NODE version](https://img.shields.io/badge/node->=9.10.x-brightgreen.svg)
-![YARN version](https://img.shields.io/badge/yarn->=1.9.x-brightgreen.svg)
-![NPM version](https://img.shields.io/badge/npm->=6.3.x-brightgreen.svg)
-![NVM version](https://img.shields.io/badge/nvm->=0.33.x-brightgreen.svg)
+![node version](https://img.shields.io/badge/node->=9.10.x-brightgreen.svg)
+![yarn version](https://img.shields.io/badge/yarn->=1.9.x-brightgreen.svg)
+![npm version](https://img.shields.io/badge/npm->=6.3.x-brightgreen.svg)
+![nvm version](https://img.shields.io/badge/nvm->=0.33.x-brightgreen.svg)
 
 ---
 
 > CLI that generates beautiful and professional README.md files
 
-Long description written to provide more informations about the project and its purpose
+Long description written to provide more informations about the project and its purposes
+
 
 ---
 
@@ -24,7 +25,6 @@ Long description written to provide more informations about the project and its 
 - [x] lodash
 - [x] shelljs
 - [x] validator
-- [x] Node
 
 ---
 
@@ -32,10 +32,10 @@ Long description written to provide more informations about the project and its 
 
 Before cloning the repo **be sure** you have installed:
 
-- [node] (version >= 9.10.x)
-- [yarn] (version >= 1.9.x)
-- [npm] (version >= 6.3.x)
-- [nvm] (version >= 0.33.x)
+- **NODE** (version >= 9.10.x)
+- **YARN** (version >= 1.9.x)
+- **NPM** (version >= 6.3.x)
+- **NVM** (version >= 0.33.x)
 
 Then:
 
@@ -85,4 +85,5 @@ not be a good fit for your project(s).
 
 ---
 
-> [@Maurizio Battaghini](http://twitter.com/battago) &nbsp;&middot;&nbsp;
+> AUTHOR: Maurizio Battaghini
+> SOCIAL: [@github](https://github.com/ibbatta) &nbsp;&middot;&nbsp;[@twitter](https://twitter.com/battago) &nbsp;&middot;&nbsp;

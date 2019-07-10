@@ -18,7 +18,11 @@
     "author": {
         "name": "Maurizio Battaghini",
         "email": "maurizio.battaghini+tech@gmail.com",
-        "url": "http://twitter.com/battago"
+        "url": "https://twitter.com/battago",
+        "social": {
+            "github": "https://github.com/ibbatta",
+            "twitter": "https://twitter.com/battago"
+        }
     },
     "contributors": [{
         "name": "Pietro Siccardi",

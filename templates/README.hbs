@@ -1,7 +1,7 @@
 # **{{upperCase name}}**
 
 {{#each engines}}
-![{{upperCase @key}} version](https://img.shields.io/badge/{{@key}}-{{{removeAllSpaces this}}}-brightgreen.svg)
+![{{@key}} version](https://img.shields.io/badge/{{@key}}-{{{removeAllSpaces this}}}-brightgreen.svg)
 {{/each}}
 
 ---
@@ -32,7 +32,7 @@
 Before cloning the repo **be sure** you have installed:
 
 {{#each engines}}
-- [{{@key}}] (version {{{this}}})
+- **{{upperCase @key}}** (version {{{this}}})
 {{/each}}
 
 Then:
@@ -88,11 +88,8 @@ not be a good fit for your project(s).
 ---
 
 {{#if author}}
-{{#if author.url}}
-> [@{{author.name}}]({{{author.url}}}) &nbsp;&middot;&nbsp;
-{{else if}}
-> [@{{author.name}}]({{{author.email}}}) &nbsp;&middot;&nbsp;
-{{else}}
-> @{{author.name}} &nbsp;&middot;&nbsp;
+> AUTHOR: {{author.name}}
+{{#if author.social}}
+> SOCIAL: {{#each author.social}}[@{{@key}}]({{{this}}}) &nbsp;&middot;&nbsp;{{/each}}
 {{/if}}
 {{/if}}
