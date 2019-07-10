@@ -1,9 +1,102 @@
-# **{{ name }}** (version {{ version }})
+# **{{upperCase name}}** (version {{version}})
+
+{{#each engines}}
+![{{@key}} version](https://img.shields.io/badge/{{@key}}-{{{removeAllSpaces this}}}-brightgreen.svg)
+{{/each}}
 
 ---
 
-> {{ description }}
-{{#if longDescription}}{{ longDescription }}{{/if}}
-{{#each engines}}
-  ![{{@key}} version](https://img.shields.io/badge/{{@key}}-{{{this}}}-brightgreen.svg)
+{{#if description}}
+> {{description}}
+
+{{longDescription}}
+
+---
+{{/if}}
+
+{{#if dependencies}}
+## **Features**
+
+{{#each dependencies}}
+- [x] {{@key}}
 {{/each}}
+{{#each frameworks}}
+- [x] {{this}}
+{{/each}}
+
+---
+{{/if}}
+
+## **Set up project**
+
+Before cloning the repo **be sure** you have installed:
+
+{{#each engines}}
+- **{{upperCase @key}}** (version {{{this}}})
+{{/each}}
+
+Then:
+
+- Choose a folder project in your system and switch in `cd [folder path]`
+- Clone the repo in your folder `git clone {{{repository.url}}}`
+
+---
+
+## **Installation**
+
+To install the project and all dependencies, enter in the project folder and run:
+
+```bash
+# install dependencies
+npm install
+```
+
+or
+
+```bash
+# install dependencies
+yarn
+```
+
+---
+
+## **Run the project**
+
+```bash
+npm {{startCommand}}
+# or
+yarn {{startCommand}}
+```
+
+## **Contributing**
+
+- Fork it!
+- Create your feature branch: `git checkout -b my-new-feature`
+- Commit your changes: `git commit -am 'Add some feature'`
+- Push to the branch: `git push origin my-new-feature`
+- Submit a pull request
+
+---
+
+{{#if contributors}}
+## **Credits**
+
+{{#each contributors}}
+- [{{name}}]({{{url}}}) ({{reason}})
+{{/each}}
+
+---
+{{/if}}
+
+### **Troubleshootings**
+
+This is just a personal project created for study / demonstration purpose and to simplify my working life, it may or may
+not be a good fit for your project(s).
+
+---
+
+> AUTHOR: {{author.name}}
+{{~#if author.social}}\
+> SOCIAL: {{#each author.social}}{{#unless @last}}[{{@key}}]({{{this}}})
+&nbsp;&middot;&nbsp;{{/unless}}{{#if @last}}[{{@key}}]({{{this}}}){{/if}}{{/each}}
+{{/if}}

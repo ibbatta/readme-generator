@@ -8,29 +8,13 @@ import Inquirer from 'inquirer';
 import config from './config';
 import { fileSettings } from './settings';
 import { collectionUtils, fileUtils } from './utilities';
-import {
-  promptQuestions,
-  packageQuestions,
-  readmeQuestions
-} from './questions';
+import { extraQuestions } from './questions';
 
-let packageAnswers, readmeAnswers;
+let packageAnswers, extraAnwsers;
 
-const promptFnQuestions = () => {
-  console.log(
-    Chalk.blueBright('Intelligent autocomplete with package.json informations')
-  );
-  return Inquirer.prompt(promptQuestions);
-};
-
-const packageFnQuestions = () => {
-  console.log(Chalk.blueBright('General questions'));
-  return Inquirer.prompt(packageQuestions);
-};
-
-const readmeFnQuestions = () => {
+const extraFnQuestions = () => {
   console.log(Chalk.blueBright('Extra questions'));
-  return Inquirer.prompt(readmeQuestions);
+  return Inquirer.prompt(extraQuestions);
 };
 
 const run = async () => {
@@ -51,19 +35,21 @@ const run = async () => {
     ? collectionUtils.filterCollectionByCostantValues(packageJsonData)
     : null;
 
-  const isAutocompleteRequested = await promptFnQuestions();
-
-  if (isAutocompleteRequested.usePackageJsonData) {
+  if (packageJsonStorage) {
     packageAnswers = packageJsonStorage;
   } else {
-    packageAnswers = await packageFnQuestions();
+    throw new Error(
+      `The file ${Chalk.bold(
+        config.packageJsonFile
+      )} is missing or not readable`
+    );
   }
-  readmeAnswers = await readmeFnQuestions();
+  extraAnwsers = await extraFnQuestions();
 
   const templateConverted = fileUtils.convertHandlebarTemplate(
     readmeMdTemplate,
     packageAnswers,
-    readmeAnswers
+    extraAnwsers
   );
 
   try {
