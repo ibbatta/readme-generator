@@ -1,3 +1,0 @@
-{
-  "*.{js,jsx,md,json}": ["eslint --fix", "git add"]
-}

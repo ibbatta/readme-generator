@@ -4,20 +4,27 @@
 ![Yarn version](https://img.shields.io/badge/yarn-%3E%3D1.9.x-brightgreen.svg)
 ![Npm version](https://img.shields.io/badge/npm-%3E%3D6.2.x-brightgreen.svg)
 ![Nvm version](https://img.shields.io/badge/nvm-%3E%3D0.33.x-brightgreen.svg)
+
 ---
+
 ![Version](https://img.shields.io/github/package-json/v/ibbatta/readme-generator.svg)
 ![License: MIT](https://img.shields.io/github/license/ibbatta/readme-generator.svg)
 ![Repository size](https://img.shields.io/github/repo-size/ibbatta/readme-generator.svg)
 ![Opened issues](https://img.shields.io/bitbucket/issues/ibbatta/readme-generator.svg)
 ![Activity](https://img.shields.io/github/commit-activity/m/ibbatta/readme-generator.svg)
+
 ---
+
 [![Twitter follower](https://img.shields.io/twitter/follow/battago.svg?style=social)](https://twitter.com/battago)
+
 ---
 
 > CLI that generates beautiful and professional README.md files
 
 This project was born mainly to satisfy my desire for knowledge and to simplify my workflow.
 Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.
+
+Click [HERE](https://docs.google.com/document/d/1vzkwiTBsGISRgkNOaUZm3eEx-Tx_z88X1ZhtNx8eKj8/edit?usp=sharing) to follow the develop process and share some ideas
 
 ---
 
@@ -29,7 +36,7 @@ Being a curious (and also lazy) developer I have always wondered how avoid to wa
 <img alt="logo jest" src="./.readme-assets/logo-jest.png" height="55" >&nbsp;&nbsp;
 <img alt="logo yarn" src="./.readme-assets/logo-yarn.png" height="55" >&nbsp;&nbsp;
 
-#### **Features**
+### **Features**
 
 - [x] Babel (ES6 / ES7)
 - [x] Develpment / Production environment ready
@@ -130,9 +137,14 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 ## **Todo**
 
 - [ ] Define a developing path for the project
+- [ ] Update README specifing best way to write a package.json to be parsed correctly
+- [ ] Store data from previosly read package.json (in JSON format, to be used further)
+- [ ] Update README specifing how to use the tool and best way to set up
+- [ ] Configure `commander` + `shelljs` + `validator` to manage extra user's options
+- [ ] Validate prompt commands
 - [ ] Define and configure tests
-- [ ] DOCKER: container creation
 - [ ] NPM: local package creation (and publish)
+- [ ] Provide translations for readme and configuration tools
 
 ---
 

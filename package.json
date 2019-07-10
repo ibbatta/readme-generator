@@ -9,42 +9,59 @@
     "homepage": "https://github.com/ibbatta/readme-generator",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ibbatta/readme-generator.git"
+        "url": "https://github.com/ibbatta/readme-generator.git"
     },
     "bugs": {
-        "url": "https://github.com/ibbatta/readme-generator/issues"
+        "url": "https://github.com/ibbatta/readme-generator/issues",
+        "email": "maurizio.battaghini+tech@gmail.com"
     },
-    "author": "Maurizio Battaghini <maurizio.battaghini+tech@gmail.com>",
-    "license": "MIT",
-    "private": true,
+    "author": {
+        "name": "Maurizio Battaghini",
+        "email": "maurizio.battaghini+tech@gmail.com",
+        "url": "https://twitter.com/battago",
+        "social": {
+            "github": "https://github.com/ibbatta",
+            "twitter": "https://twitter.com/battago"
+        }
+    },
+    "contributors": [{
+        "name": "Pietro Siccardi",
+        "url": "http://github.com/pietrosiccardi",
+        "reason": "Great support for the template engine"
+    }],
     "keywords": [
         "readme",
-        "md",
-        "cli",
+        "readme-template",
+        "readme-generator",
+        "readme-md",
         "generator",
-        "template"
+        "cli",
+        "readme-standard",
+        "readme-quality"
     ],
     "engines": {
         "node": ">= 9.10.x",
         "yarn": ">= 1.9.x",
-        "npm": ">= 6.3.x"
+        "npm": ">= 6.3.x",
+        "nvm": ">= 0.33.x"
     },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions",
-        "not ie <= 10"
-    ],
+    "license": "MIT",
+    "private": true,
     "scripts": {
         "start": "clear && babel-node -- ./index.js",
-        "build": "",
-        "test": "lint-staged && exit 1"
+        "build": "exit 1",
+        "test": "lint-staged",
+        "changelog": "auto-changelog",
+        "version": "auto-changelog -p && git add CHANGELOG.md"
     },
     "dependencies": {
+        "boxen": "^4.1.0",
         "chalk": "^2.4.2",
         "commander": "^2.20.0",
         "figlet": "^1.2.3",
-        "husky": "^2.6.0",
+        "handlebars": "^4.1.2",
         "inquirer": "^6.3.1",
+        "lodash": "^4.17.11",
         "shelljs": "^0.8.3",
         "validator": "^11.0.0"
     },
@@ -52,6 +69,7 @@
         "@babel/core": "^7.3.4",
         "@babel/node": "^7.4.5",
         "@babel/preset-env": "^7.3.4",
+        "auto-changelog": "^1.13.0",
         "babel-eslint": "^10.0.1",
         "babel-jest": "^24.1.0",
         "babel-loader": "^8.0.5",
@@ -59,7 +77,31 @@
         "eslint-config-airbnb": "17.1.0",
         "eslint-plugin-import": "^2.12.0",
         "eslint-plugin-jsx-a11y": "^6.0.3",
+        "husky": "^3.0.0",
         "jest": "^24.8.0",
         "lint-staged": "^8.2.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn test",
+            "pre-push": "auto-changelog && git add CHANGELOG.md"
+        }
+    },
+    "lint-staged": {
+        "*.js": [
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": true,
+        "commitLimit": 10,
+        "includeBranch": [
+            "master",
+            "develop",
+            "*"
+        ]
     }
 }
