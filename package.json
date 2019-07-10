@@ -20,6 +20,11 @@
         "email": "maurizio.battaghini+tech@gmail.com",
         "url": "http://twitter.com/battago"
     },
+    "contributors": [{
+        "name": "Pietro Siccardi",
+        "url": "http://github.com/pietrosiccardi",
+        "reason": "Great support for the template engine"
+    }],
     "keywords": [
         "readme",
         "readme-template",
@@ -33,7 +38,8 @@
     "engines": {
         "node": ">= 9.10.x",
         "yarn": ">= 1.9.x",
-        "npm": ">= 6.3.x"
+        "npm": ">= 6.3.x",
+        "nvm": ">= 0.33.x"
     },
     "license": "MIT",
     "private": true,
