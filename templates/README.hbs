@@ -1,4 +1,4 @@
-# **{{upperCase name}}**
+# **{{upperCase name}}** (version {{version}})
 
 {{#each engines}}
 ![{{@key}} version](https://img.shields.io/badge/{{@key}}-{{{removeAllSpaces this}}}-brightgreen.svg)
@@ -60,6 +60,14 @@ yarn
 
 ---
 
+## **Run the project**
+
+```bash
+npm {{startCommand}}
+# or
+yarn {{startCommand}}
+```
+
 ## **Contributing**
 
 - Fork it!
@@ -87,9 +95,8 @@ not be a good fit for your project(s).
 
 ---
 
-{{#if author}}
 > AUTHOR: {{author.name}}
-{{#if author.social}}
-> SOCIAL: {{#each author.social}}[@{{@key}}]({{{this}}}) &nbsp;&middot;&nbsp;{{/each}}
-{{/if}}
+{{~#if author.social}}\
+> SOCIAL: {{#each author.social}}{{#unless @last}}[{{@key}}]({{{this}}})
+&nbsp;&middot;&nbsp;{{/unless}}{{#if @last}}[{{@key}}]({{{this}}}){{/if}}{{/each}}
 {{/if}}

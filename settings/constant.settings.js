@@ -10,7 +10,6 @@ export default {
     'name',
     'version',
     'description',
-    'homepage',
     'repository',
     'author',
     'engines',

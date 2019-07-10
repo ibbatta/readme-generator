@@ -4,7 +4,7 @@ export default {
     ext: 'hbs'
   },
   readme: {
-    name: 'README',
+    name: 'TEST-README',
     ext: 'md'
   },
   package: {
