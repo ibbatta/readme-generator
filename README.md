@@ -141,6 +141,8 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 - [ ] Store data from previosly read package.json (in JSON format, to be used further)
 - [ ] Update README specifing how to use the tool and best way to set up
 - [ ] Configure `commander` + `shelljs` + `validator` to manage extra user's options
+- [ ] Read `.nvmrc` file to add nvm instruction on readme
+- [ ] Read `.editorconfig`, `.jsbeautifyrc` or `.eslintrc` to add specific instructions on readme
 - [ ] Validate prompt commands
 - [ ] Define and configure tests
 - [ ] NPM: local package creation (and publish)
