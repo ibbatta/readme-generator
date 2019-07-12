@@ -4,6 +4,7 @@ import Chalk from 'chalk';
 import Boxen from 'boxen';
 import Figlet from 'figlet';
 import Inquirer from 'inquirer';
+import Listr from 'listr';
 import _ from 'lodash';
 
 import { fileSettings, dataSettings } from './settings';

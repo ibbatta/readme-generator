@@ -8,8 +8,7 @@
 
 > CLI that generates beautiful and professional README.md files
 
-This is a long description
-
+Test long description
 
 ---
 
@@ -20,6 +19,7 @@ This is a long description
 - [x] figlet
 - [x] handlebars
 - [x] inquirer
+- [x] listr
 - [x] lodash
 
 ---
