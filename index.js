@@ -4,56 +4,48 @@ import Chalk from 'chalk';
 import Boxen from 'boxen';
 import Figlet from 'figlet';
 import Inquirer from 'inquirer';
+import _ from 'lodash';
 
-import config from './config';
-import { fileSettings } from './settings';
-import { collectionUtils, fileUtils } from './utilities';
-import { extraQuestions } from './questions';
+import { fileSettings, dataSettings } from './settings';
+import { fileUtils, hbsUtils } from './utilities';
+import questions from './readme/questions';
 
-let packageAnswers, extraAnwsers;
-
-const extraFnQuestions = () => {
+// TODO: fare un loop per richiamare le domande e gestire un "promise all"
+const readmeQuestions = () => {
   console.log(Chalk.blueBright('Extra questions'));
-  return Inquirer.prompt(extraQuestions);
+  return Inquirer.prompt(questions);
 };
 
 const run = async () => {
   console.log(Chalk.green(Figlet.textSync('Readme\nGenerator')));
 
-  const packageJsonExist = await fileUtils.accessFilePromise(
-    config.packageJsonFile
-  );
-  const packageJsonData = await fileUtils.readFilePromise(
-    config.packageJsonFile
-  );
-
-  const readmeMdTemplate = await fileUtils.readFilePromise(
-    config.readmeMdTemplate
-  );
-
-  const packageJsonStorage = packageJsonExist
-    ? collectionUtils.filterCollectionByCostantValues(packageJsonData)
-    : null;
-
-  if (packageJsonStorage) {
-    packageAnswers = packageJsonStorage;
-  } else {
+  try {
+    await fileUtils.checkFileExist(fileSettings.package.path);
+  } catch (error) {
     throw new Error(
-      `The file ${Chalk.bold(
-        config.packageJsonFile
-      )} is missing or not readable`
+      Chalk.red(
+        `The file ${Chalk.bold(
+          fileSettings.package.path
+        )} is missing or not readable`
+      )
     );
   }
-  extraAnwsers = await extraFnQuestions();
 
-  const templateConverted = fileUtils.convertHandlebarTemplate(
-    readmeMdTemplate,
-    packageAnswers,
-    extraAnwsers
+  const templateFile = await fileUtils.readFile(fileSettings.template.path);
+  const templateData = _.merge(
+    {},
+    _.pick(
+      JSON.parse(await fileUtils.readFile(fileSettings.package.path)),
+      dataSettings
+    ),
+    await readmeQuestions()
   );
 
   try {
-    await fileUtils.writeFilePromise(config.readmeMdFile, templateConverted);
+    await fileUtils.writeFile(
+      fileSettings.readme.path,
+      hbsUtils.generateHandlebar(templateFile, templateData)
+    );
     console.log(
       Chalk.green(
         Boxen(
@@ -69,7 +61,11 @@ const run = async () => {
       )
     );
   } catch (error) {
-    console.error(Chalk.red(error));
+    throw new Error(
+      Chalk.red(
+        `Unable to generate the ${Chalk.bold(fileSettings.package.path)} file`
+      )
+    );
   }
 };
 

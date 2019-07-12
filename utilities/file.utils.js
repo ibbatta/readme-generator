@@ -1,40 +1,20 @@
-import fs from 'fs';
-import _ from 'lodash';
-import Handlebar from 'handlebars';
+import fs, { constants } from 'fs';
 
-import { constantSettings } from '../settings';
-
-Handlebar.registerHelper('removeAllSpaces', text => {
-  return text.replace(/\s/g, '');
-});
-
-Handlebar.registerHelper('upperCase', text => {
-  return text.toUpperCase();
-});
-
-Handlebar.registerHelper('lowerCase', text => {
-  return text.toLowerCase();
-});
-
-const accessFilePromise = async file =>
+const checkFileExist = async file =>
   await new Promise((resolve, reject) => {
-    fs.access(
-      file,
-      constantSettings.file.isExist | constantSettings.file.isReadable,
-      err => {
-        err ? reject(err) : resolve(true);
-      }
-    );
+    fs.access(file, constants.F_OK | constants.W_OK, err => {
+      err ? reject(err) : resolve(true);
+    });
   });
 
-const readFilePromise = async file =>
+const readFile = async file =>
   await new Promise((resolve, reject) => {
     fs.readFile(file, 'utf8', (err, fileData) => {
       err ? reject(err) : resolve(fileData);
     });
   });
 
-const writeFilePromise = async (file, data) => {
+const writeFile = async (file, data) => {
   await new Promise((resolve, reject) => {
     fs.writeFile(file, data, err => {
       err ? reject(err) : resolve(file);
@@ -42,15 +22,8 @@ const writeFilePromise = async (file, data) => {
   });
 };
 
-const convertHandlebarTemplate = (wrapper, ...answers) => {
-  console.log(JSON.stringify(answers, null, 2));
-  const template = Handlebar.compile(wrapper);
-  return template(_.merge({}, ...answers));
-};
-
 export default {
-  accessFilePromise,
-  readFilePromise,
-  writeFilePromise,
-  convertHandlebarTemplate
+  checkFileExist,
+  readFile,
+  writeFile
 };
