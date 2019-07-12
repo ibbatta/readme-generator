@@ -8,8 +8,6 @@
 
 > CLI that generates beautiful and professional README.md files
 
-Test long description
-
 ---
 
 ## **Features**

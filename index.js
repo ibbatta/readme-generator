@@ -20,18 +20,6 @@ const readmeQuestions = () => {
 const run = async () => {
   console.log(Chalk.green(Figlet.textSync('Readme\nGenerator')));
 
-  try {
-    await fileUtils.checkFileExist(fileSettings.package.path);
-  } catch (error) {
-    throw new Error(
-      Chalk.red(
-        `The file ${Chalk.bold(
-          fileSettings.package.path
-        )} is missing or not readable`
-      )
-    );
-  }
-
   const templateFile = await fileUtils.readFile(fileSettings.template.path);
   const templateData = _.merge(
     {},
@@ -42,32 +30,72 @@ const run = async () => {
     await readmeQuestions()
   );
 
-  try {
-    await fileUtils.writeFile(
-      fileSettings.readme.path,
-      hbsUtils.generateHandlebar(templateFile, templateData)
-    );
-    console.log(
-      Chalk.green(
-        Boxen(
-          `${Chalk.yellowBright.bold(
-            fileSettings.readme.name
-          )} generated with success`,
-          {
-            padding: 1,
-            margin: 1,
-            borderStyle: 'classic'
-          }
+  const tasks = [
+    {
+      title: 'Check if package.json exists',
+      task: async () => {
+        try {
+          await fileUtils.checkFileExist(fileSettings.package.path);
+        } catch (error) {
+          throw new Error(
+            Chalk.red(
+              `The file ${Chalk.bold(
+                fileSettings.package.path
+              )} is missing or not readable`
+            )
+          );
+        }
+      }
+    },
+    {
+      title: 'Read package.json data',
+      task: async () => {
+        await fileUtils.readFile(fileSettings.template.path);
+      }
+    },
+    {
+      title: 'Generate readme',
+      task: async () => {
+        try {
+          await fileUtils.writeFile(
+            fileSettings.readme.path,
+            hbsUtils.generateHandlebar(templateFile, templateData)
+          );
+        } catch (error) {
+          throw new Error(
+            Chalk.red(
+              `Unable to generate the ${Chalk.bold(
+                fileSettings.package.path
+              )} file`
+            )
+          );
+        }
+      }
+    }
+  ];
+
+  const ReadmeGeneratorTasks = new Listr(tasks);
+
+  ReadmeGeneratorTasks.run()
+    .then(() => {
+      console.log(
+        Chalk.green(
+          Boxen(
+            `${Chalk.yellowBright.bold(
+              fileSettings.readme.name
+            )} generated with success`,
+            {
+              padding: 1,
+              margin: 1,
+              borderStyle: 'double'
+            }
+          )
         )
-      )
-    );
-  } catch (error) {
-    throw new Error(
-      Chalk.red(
-        `Unable to generate the ${Chalk.bold(fileSettings.package.path)} file`
-      )
-    );
-  }
+      );
+    })
+    .catch(err => {
+      throw new Error(Chalk.red(err));
+    });
 };
 
 run();
