@@ -13,10 +13,9 @@ Handlebar.registerHelper('lowerCase', text => {
   return text.toLowerCase();
 });
 
-const generateHandlebar = (wrapper, ...answers) => {
-  console.log(JSON.stringify(answers, null, 2));
+const generateHandlebar = (wrapper, data) => {
   const template = Handlebar.compile(wrapper);
-  return template(_.merge({}, ...answers));
+  return template(_.merge({}, _.omitBy(data, _.isEmpty || _.isNil)));
 };
 
 export default {
