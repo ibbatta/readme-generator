@@ -17,7 +17,6 @@
 - [x] figlet
 - [x] handlebars
 - [x] inquirer
-- [x] listr
 - [x] lodash
 
 ---
