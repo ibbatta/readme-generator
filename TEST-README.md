@@ -60,13 +60,13 @@ yarn
 ### START the project
 
 ```bash
-npm (or yarn) start
+npm (or yarn) clear
 ```
 
 ### TEST the project
 
 ```bash
-npm (or yarn) test
+npm (or yarn) clear
 ```
 
 

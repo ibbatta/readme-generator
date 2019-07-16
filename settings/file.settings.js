@@ -15,9 +15,10 @@ const settings = {
     ext: 'json'
   },
   formatters: [
-    { name: 'eslintrc' },
-    { name: 'jsbeautifyrc' },
-    { name: 'editorconfig' }
+    { name: 'eslint', ext: 'rc' },
+    { name: 'jsbeautify', ext: 'rc' },
+    { name: 'editorconfig', ext: null },
+    { name: 'prettier', ext: 'rc' }
   ],
   manager: [{ ext: 'lock' }]
 };
@@ -40,8 +41,10 @@ settings.package.path = path.join(
 settings.formatters.forEach((val, index) => {
   settings.formatters[index].path = path.join(
     pathSettings.root,
-    `.${val.name}`
+    `.${val.name}${val.ext ? val.ext : ''}`
   );
 });
+
+console.log('---', settings);
 
 export default settings;

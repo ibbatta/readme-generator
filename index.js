@@ -16,6 +16,12 @@ const readmeQuestions = () => {
   return Inquirer.prompt(questions);
 };
 
+const checkFormatter = () => {
+  const formatter = _.map(fileSettings.formatters, data => data.name);
+};
+
+console.log(checkFormatter());
+
 const run = async () => {
   messageSettings.mainTitle('Readme\nGenerator');
   try {
@@ -45,4 +51,4 @@ const run = async () => {
   }
 };
 
-run();
+// run();
