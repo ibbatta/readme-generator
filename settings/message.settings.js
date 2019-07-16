@@ -1,22 +1,9 @@
-import Chalk from 'chalk'
-
-const printLog = (content) => console.log(content);
-const printErr = (content) => console.error(content);
-
-const projectTitle = (message) => {
-    printLog(Chalk.green(message))
-}
-
-const questionTitle = (message) => {
-    printLog(Chalk.blueBright(message));
-}
-
-const missingFile = (message) => {
-    printErr(Chalk.red(message));
-}
+import Chalk from 'chalk';
+import Figlet from 'figlet';
+import { sprintf as Sprintf } from 'sprintf-js';
 
 export default {
-    questionTitle,
-    projectTitle,
-    missingFile
-}
+  projectTitle: 'Readme\nGenerator',
+  questionTitle: '%s',
+  missingFile: 'ERROR: The file %s is missing or not readable'
+};
