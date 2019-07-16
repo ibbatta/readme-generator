@@ -55,11 +55,20 @@ yarn
 
 ---
 
-## **Run the project**
+## **Usage**
+
+### START the project
 
 ```bash
-start
+npm (or yarn) start
 ```
+
+### TEST the project
+
+```bash
+npm (or yarn) test
+```
+
 
 ## **Contributing**
 

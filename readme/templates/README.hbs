@@ -9,9 +9,6 @@
 {{#if description}}
 > {{description}}
 
-{{#if longDescription}}
-{{longDescription}}
-{{/if}}
 ---
 {{/if}}
 
@@ -61,11 +58,16 @@ yarn
 
 ---
 
-## **Run the project**
+## **Usage**
+
+{{#each commands}}
+### {{upperCase @key}} the project
 
 ```bash
-{{startCommand}}
+npm (or yarn) {{this}}
 ```
+
+{{/each}}
 
 ## **Contributing**
 

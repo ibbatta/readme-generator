@@ -1,20 +1,21 @@
+import Hbs from 'handlebars';
 import _ from 'lodash';
-import Handlebar from 'handlebars';
 
-Handlebar.registerHelper('removeAllSpaces', text => {
+Hbs.registerHelper('removeAllSpaces', text => {
   return text.replace(/\s/g, '');
 });
 
-Handlebar.registerHelper('upperCase', text => {
+Hbs.registerHelper('upperCase', text => {
   return text.toUpperCase();
 });
 
-Handlebar.registerHelper('lowerCase', text => {
+Hbs.registerHelper('lowerCase', text => {
   return text.toLowerCase();
 });
 
 const generateHandlebar = (wrapper, data) => {
-  const template = Handlebar.compile(wrapper);
+  console.log(data);
+  const template = Hbs.compile(wrapper);
   return template(_.merge({}, _.omitBy(data, _.isEmpty || _.isNil)));
 };
 

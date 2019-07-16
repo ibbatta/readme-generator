@@ -1,13 +1,14 @@
 export default [
   {
-    name: 'startCommand',
+    name: 'commands.start',
     type: 'input',
     message: 'What is the command to run the project?',
     default: 'start'
   },
   {
-    name: 'longDescription',
-    type: 'editor',
-    message: 'Long description'
+    name: 'commands.test',
+    type: 'input',
+    message: 'What is the command to test the project?',
+    default: 'test'
   }
 ];

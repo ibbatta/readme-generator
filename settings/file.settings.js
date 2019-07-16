@@ -1,39 +1,47 @@
 import path from 'path';
-import _ from 'lodash';
-
 import pathSettings from './path.settings';
-import config from '../readme.config';
 
-const defaultSettings = {
-    template: {
-        name: 'README',
-        ext: 'hbs'
-    },
-    readme: {
-        name: 'README',
-        ext: 'md'
-    },
-    package: {
-        name: 'package',
-        ext: 'json'
-    }
+const settings = {
+  template: {
+    name: 'README',
+    ext: 'hbs'
+  },
+  readme: {
+    name: 'TEST-README',
+    ext: 'md'
+  },
+  package: {
+    name: 'package',
+    ext: 'json'
+  },
+  formatters: [
+    { name: 'eslintrc' },
+    { name: 'jsbeautifyrc' },
+    { name: 'editorconfig' }
+  ],
+  manager: [{ ext: 'lock' }]
 };
 
-const settings = _.merge({}, defaultSettings, config.files);
-
 settings.template.path = path.join(
-    pathSettings.readme.templates,
-    `${settings.template.name}.${settings.template.ext}`
+  pathSettings.readme.templates,
+  `${settings.template.name}.${settings.template.ext}`
 );
 
 settings.readme.path = path.join(
-    pathSettings.root,
-    `${settings.readme.name}.${settings.readme.ext}`
+  pathSettings.root,
+  `${settings.readme.name}.${settings.readme.ext}`
 );
 
 settings.package.path = path.join(
-    pathSettings.root,
-    `${settings.package.name}.${settings.package.ext}`
+  pathSettings.root,
+  `${settings.package.name}.${settings.package.ext}`
 );
+
+settings.formatters.forEach((val, index) => {
+  settings.formatters[index].path = path.join(
+    pathSettings.root,
+    `.${val.name}`
+  );
+});
 
 export default settings;
