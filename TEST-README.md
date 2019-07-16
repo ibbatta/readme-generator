@@ -18,6 +18,7 @@
 - [x] handlebars
 - [x] inquirer
 - [x] lodash
+- [x] sprintf-js
 
 ---
 

@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 
-import Chalk from 'chalk';
-import Boxen from 'boxen';
-import Figlet from 'figlet';
 import Inquirer from 'inquirer';
 import _ from 'lodash';
 
@@ -15,17 +12,16 @@ const outputFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
 
 // TODO: fare un loop per richiamare le domande e gestire un "promise all"
 const readmeQuestions = () => {
-  console.log(Chalk.yellowBright('Extra questions'));
+  messageSettings.questionTitle('Extra questions');
   return Inquirer.prompt(questions);
 };
 
 const run = async () => {
-  console.info(Chalk.greenBright(Figlet.textSync('Readme\nGenerator')));
+  messageSettings.mainTitle('Readme\nGenerator');
   try {
     await fileUtils.checkFileExist(fileSettings.package.path);
   } catch (error) {
-    const errorMessage = `ERROR: The file ${inputFile} is missing or not readable`;
-    throw new Error(console.error(Chalk.red(errorMessage)));
+    throw new Error(messageSettings.readFileError(inputFile));
   }
 
   const templateFile = await fileUtils.readFile(fileSettings.template.path);
@@ -43,21 +39,9 @@ const run = async () => {
       fileSettings.readme.path,
       hbsUtils.generateHandlebar(templateFile, templateData)
     );
-    console.log(
-      Chalk.green(
-        Boxen(`${Chalk.bold.underline(outputFile)} generated with success`, {
-          padding: 1,
-          margin: 1,
-          borderStyle: 'classic'
-        })
-      )
-    );
+    messageSettings.writeFileSuccess(outputFile);
   } catch (error) {
-    throw new Error(
-      Chalk.red(
-        `Unable to generate the ${Chalk.bold(fileSettings.package.path)} file`
-      )
-    );
+    throw new Error(messageSettings.writeFileError(outputFile));
   }
 };
 
