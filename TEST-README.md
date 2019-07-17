@@ -60,13 +60,13 @@ yarn
 ### START the project
 
 ```bash
-npm (or yarn) start
+npm / yarn start
 ```
 
 ### TEST the project
 
 ```bash
-npm (or yarn) test
+npm / yarn test
 ```
 
 ## **Editor setup**
@@ -108,7 +108,7 @@ It works including a `.prettierrc` file in the root directory and making sure yo
 
 ## **Credits**
 
-- [Pietro Siccardi](http://github.com/pietrosiccardi) (Great support for the template engine)
+- [Pietro Siccardi](http://github.com/pietrosiccardi) (Tactical support for the template engine)
 
 ---
 

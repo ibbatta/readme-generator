@@ -20,7 +20,7 @@ const settings = {
     { name: 'editorconfig', ext: null },
     { name: 'prettier', ext: 'rc' }
   ],
-  manager: [{ ext: 'lock' }]
+  managers: { name: ['package', 'yarn'], ext: 'lock' }
 };
 
 settings.template.path = path.join(

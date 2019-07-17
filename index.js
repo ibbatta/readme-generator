@@ -1,17 +1,31 @@
 #!/usr/bin/env node
 
+import path from 'path';
 import Inquirer from 'inquirer';
 import _ from 'lodash';
 
-import { fileSettings, dataSettings, messageSettings } from './settings';
+import {
+  fileSettings,
+  dataSettings,
+  pathSettings,
+  messageSettings
+} from './settings';
 import { fileUtils, hbsUtils } from './utilities';
-import questions from './readme/questions';
 
 const inputFile = `${fileSettings.package.name}.${fileSettings.package.ext}`;
 const outputFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
 
-// TODO: fare un loop per richiamare le domande e gestire un "promise all"
-const readmeQuestions = () => {
+const parseQuestions = async questionsPath => {
+  const questions = [];
+  const questionsFile = await fileUtils.readDirectoryFiles(questionsPath);
+  await Promise.all(
+    questionsFile.files.map(async file => {
+      await fileUtils
+        .readFile(path.join(questionsFile.directory, file))
+        .then(res => questions.push(...JSON.parse(res)));
+    })
+  );
+
   messageSettings.questionTitle('Extra questions');
   return Inquirer.prompt(questions);
 };
@@ -49,7 +63,7 @@ const run = async () => {
       JSON.parse(await fileUtils.readFile(fileSettings.package.path)),
       dataSettings
     ),
-    await readmeQuestions(),
+    await parseQuestions(pathSettings.readme.questions),
     await checkFormatterFiles(fileSettings.formatters)
   );
 

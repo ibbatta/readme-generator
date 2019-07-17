@@ -1,28 +1,36 @@
 import fs, { constants } from 'fs';
 
-const checkFileExist = async file =>
-  await new Promise((resolve, reject) => {
+const readDirectoryFiles = directory =>
+  new Promise((resolve, reject) => {
+    fs.readdir(directory, (err, files) => {
+      err ? reject(err) : resolve({ directory, files });
+    });
+  });
+
+const checkFileExist = file =>
+  new Promise((resolve, reject) => {
     fs.access(file, constants.F_OK | constants.W_OK, err => {
-      return err ? reject(err) : resolve(true);
+      err ? reject(err) : resolve(true);
     });
   });
 
-const readFile = async file =>
-  await new Promise((resolve, reject) => {
+const readFile = file =>
+  new Promise((resolve, reject) => {
     fs.readFile(file, 'utf8', (err, fileData) => {
-      return err ? reject(err) : resolve(fileData);
+      err ? reject(err) : resolve(fileData);
     });
   });
 
-const writeFile = async (file, data) => {
-  await new Promise((resolve, reject) => {
+const writeFile = (file, data) => {
+  new Promise((resolve, reject) => {
     fs.writeFile(file, data, err => {
-      return err ? reject(err) : resolve(file);
+      err ? reject(err) : resolve(file);
     });
   });
 };
 
 export default {
+  readDirectoryFiles,
   checkFileExist,
   readFile,
   writeFile
