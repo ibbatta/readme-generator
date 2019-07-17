@@ -16,11 +16,23 @@ const readmeQuestions = () => {
   return Inquirer.prompt(questions);
 };
 
-const checkFormatter = () => {
-  const formatter = _.map(fileSettings.formatters, data => data.name);
-};
+const checkFormatterFiles = async fileArray => {
+  const check = [];
+  await Promise.all(
+    fileArray.map(async file => {
+      await fileUtils
+        .checkFileExist(file.path)
+        .then(res => {
+          check.push({ [file.name]: res });
+        })
+        .catch(() => {
+          check.push({ [file.name]: false });
+        });
+    })
+  );
 
-console.log(checkFormatter());
+  return { formatters: check };
+};
 
 const run = async () => {
   messageSettings.mainTitle('Readme\nGenerator');
@@ -37,7 +49,8 @@ const run = async () => {
       JSON.parse(await fileUtils.readFile(fileSettings.package.path)),
       dataSettings
     ),
-    await readmeQuestions()
+    await readmeQuestions(),
+    await checkFormatterFiles(fileSettings.formatters)
   );
 
   try {
@@ -51,4 +64,4 @@ const run = async () => {
   }
 };
 
-// run();
+run();

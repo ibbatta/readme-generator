@@ -45,6 +45,4 @@ settings.formatters.forEach((val, index) => {
   );
 });
 
-console.log('---', settings);
-
 export default settings;

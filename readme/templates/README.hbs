@@ -70,6 +70,44 @@ npm (or yarn) {{this}}
 
 {{/each}}
 {{/if}}
+{{#if formatters}}
+## **Editor setup**
+
+To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every
+project using some editors plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
+{{#each formatters}}
+{{#if this.editorconfig}}
+
+### Basic Editor Configuration
+
+I chose to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and charset.
+It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin.
+{{/if}}
+{{#if this.jsbeautify}}
+
+### Auto correction on save
+
+I have chose to use [js-beautify](https://github.com/beautify-web/js-beautify/) as a beautifier also for HTML and CSS.
+It works including a `.jsbeautifyrc` file in the root directory and making sure your editor has the necessary plugin.
+{{/if}}
+{{#if this.eslint}}
+
+### Eslint
+
+I have chose to use [Eslint](https://eslint.org/) to check on Javascript / React [.js / .jsx] syntax.
+It works including a `.eslintrc` file in the root directory and making sure your editor has the necessary plugin.
+{{/if}}
+{{#if this.prettier}}
+
+### Prettier
+
+I have chose to use [Prettier](https://prettier.io/) to ensure the codebase with a consistent style.
+It works including a `.prettierrc` file in the root directory and making sure your editor has the necessary plugin.
+{{/if}}
+{{/each}}
+
+---
+{{/if}}
 
 ## **Contributing**
 
