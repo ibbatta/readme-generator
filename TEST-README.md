@@ -86,7 +86,8 @@ It works including a `.jsbeautifyrc` file in the root directory and making sure 
 
 ### Basic Editor Configuration
 
-I chose to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and charset.
+I have chose to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and
+charset.
 It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin.
 
 ### Prettier
