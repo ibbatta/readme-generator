@@ -134,21 +134,6 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ---
 
-## **Todo**
-
-- [ ] Define a developing path for the project
-- [ ] Update README specifing best way to write a package.json to be parsed correctly
-- [ ] Update README specifing how to use the tool and best way to set up
-- [ ] Configure `commander` + `shelljs` + `validator` to manage extra user's options
-- [ ] Read `.nvmrc` file to add nvm instruction on readme
-- [ ] Read `.editorconfig`, `.jsbeautifyrc` or `.eslintrc` to add specific instructions on readme
-- [ ] Configure a "message" file with all system messages like errors, etc
-- [ ] Define and configure tests
-- [ ] NPM: local package creation (and publish)
-- [ ] Provide translations for readme and configuration tools
-
----
-
 ## **Contributing**
 
 - Fork it!
@@ -156,12 +141,6 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 - Commit your changes: `git commit -am 'Add some feature'`
 - Push to the branch: `git push origin my-new-feature`
 - Submit a pull request
-
----
-
-## **Credits**
-
-- [Pietro Siccardi](https://github.com/psiccardi) (for docker and template development) work in progress
 
 ---
 
