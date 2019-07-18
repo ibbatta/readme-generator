@@ -6,9 +6,7 @@
 
 ---
 
-> CLI that generates beautiful and professional README.md files
-
-Test long description
+> This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.
 
 ---
 
@@ -19,8 +17,8 @@ Test long description
 - [x] figlet
 - [x] handlebars
 - [x] inquirer
-- [x] listr
 - [x] lodash
+- [x] sprintf-js
 
 ---
 
@@ -57,11 +55,47 @@ yarn
 
 ---
 
-## **Run the project**
+## **Usage**
+
+### START the project
 
 ```bash
-start
+npm / yarn start
 ```
+
+### TEST the project
+
+```bash
+npm / yarn test
+```
+
+## **Editor setup**
+
+To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every
+project using some editors plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
+
+### Eslint
+
+I have chose to use [Eslint](https://eslint.org/) to check on Javascript / React [.js / .jsx] syntax.
+It works including a `.eslintrc` file in the root directory and making sure your editor has the necessary plugin.
+
+### Auto correction on save
+
+I have chose to use [js-beautify](https://github.com/beautify-web/js-beautify/) as a beautifier also for HTML and CSS.
+It works including a `.jsbeautifyrc` file in the root directory and making sure your editor has the necessary plugin.
+
+### Basic Editor Configuration
+
+I have chose to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and
+charset.
+It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin.
+
+### Prettier
+
+I have chose to use [Prettier](https://prettier.io/) to ensure the codebase with a consistent style.
+It works including a `.prettierrc` file in the root directory and making sure your editor has the necessary plugin.
+
+---
 
 ## **Contributing**
 
@@ -75,7 +109,7 @@ start
 
 ## **Credits**
 
-- [Pietro Siccardi](http://github.com/pietrosiccardi) (Great support for the template engine)
+- [Pietro Siccardi](http://github.com/pietrosiccardi) (Tactical support for the template engine)
 
 ---
 

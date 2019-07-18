@@ -1,25 +1,27 @@
 import path from 'path';
-import _ from 'lodash';
-
 import pathSettings from './path.settings';
-import config from '../config';
 
-const defaultSettings = {
+const settings = {
   template: {
     name: 'README',
     ext: 'hbs'
   },
   readme: {
-    name: 'README',
+    name: 'TEST-README',
     ext: 'md'
   },
   package: {
     name: 'package',
     ext: 'json'
-  }
+  },
+  formatters: [
+    { name: 'eslint', ext: 'rc' },
+    { name: 'jsbeautify', ext: 'rc' },
+    { name: 'editorconfig', ext: null },
+    { name: 'prettier', ext: 'rc' }
+  ],
+  managers: { name: ['package', 'yarn'], ext: 'lock' }
 };
-
-const settings = _.merge({}, defaultSettings, config.files);
 
 settings.template.path = path.join(
   pathSettings.readme.templates,
@@ -35,5 +37,12 @@ settings.package.path = path.join(
   pathSettings.root,
   `${settings.package.name}.${settings.package.ext}`
 );
+
+settings.formatters.forEach((val, index) => {
+  settings.formatters[index].path = path.join(
+    pathSettings.root,
+    `.${val.name}${val.ext ? val.ext : ''}`
+  );
+});
 
 export default settings;

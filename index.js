@@ -1,35 +1,59 @@
 #!/usr/bin/env node
 
-import Chalk from 'chalk';
-import Boxen from 'boxen';
-import Figlet from 'figlet';
+import path from 'path';
 import Inquirer from 'inquirer';
-import Listr from 'listr';
 import _ from 'lodash';
 
-import { fileSettings, dataSettings } from './settings';
+import {
+  fileSettings,
+  dataSettings,
+  pathSettings,
+  messageSettings
+} from './settings';
 import { fileUtils, hbsUtils } from './utilities';
-import questions from './readme/questions';
 
-// TODO: fare un loop per richiamare le domande e gestire un "promise all"
-const readmeQuestions = () => {
-  console.log(Chalk.blueBright('Extra questions'));
+const inputFile = `${fileSettings.package.name}.${fileSettings.package.ext}`;
+const outputFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
+
+const parseQuestions = async questionsPath => {
+  const questions = [];
+  const questionsFile = await fileUtils.readDirectoryFiles(questionsPath);
+  await Promise.all(
+    questionsFile.files.map(async file => {
+      await fileUtils
+        .readFile(path.join(questionsFile.directory, file))
+        .then(res => questions.push(...JSON.parse(res)));
+    })
+  );
+
+  messageSettings.questionTitle('Extra questions');
   return Inquirer.prompt(questions);
 };
 
-const run = async () => {
-  console.log(Chalk.green(Figlet.textSync('Readme\nGenerator')));
+const checkFormatterFiles = async fileArray => {
+  const check = [];
+  await Promise.all(
+    fileArray.map(async file => {
+      await fileUtils
+        .checkFileExist(file.path)
+        .then(res => {
+          check.push({ [file.name]: res });
+        })
+        .catch(() => {
+          check.push({ [file.name]: false });
+        });
+    })
+  );
 
+  return { formatters: check };
+};
+
+const run = async () => {
+  messageSettings.mainTitle('Readme\nGenerator');
   try {
     await fileUtils.checkFileExist(fileSettings.package.path);
   } catch (error) {
-    throw new Error(
-      Chalk.red(
-        `The file ${Chalk.bold(
-          fileSettings.package.path
-        )} is missing or not readable`
-      )
-    );
+    throw new Error(messageSettings.readFileError(inputFile));
   }
 
   const templateFile = await fileUtils.readFile(fileSettings.template.path);
@@ -39,7 +63,8 @@ const run = async () => {
       JSON.parse(await fileUtils.readFile(fileSettings.package.path)),
       dataSettings
     ),
-    await readmeQuestions()
+    await parseQuestions(pathSettings.readme.questions),
+    await checkFormatterFiles(fileSettings.formatters)
   );
 
   try {
@@ -47,26 +72,9 @@ const run = async () => {
       fileSettings.readme.path,
       hbsUtils.generateHandlebar(templateFile, templateData)
     );
-    console.log(
-      Chalk.green(
-        Boxen(
-          `${Chalk.yellowBright.bold(
-            fileSettings.readme.name
-          )} generated with success`,
-          {
-            padding: 1,
-            margin: 1,
-            borderStyle: 'classic'
-          }
-        )
-      )
-    );
+    messageSettings.writeFileSuccess(outputFile);
   } catch (error) {
-    throw new Error(
-      Chalk.red(
-        `Unable to generate the ${Chalk.bold(fileSettings.package.path)} file`
-      )
-    );
+    throw new Error(messageSettings.writeFileError(outputFile));
   }
 };
 
