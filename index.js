@@ -1,75 +1,80 @@
 #!/usr/bin/env node
 
-import Chalk from 'chalk';
-import Boxen from 'boxen';
-import Figlet from 'figlet';
+import path from 'path';
 import Inquirer from 'inquirer';
+import _ from 'lodash';
 
-import config from './config';
-import { fileSettings } from './settings';
-import { collectionUtils, fileUtils } from './utilities';
-import { extraQuestions } from './questions';
+import {
+  fileSettings,
+  dataSettings,
+  pathSettings,
+  messageSettings
+} from './settings';
+import { fileUtils, hbsUtils } from './utilities';
 
-let packageAnswers, extraAnwsers;
+const inputFile = `${fileSettings.package.name}.${fileSettings.package.ext}`;
+const outputFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
 
-const extraFnQuestions = () => {
-  console.log(Chalk.blueBright('Extra questions'));
-  return Inquirer.prompt(extraQuestions);
+const parseQuestions = async questionsPath => {
+  const questions = [];
+  const questionsFile = await fileUtils.readDirectoryFiles(questionsPath);
+  await Promise.all(
+    questionsFile.files.map(async file => {
+      await fileUtils
+        .readFile(path.join(questionsFile.directory, file))
+        .then(res => questions.push(...JSON.parse(res)));
+    })
+  );
+
+  messageSettings.questionTitle('Extra questions');
+  return Inquirer.prompt(questions);
+};
+
+const checkFormatterFiles = async fileArray => {
+  const check = [];
+  await Promise.all(
+    fileArray.map(async file => {
+      await fileUtils
+        .checkFileExist(file.path)
+        .then(res => {
+          check.push({ [file.name]: res });
+        })
+        .catch(() => {
+          check.push({ [file.name]: false });
+        });
+    })
+  );
+
+  return { formatters: check };
 };
 
 const run = async () => {
-  console.log(Chalk.green(Figlet.textSync('Readme\nGenerator')));
-
-  const packageJsonExist = await fileUtils.accessFilePromise(
-    config.packageJsonFile
-  );
-  const packageJsonData = await fileUtils.readFilePromise(
-    config.packageJsonFile
-  );
-
-  const readmeMdTemplate = await fileUtils.readFilePromise(
-    config.readmeMdTemplate
-  );
-
-  const packageJsonStorage = packageJsonExist
-    ? collectionUtils.filterCollectionByCostantValues(packageJsonData)
-    : null;
-
-  if (packageJsonStorage) {
-    packageAnswers = packageJsonStorage;
-  } else {
-    throw new Error(
-      `The file ${Chalk.bold(
-        config.packageJsonFile
-      )} is missing or not readable`
-    );
+  messageSettings.mainTitle('Readme\nGenerator');
+  try {
+    await fileUtils.checkFileExist(fileSettings.package.path);
+  } catch (error) {
+    throw new Error(messageSettings.readFileError(inputFile));
   }
-  extraAnwsers = await extraFnQuestions();
 
-  const templateConverted = fileUtils.convertHandlebarTemplate(
-    readmeMdTemplate,
-    packageAnswers,
-    extraAnwsers
+  const templateFile = await fileUtils.readFile(fileSettings.template.path);
+  const templateData = _.merge(
+    {},
+    _.pick(
+      JSON.parse(await fileUtils.readFile(fileSettings.package.path)),
+      dataSettings
+    ),
+    await parseQuestions(pathSettings.readme.questions),
+    await checkFormatterFiles(fileSettings.formatters)
   );
 
   try {
-    await fileUtils.writeFilePromise(config.readmeMdFile, templateConverted);
-    console.log(
-      Chalk.green(
-        Boxen(
-          `${Chalk.yellowBright.bold(
-            fileSettings.readme.name
-          )} generated with success`,
-          {
-            padding: 1,
-            margin: 1,
-            borderStyle: 'classic'
-          }
-        )
-      )
+    await fileUtils.writeFile(
+      fileSettings.readme.path,
+      hbsUtils.generateHandlebar(templateFile, templateData)
     );
+    messageSettings.writeFileSuccess(outputFile);
   } catch (error) {
-    console.error(Chalk.red(error));
+    throw new Error(messageSettings.writeFileError(outputFile));
   }
 };
 

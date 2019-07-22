@@ -1,0 +1,144 @@
+# **{{upperCase name}}** (version {{version}})
+
+{{#each engines}}
+![{{@key}} version](https://img.shields.io/badge/{{@key}}-{{{removeAllSpaces this}}}-brightgreen.svg)
+{{/each}}
+
+---
+
+{{#if description}}
+> {{{description}}}
+
+---
+{{/if}}
+
+{{#if dependencies}}
+## **Features**
+
+{{#each dependencies}}
+- [x] {{@key}}
+{{/each}}
+{{#each frameworks}}
+- [x] {{this}}
+{{/each}}
+
+---
+{{/if}}
+
+## **Set up project**
+
+Before cloning the repo **be sure** you have installed:
+
+{{#each engines}}
+- [**{{upperCase @key}}**](https://www.google.com/search?q=how+to+install+{{lowerCase @key}}) (version {{{this}}})
+{{/each}}
+
+Then:
+
+- Choose a folder project in your system and switch in `cd [folder path]`
+- Clone the repo in your folder `git clone {{{repository.url}}}`
+
+---
+
+## **Installation**
+
+To install the project and all dependencies, enter in the project folder and run:
+
+```bash
+# install dependencies
+npm install
+```
+
+or
+
+```bash
+# install dependencies
+yarn
+```
+
+---
+
+{{#if commands}}
+## **Usage**
+
+{{#each commands}}
+### {{upperCase @key}} the project
+
+```bash
+npm / yarn {{this}}
+```
+
+{{/each}}
+{{/if}}
+{{#if formatters}}
+## **Editor setup**
+
+To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every
+project using some editors plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
+{{#each formatters}}
+{{#if this.editorconfig}}
+
+### Basic Editor Configuration
+
+I have chose to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and
+charset.
+It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin.
+{{/if}}
+{{#if this.jsbeautify}}
+
+### Auto correction on save
+
+I have chose to use [js-beautify](https://github.com/beautify-web/js-beautify/) as a beautifier also for HTML and CSS.
+It works including a `.jsbeautifyrc` file in the root directory and making sure your editor has the necessary plugin.
+{{/if}}
+{{#if this.eslint}}
+
+### Eslint
+
+I have chose to use [Eslint](https://eslint.org/) to check on Javascript / React [.js / .jsx] syntax.
+It works including a `.eslintrc` file in the root directory and making sure your editor has the necessary plugin.
+{{/if}}
+{{#if this.prettier}}
+
+### Prettier
+
+I have chose to use [Prettier](https://prettier.io/) to ensure the codebase with a consistent style.
+It works including a `.prettierrc` file in the root directory and making sure your editor has the necessary plugin.
+{{/if}}
+{{/each}}
+
+---
+{{/if}}
+
+## **Contributing**
+
+- Fork it!
+- Create your feature branch: `git checkout -b my-new-feature`
+- Commit your changes: `git commit -am 'Add some feature'`
+- Push to the branch: `git push origin my-new-feature`
+- Submit a pull request
+
+---
+
+{{#if contributors}}
+## **Credits**
+
+{{#each contributors}}
+- [{{name}}]({{{url}}}) ({{reason}})
+{{/each}}
+
+---
+{{/if}}
+
+### **Troubleshootings**
+
+This is just a personal project created for study / demonstration purpose and to simplify my working life, it may or may
+not be a good fit for your project(s).
+
+---
+
+> AUTHOR: {{author.name}}
+{{~#if author.social}}\
+> SOCIAL: {{#each author.social}}{{#unless @last}}[{{@key}}]({{{this}}})
+&nbsp;&middot;&nbsp;{{/unless}}{{#if @last}}[{{@key}}]({{{this}}}){{/if}}{{/each}}
+{{/if}}
