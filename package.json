@@ -24,11 +24,13 @@
             "twitter": "https://twitter.com/battago"
         }
     },
-    "contributors": [{
-        "name": "Pietro Siccardi",
-        "url": "http://github.com/pietrosiccardi",
-        "reason": "Tactical support for the template engine"
-    }],
+    "contributors": [
+        {
+            "name": "Pietro Siccardi",
+            "url": "http://github.com/pietrosiccardi",
+            "reason": "Tactical support for the template engine"
+        }
+    ],
     "keywords": [
         "readme",
         "readme-template",
@@ -92,7 +94,7 @@
     },
     "auto-changelog": {
         "output": "CHANGELOG.md",
-        "template": "changelog-template.hbs",
+        "template": "changelog.tpl.hbs",
         "unreleased": true,
         "commitLimit": 10,
         "includeBranch": [
