@@ -16,9 +16,14 @@ const inputFile = `${fileSettings.package.name}.${fileSettings.package.ext}`;
 const outputFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
 
 const registerHbsPartials = async partialsPath => {
-    const { files } = await fileUtils.readDirectoryFiles(partialsPath);
-    files.forEach(file => {
-        console.log('--------------', file);
+    const { directory, files } = await fileUtils.readDirectoryFiles(partialsPath);
+    await files.forEach(async file => {
+        const partialName = file.split(".")[0];
+        fileUtils
+            .readFile(path.join(directory, file))
+            .then(partialContent => {
+                hbsUtils.registerPartial(partialName, partialContent)
+            });
 
     });
 };

@@ -8,18 +8,7 @@
 
 ---
 
-{{#if dependencies}}
-## **:package: Main tools used**
-
-{{#each dependencies}}
-- [x] {{@key}}
-{{/each}}
-{{#each frameworks}}
-- [x] {{this}}
-{{/each}}
-
----
-{{/if}}
+{{> dependencies}}
 
 ## **:wrench: DEVELOPER USAGE**
 
@@ -27,9 +16,7 @@
 
 Before cloning the repo **be sure** you have installed:
 
-{{#each engines}}
-- [**{{uppercase @key}}**](https://www.google.com/search?q=how+to+install+{{lowercase @key}}) (version {{{this}}})
-{{/each}}
+{{> engines}}
 
 Then:
 
@@ -44,34 +31,9 @@ In order to install the project and all dependencies, enter in the project folde
 
 ---
 
-{{#if commands}}
-{{#each commands}}
-### {{capitalize @key}} the project
-```bash
-{{../manager}} {{this}}
-```
+{{> commands}}
 
-{{/each}}
----
-{{/if}}
-
-{{#if formatters}}
-### **Editor setup**
-
-To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every
-project using some editors plugins. Plese be sure to disable / remove any other linters or custom configurations.
-
-I have chosen to use
-
-{{#each formatters}}
-- [{{uppercase this}}](https://www.google.com/search?q={{lowercase this}})
-{{/each}}
-
-This
-works including a specific `.dotfile` in the root directory and making sure your editor has the necessary plugin.
-
----
-{{/if}}
+{{> formatters}}
 
 ## **:handshake: Contributing**
 
@@ -83,15 +45,7 @@ works including a specific `.dotfile` in the root directory and making sure your
 
 ---
 
-{{#if contributors}}
-### **:busts_in_silhouette: Credits**
-
-{{#each contributors}}
-- [{{name}}]({{{url}}}) ({{reason}})
-{{/each}}
-
----
-{{/if}}
+{{> contributors}}
 
 ### **:anger: Troubleshootings**
 
@@ -100,15 +54,6 @@ not be a good fit for your project(s).
 
 ---
 
-### **:robot: Author**
+{{> author}}
 
-_*{{author.name}}*_
-
-{{#if author.social}}
-> You can follow me on
-{{#each author.social~}}{{#unless @last}}[{{@key}}]({{{this}}})&nbsp;&middot;&nbsp;{{/unless}}{{#if @last}}[{{@key}}]({{{this}}}){{/if}}{{~/each}}
-{{/if}}
-
----
-
-{{> Copyright}}
+{{> copyright}}
