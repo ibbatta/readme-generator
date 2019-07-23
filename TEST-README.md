@@ -1,4 +1,4 @@
-# **:id: README-GENERATOR** (version 0.0.1)
+# **:triangular_flag_on_post: README-GENERATOR** (version 0.0.1)
 
 ![node version](https://img.shields.io/badge/node->=9.10.x-brightgreen.svg)
 ![yarn version](https://img.shields.io/badge/yarn->=1.9.x-brightgreen.svg)
@@ -39,20 +39,20 @@ Then:
 
 ### **Installation**
 
-In order to install the project and all dependencies, enter in the project folder and run `npm install`
+In order to install the project and all dependencies, enter in the project folder and run `yarn install`
 
 ---
 
 ### Start the project
 
 ```bash
-npm start
+yarn start
 ```
 
 ### Test the project
 
 ```bash
-npm test
+yarn test
 ```
 
 ---
@@ -66,8 +66,8 @@ I have chosen to use
 
 - [ESLINT](https://www.google.com/search?q=eslint)
 - [JSBEAUTIFY](https://www.google.com/search?q=jsbeautify)
-- [PRETTIER](https://www.google.com/search?q=prettier)
 - [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
+- [PRETTIER](https://www.google.com/search?q=prettier)
 
 This
 works including a specific `.dotfile` in the root directory and making sure your editor has the necessary plugin.
