@@ -1,4 +1,4 @@
-# **:id: README-GENERATOR** (version: 0.0.1)
+# **:id: README-GENERATOR** (version 0.0.1)
 
 ![node version](https://img.shields.io/badge/node->=9.10.x-brightgreen.svg)
 ![yarn version](https://img.shields.io/badge/yarn->=1.9.x-brightgreen.svg)
@@ -26,9 +26,9 @@
 
 Before cloning the repo **be sure** you have installed:
 
-- [**Node**](https://www.google.com/search?q=how+to+install+node) (version >= 9.10.x)
-- [**Yarn**](https://www.google.com/search?q=how+to+install+yarn) (version >= 1.9.x)
-- [**Npm**](https://www.google.com/search?q=how+to+install+npm) (version >= 6.3.x)
+- [**NODE**](https://www.google.com/search?q=how+to+install+node) (version >= 9.10.x)
+- [**YARN**](https://www.google.com/search?q=how+to+install+yarn) (version >= 1.9.x)
+- [**NPM**](https://www.google.com/search?q=how+to+install+npm) (version >= 6.3.x)
 
 Then:
 
@@ -43,14 +43,12 @@ In order to install the project and all dependencies, enter in the project folde
 
 ---
 
-### START the project
-
+### Start the project
 ```bash
 yarn start
 ```
 
-### TEST the project
-
+### Test the project
 ```bash
 yarn test
 ```
@@ -64,10 +62,10 @@ project using some editors plugins. Plese be sure to disable / remove any other 
 
 I have chosen to use
 
-- [Eslint](https://www.google.com/search?q=eslint)
-- [Jsbeautify](https://www.google.com/search?q=jsbeautify)
-- [Editorconfig](https://www.google.com/search?q=editorconfig)
-- [Prettier](https://www.google.com/search?q=prettier)
+- [ESLINT](https://www.google.com/search?q=eslint)
+- [JSBEAUTIFY](https://www.google.com/search?q=jsbeautify)
+- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
+- [PRETTIER](https://www.google.com/search?q=prettier)
 
 This
 works including a specific `.dotfile` in the root directory and making sure your editor has the necessary plugin.

@@ -1,4 +1,4 @@
-# **:id: {{uppercase name}}** (version: {{version}})
+# **:id: {{uppercase name}}** (version {{version}})
 
 {{#each engines}}
 ![{{@key}} version](https://img.shields.io/badge/{{@key}}-{{{removeAllSpaces this}}}-brightgreen.svg)
@@ -28,7 +28,7 @@
 Before cloning the repo **be sure** you have installed:
 
 {{#each engines}}
-- [**{{capitalize @key}}**](https://www.google.com/search?q=how+to+install+{{lowercase @key}}) (version {{{this}}})
+- [**{{uppercase @key}}**](https://www.google.com/search?q=how+to+install+{{lowercase @key}}) (version {{{this}}})
 {{/each}}
 
 Then:
@@ -46,8 +46,7 @@ In order to install the project and all dependencies, enter in the project folde
 
 {{#if commands}}
 {{#each commands}}
-### {{uppercase @key}} the project
-
+### {{capitalize @key}} the project
 ```bash
 {{../manager}} {{this}}
 ```
@@ -65,7 +64,7 @@ project using some editors plugins. Plese be sure to disable / remove any other 
 I have chosen to use
 
 {{#each formatters}}
-- [{{capitalize this}}](https://www.google.com/search?q={{lowercase this}})
+- [{{uppercase this}}](https://www.google.com/search?q={{lowercase this}})
 {{/each}}
 
 This
