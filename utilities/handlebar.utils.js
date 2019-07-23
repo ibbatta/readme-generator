@@ -5,12 +5,24 @@ Hbs.registerHelper('removeAllSpaces', text => {
   return text.replace(/\s/g, '');
 });
 
-Hbs.registerHelper('upperCase', text => {
+Hbs.registerHelper('uppercase', text => {
   return text.toUpperCase();
 });
 
-Hbs.registerHelper('lowerCase', text => {
+Hbs.registerHelper('lowercase', text => {
   return text.toLowerCase();
+});
+
+Hbs.registerHelper('capitalize', text => {
+  return `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
+});
+
+Hbs.registerHelper('ifEquals', function(a, b, options) {
+  if (a === b) {
+    return options.fn(this);
+  }
+
+  return options.inverse(this);
 });
 
 const generateHandlebar = (wrapper, data) => {

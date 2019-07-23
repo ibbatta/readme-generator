@@ -8,9 +8,9 @@ const Log = showData => console.log(showData);
 const labels = {
   mainTitle: '%s',
   questionTitle: '%s',
-  readFileError: 'ERROR: The file %s is missing or not readable',
+  readFileError: 'ERROR: The %s file is missing or not readable',
   writeFileError: 'ERROR: Unable to generate the %s file',
-  writeFileSuccess: 'The %s is generated with success'
+  writeFileSuccess: 'The %s file is generated with success'
 };
 
 const mainTitle = data => {

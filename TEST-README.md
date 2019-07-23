@@ -10,7 +10,7 @@
 
 ---
 
-## **Features**
+## **Main tools used**
 
 - [x] boxen
 - [x] chalk
@@ -43,31 +43,26 @@ To install the project and all dependencies, enter in the project folder and run
 
 ```bash
 # install dependencies
-npm install
-```
-
-or
-
-```bash
-# install dependencies
-yarn
+yarn install
 ```
 
 ---
 
 ## **Usage**
 
-### START the project
+### Start the project
 
 ```bash
-npm / yarn start
+yarn start
 ```
 
-### TEST the project
+### Test the project
 
 ```bash
-npm / yarn test
+yarn test
 ```
+
+---
 
 ## **Editor setup**
 
