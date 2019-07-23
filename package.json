@@ -82,7 +82,7 @@
         "hooks": {
             "pre-commit": "yarn test",
             "commit-msg": "echo $HUSKY_GIT_PARAMS",
-            "pre-push": "auto-changelog && git add CHANGELOG.md"
+            "pre-push": "auto-changelog && git add CHANGELOG.md && git commit -m $HUSKY_GIT_PARAMS"
         }
     },
     "lint-staged": {
