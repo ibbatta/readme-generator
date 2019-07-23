@@ -24,13 +24,11 @@
             "twitter": "https://twitter.com/battago"
         }
     },
-    "contributors": [
-        {
-            "name": "Pietro Siccardi",
-            "url": "http://github.com/pietrosiccardi",
-            "reason": "Tactical support for the template engine"
-        }
-    ],
+    "contributors": [{
+        "name": "Pietro Siccardi",
+        "url": "http://github.com/pietrosiccardi",
+        "reason": "Tactical support for the template engine"
+    }],
     "keywords": [
         "readme",
         "readme-template",
@@ -83,6 +81,7 @@
     "husky": {
         "hooks": {
             "pre-commit": "yarn test",
+            "commit-msg": "echo $HUSKY_GIT_PARAMS",
             "pre-push": "auto-changelog && git add CHANGELOG.md"
         }
     },
