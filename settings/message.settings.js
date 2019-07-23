@@ -8,6 +8,7 @@ const Log = showData => console.log(showData);
 const labels = {
   mainTitle: '%s',
   questionTitle: '%s',
+  genericError: '%s',
   readFileError: 'ERROR: The %s file is missing or not readable',
   writeFileError: 'ERROR: Unable to generate the %s file',
   writeFileSuccess: 'The %s file is generated with success'
@@ -19,6 +20,10 @@ const mainTitle = data => {
 
 const questionTitle = data => {
   Log(Chalk.blueBright(Sprf(labels.questionTitle, data)));
+};
+
+const genericError = data => {
+  Log(Chalk.red(Sprf(labels.genericError, data)));
 };
 
 const readFileError = data => {
@@ -44,6 +49,7 @@ const writeFileError = data => {
 export default {
   mainTitle,
   questionTitle,
+  genericError,
   readFileError,
   writeFileSuccess,
   writeFileError

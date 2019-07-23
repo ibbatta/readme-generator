@@ -15,6 +15,13 @@ import { fileUtils, hbsUtils, questionUtils } from './utilities';
 const inputFile = `${fileSettings.package.name}.${fileSettings.package.ext}`;
 const outputFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
 
+// const registerHbsPartials = async partialsPath => {
+//   const { directory, files } = await fileUtils.readDirectoryFiles(partialsPath);
+//   files.forEach(file => {
+//     console.log('--------------', file);
+//   });
+// };
+
 const checkFormatterFiles = async fileArray => {
   const check = [];
 
@@ -58,11 +65,18 @@ const parseQuestions = async questionsPath => {
 
 const run = async () => {
   messageSettings.mainTitle('Readme\nGenerator');
+
   try {
     await fileUtils.checkFileExist(fileSettings.package.path);
   } catch (error) {
-    throw new Error(messageSettings.readFileError(inputFile));
+    throw new Error(messageSettings.readFileError(inputFile, error));
   }
+
+  // try {
+  //   await registerHbsPartials(pathSettings.readme.hbsPartials);
+  // } catch (error) {
+  //   throw new Error(messageSettings.genericError(error));
+  // }
 
   const templateFile = await fileUtils.readFile(fileSettings.template.path);
   const templateData = _.merge(
@@ -81,7 +95,7 @@ const run = async () => {
     );
     messageSettings.writeFileSuccess(outputFile);
   } catch (error) {
-    throw new Error(messageSettings.writeFileError(outputFile));
+    throw new Error(messageSettings.writeFileError(outputFile, error));
   }
 };
 

@@ -17,7 +17,11 @@ Hbs.registerHelper('capitalize', text => {
   return `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
 });
 
-Hbs.registerHelper('ifEquals', function(a, b, options) {
+Hbs.registerHelper('getYear', () => {
+  return new Date().getFullYear();
+});
+
+Hbs.registerHelper('ifEquals', (a, b, options) => {
   if (a === b) {
     return options.fn(this);
   }
@@ -25,10 +29,9 @@ Hbs.registerHelper('ifEquals', function(a, b, options) {
   return options.inverse(this);
 });
 
-Hbs.registerPartial(
-  'Copyright',
-  `Copyright © ${new Date().getFullYear()} [{{author.name}}]({{author.url}}).`
-);
+const registerPartial = (name, partialTemplate) => {
+  Hbs.registerPartial(name, partialTemplate);
+};
 
 const generateHandlebar = (wrapper, data) => {
   console.log(data); //TODO: remove this
@@ -37,5 +40,6 @@ const generateHandlebar = (wrapper, data) => {
 };
 
 export default {
+  registerPartial,
   generateHandlebar
 };
