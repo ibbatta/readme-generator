@@ -12,13 +12,13 @@
 
 ### Commits
 
-- update repository base [`41485e9`](https://github.com/ibbatta/readme-generator/commit/41485e9bf704f3c22ea8c6a844da4c4676f13adb)
-- init repository [`ab38f6c`](https://github.com/ibbatta/readme-generator/commit/ab38f6cffd9f1f03efe03c58b25efd489b4530df)
-- update readme [`4919fb0`](https://github.com/ibbatta/readme-generator/commit/4919fb0f6205d7aa3f903bea7cb3938ebd876587)
-- add husky and lint-staged, remove unused file and placeholder templates [`93d6dbc`](https://github.com/ibbatta/readme-generator/commit/93d6dbce68884061f3153a13e362ac8b62e5fabb)
 - code refactory [`3de5c39`](https://github.com/ibbatta/readme-generator/commit/3de5c3914cb1b8d0fdd342a4ae410537a121a678)
 - upgrade dependencies [`8e970fd`](https://github.com/ibbatta/readme-generator/commit/8e970fde5f70349e77f828f5eaf9c2dea7334e62)
-- husky test [`fd98a2a`](https://github.com/ibbatta/readme-generator/commit/fd98a2a58cd835201601d88b80d4087903c2e4af)
 - update husky npm config [`009f522`](https://github.com/ibbatta/readme-generator/commit/009f52250a8f3a449587e48ecb2c5eaa5dc87405)
 - megarefactory for settings, utilities and configuration [`edce881`](https://github.com/ibbatta/readme-generator/commit/edce88126b2077e1cea9167d737cb59f742711eb)
-- create first template correctly [`d4f0a91`](https://github.com/ibbatta/readme-generator/commit/d4f0a9155cd4733964a6247e4458029150a5ffb7)
+- minor [`d27c70e`](https://github.com/ibbatta/readme-generator/commit/d27c70e5ddebcbbdca666baee86aca29ba9e2237)
+- intercept formatter question and add choices dynamically [`8d6cda5`](https://github.com/ibbatta/readme-generator/commit/8d6cda54c5aa4f8366dfb07d2661335048bbdeba)
+- minor [`1bbbdca`](https://github.com/ibbatta/readme-generator/commit/1bbbdca00281f026249a2792a0484e67797c4713)
+- Update README.md [`51b8e05`](https://github.com/ibbatta/readme-generator/commit/51b8e05c9da1de7481623652b8b9524737c4528f)
+- minor [`97fd7da`](https://github.com/ibbatta/readme-generator/commit/97fd7daf26736498a47d6b1db986c9c2c8fda62f)
+- add listr [`dd99c08`](https://github.com/ibbatta/readme-generator/commit/dd99c08090b3a3cb6d0952721aaa4df60b29dd93)
