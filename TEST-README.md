@@ -46,29 +46,23 @@ To install the project and all dependencies, enter in the project folder and run
 npm install
 ```
 
-or
-
-```bash
-# install dependencies
-yarn
-```
-
 ---
 
 ## **Usage**
 
-### START the project
+### Start the project
 
 ```bash
-npm / yarn start
+npm start
 ```
 
-### TEST the project
+### Test the project
 
 ```bash
-npm / yarn test
+npm test
 ```
 
+---
 ## **Editor setup**
 
 To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every
@@ -78,22 +72,6 @@ project using some editors plugins. Plese be sure to disable / remove any other 
 
 I have chose to use [Eslint](https://eslint.org/) to check on Javascript / React [.js / .jsx] syntax.
 It works including a `.eslintrc` file in the root directory and making sure your editor has the necessary plugin.
-
-### Auto correction on save
-
-I have chose to use [js-beautify](https://github.com/beautify-web/js-beautify/) as a beautifier also for HTML and CSS.
-It works including a `.jsbeautifyrc` file in the root directory and making sure your editor has the necessary plugin.
-
-### Basic Editor Configuration
-
-I have chose to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and
-charset.
-It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin.
-
-### Prettier
-
-I have chose to use [Prettier](https://prettier.io/) to ensure the codebase with a consistent style.
-It works including a `.prettierrc` file in the root directory and making sure your editor has the necessary plugin.
 
 ---
 
