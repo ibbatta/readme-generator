@@ -15,6 +15,7 @@
 - [x] figlet
 - [x] handlebars
 - [x] inquirer
+- [x] js-yaml
 - [x] lodash
 - [x] sprintf-js
 
@@ -64,10 +65,10 @@ project using some editors plugins. Plese be sure to disable / remove any other 
 
 I have chosen to use
 
-- [ESLINT](https://www.google.com/search?q=eslint)
 - [JSBEAUTIFY](https://www.google.com/search?q=jsbeautify)
-- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
+- [ESLINT](https://www.google.com/search?q=eslint)
 - [PRETTIER](https://www.google.com/search?q=prettier)
+- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 
 This
 works including a specific `.dotfile` in the root directory and making sure your editor has the necessary plugin.
@@ -102,9 +103,6 @@ not be a good fit for your project(s).
 Please :star: this repository if you like it or this project helped you!\
 Feel free to open issues or submit pull-requests to help me improving my work.
 
-<a href="https://www.patreon.com/ibbatta" target="_blank">
-  <img alt="Patron logo" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="150px"/>
-</a>
 
 ---
 

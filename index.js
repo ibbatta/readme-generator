@@ -9,8 +9,8 @@ import {
     dataSettings,
     pathSettings,
     messageSettings
-} from './settings';
-import { fileUtils, hbsUtils, questionUtils } from './utilities';
+} from './src/settings';
+import { fileUtils, questionUtils, hbsUtils } from './src/utilities';
 
 const inputFile = `${fileSettings.package.name}.${fileSettings.package.ext}`;
 const outputFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
