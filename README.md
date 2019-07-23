@@ -25,7 +25,7 @@ The tools will look for the **name**, **version**, **description**, **respositor
 
 _NOTE_: To generate a complete `README.md`, be sure that the structure of your package.json looks like this:
 
-```json
+```js
 {
     "name": "PROJECT NAME",
     "version": "PROJECT VERSION",
