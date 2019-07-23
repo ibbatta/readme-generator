@@ -1,4 +1,4 @@
-# **{{uppercase name}}** (version {{version}})
+# **:id: {{uppercase name}}** (version: {{version}})
 
 {{#each engines}}
 ![{{@key}} version](https://img.shields.io/badge/{{@key}}-{{{removeAllSpaces this}}}-brightgreen.svg)
@@ -40,12 +40,7 @@ Then:
 
 ### **Installation**
 
-To install the project and all dependencies, enter in the project folder and run:
-
-```bash
-# install dependencies
-{{manager}} install
-```
+In order to install the project and all dependencies, enter in the project folder and run `{{manager}} install`
 
 ---
 
@@ -74,7 +69,7 @@ I have chosen to use
 {{/each}}
 
 This
-works including a specific `dotfile` in the root directory and making sure your editor has the necessary plugin.
+works including a specific `.dotfile` in the root directory and making sure your editor has the necessary plugin.
 
 ---
 {{/if}}
