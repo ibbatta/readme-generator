@@ -17,22 +17,7 @@
 
 ---
 
-## **What this boilerplate contains**
-
-<img alt="logo node" src="./.readme-assets/logo-node.png" height="55" >&nbsp;&nbsp;
-<img alt="logo es6" src="./.readme-assets/logo-es6.png" height="55" >&nbsp;&nbsp;
-<img alt="logo jest" src="./.readme-assets/logo-jest.png" height="55" >&nbsp;&nbsp;
-
-### **Features**
-
-- [x] Develpment and Production ready
-- [x] Airbnb javascript linter
-- [x] Test with Jest
-- [x] Full node package realeased on npm (for local and global installations)
-
----
-
-## **USER USAGE**
+## **:clipboard: USER USAGE**
 
 Just run `generate-readme` at the root of your project and answer questions.
 
@@ -81,7 +66,7 @@ This allow the tool to create a better README with more cool informations.
 
 ---
 
-## **DEVELOPER USAGE**
+## **:wrench: DEVELOPER USAGE**
 
 ### **Set up project**
 
@@ -156,7 +141,7 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ---
 
-## **Contributing**
+## **:handshake: Contributing**
 
 - Fork it!
 - Create your feature branch: `git checkout -b my-new-feature`
@@ -166,9 +151,20 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ---
 
-### **Troubleshootings**
+### **:anger: Troubleshootings**
 
 This is just a personal project created for study / demonstration purpose and to simplify my working life, it may or may not be a good fit for your project(s).
+
+---
+
+### **:heart: Show your support**
+
+Please :star: this repository if you like it or this project helped you!\
+Feel free to open issues or submit pull-requests to help me improving my work.
+
+<a href="https://www.patreon.com/ibbatta" target="_blank">
+  <img alt="Patron logo" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="150px"/>                                                    
+</a>
 
 ---
 
