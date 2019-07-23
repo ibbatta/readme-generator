@@ -10,7 +10,7 @@
 
 ---
 
-## **Main tools used**
+## **:package: Main tools used**
 
 - [x] boxen
 - [x] chalk
@@ -22,7 +22,9 @@
 
 ---
 
-## **Set up project**
+## **:wrench: DEVELOPER USAGE**
+
+### **Set up project**
 
 Before cloning the repo **be sure** you have installed:
 
@@ -37,7 +39,7 @@ Then:
 
 ---
 
-## **Installation**
+### **Installation**
 
 To install the project and all dependencies, enter in the project folder and run:
 
@@ -47,8 +49,6 @@ yarn install
 ```
 
 ---
-
-## **Usage**
 
 ### Start the project
 
@@ -64,35 +64,35 @@ yarn test
 
 ---
 
-## **Editor setup**
+### **Editor setup**
 
 To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every
 project using some editors plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
 
-### Eslint
+#### Eslint
 
 I have chose to use [Eslint](https://eslint.org/) to check on Javascript / React [.js / .jsx] syntax.
 It works including a `.eslintrc` file in the root directory and making sure your editor has the necessary plugin.
 
-### Auto correction on save
+#### Auto correction on save
 
 I have chose to use [js-beautify](https://github.com/beautify-web/js-beautify/) as a beautifier also for HTML and CSS.
 It works including a `.jsbeautifyrc` file in the root directory and making sure your editor has the necessary plugin.
 
-### Basic Editor Configuration
+#### Basic Editor Configuration
 
 I have chose to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and
 charset.
 It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin.
 
-### Prettier
+#### Prettier
 
 I have chose to use [Prettier](https://prettier.io/) to ensure the codebase with a consistent style.
 It works including a `.prettierrc` file in the root directory and making sure your editor has the necessary plugin.
 
 ---
 
-## **Contributing**
+## **:handshake: Contributing**
 
 - Fork it!
 - Create your feature branch: `git checkout -b my-new-feature`
@@ -102,19 +102,25 @@ It works including a `.prettierrc` file in the root directory and making sure yo
 
 ---
 
-## **Credits**
+### **:busts_in_silhouette: Credits**
 
 - [Pietro Siccardi](http://github.com/pietrosiccardi) (Tactical support for the template engine)
 
 ---
 
-### **Troubleshootings**
+### **:anger: Troubleshootings**
 
 This is just a personal project created for study / demonstration purpose and to simplify my working life, it may or may
 not be a good fit for your project(s).
 
 ---
 
-> AUTHOR: Maurizio Battaghini\
-> SOCIAL: [github](https://github.com/ibbatta)
+### **:robot: Author**
+
+Maurizio Battaghini\
+> [github](https://github.com/ibbatta)
 &nbsp;&middot;&nbsp;[twitter](https://twitter.com/battago)
+
+---
+
+Copyright © 2019 [Maurizio Battaghini](https://twitter.com/battago).
