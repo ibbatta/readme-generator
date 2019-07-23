@@ -68,9 +68,13 @@ To keep consistency to the style of resources, I decided to stick to some shared
 project using some editors plugins. Plese be sure to disable / remove any other linters or custom configurations.
 
 I have chosen to use
-[Eslint](https://www.google.com/search?q=add+eslint+configuration)&nbsp;[Jsbeautify](https://www.google.com/search?q=add+jsbeautify+configuration)&nbsp;[Editorconfig](https://www.google.com/search?q=add+editorconfig+configuration)&nbsp;[Prettier](https://www.google.com/search?q=add+prettier+configuration)&nbsp;
 
-It
+- [Eslint](https://www.google.com/search?q=eslint)
+- [Jsbeautify](https://www.google.com/search?q=jsbeautify)
+- [Prettier](https://www.google.com/search?q=prettier)
+- [Editorconfig](https://www.google.com/search?q=editorconfig)
+
+This
 works including a specific `dotfile` in the root directory and making sure your editor has the necessary plugin.
 
 ---
@@ -102,8 +106,8 @@ not be a good fit for your project(s).
 
 _*Maurizio Battaghini*_
 
-> You can follow me on [github](https://github.com/ibbatta)
-&nbsp;&middot;&nbsp;[twitter](https://twitter.com/battago)
+> You can follow me on
+> [github](https://github.com/ibbatta)&nbsp;&middot;&nbsp;[twitter](https://twitter.com/battago)
 
 ---
 

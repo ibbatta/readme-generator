@@ -68,9 +68,12 @@ To keep consistency to the style of resources, I decided to stick to some shared
 project using some editors plugins. Plese be sure to disable / remove any other linters or custom configurations.
 
 I have chosen to use
-{{#each formatters}}[{{capitalize this}}](https://www.google.com/search?q=add+{{lowercase this}}+configuration)&nbsp;{{/each}}
 
-It
+{{#each formatters}}
+- [{{capitalize this}}](https://www.google.com/search?q={{lowercase this}})
+{{/each}}
+
+This
 works including a specific `dotfile` in the root directory and making sure your editor has the necessary plugin.
 
 ---
@@ -108,8 +111,8 @@ not be a good fit for your project(s).
 _*{{author.name}}*_
 
 {{#if author.social}}
-> You can follow me on {{#each author.social}}{{#unless @last}}[{{@key}}]({{{this}}})
-&nbsp;&middot;&nbsp;{{/unless}}{{#if @last}}[{{@key}}]({{{this}}}){{/if}}{{/each}}
+> You can follow me on
+{{#each author.social~}}{{#unless @last}}[{{@key}}]({{{this}}})&nbsp;&middot;&nbsp;{{/unless}}{{#if @last}}[{{@key}}]({{{this}}}){{/if}}{{~/each}}
 {{/if}}
 
 ---
