@@ -16,7 +16,7 @@
 
 ---
 
-## **:clipboard: USER USAGE**
+## **:clipboard: User usage**
 
 Just run `generate-readme` at the root of your project and answer questions.
 
@@ -66,7 +66,7 @@ This allow the tool to create a better README with more cool informations.
 
 ---
 
-## **:wrench: DEVELOPER USAGE**
+## **:wrench: Developer usage**
 
 ### **Set up project**
 
