@@ -4,13 +4,9 @@
 ![{{@key}} version](https://img.shields.io/badge/{{@key}}-{{{removeAllSpaces this}}}-brightgreen.svg)
 {{/each}}
 
----
-
-{{#if description}}
 > {{{description}}}
 
 ---
-{{/if}}
 
 {{#if dependencies}}
 ## **:package: Main tools used**
@@ -135,7 +131,7 @@ not be a good fit for your project(s).
 ### **:robot: Author**
 
 {{author.name}}
-{{~#if author.social}}\
+{{~#if author.social}}
 > {{#each author.social}}{{#unless @last}}[{{@key}}]({{{this}}})
 &nbsp;&middot;&nbsp;{{/unless}}{{#if @last}}[{{@key}}]({{{this}}}){{/if}}{{/each}}
 {{/if}}
