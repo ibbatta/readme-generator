@@ -130,12 +130,13 @@ not be a good fit for your project(s).
 
 ### **:robot: Author**
 
-{{author.name}}
-{{~#if author.social}}
+_*{{author.name}}*_
+
+{{#if author.social}}
 > {{#each author.social}}{{#unless @last}}[{{@key}}]({{{this}}})
 &nbsp;&middot;&nbsp;{{/unless}}{{#if @last}}[{{@key}}]({{{this}}}){{/if}}{{/each}}
 {{/if}}
 
 ---
 
-Copyright © 2019 [{{author.name}}]({{author.url}}).
+{{> Copyright}}

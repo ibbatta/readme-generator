@@ -25,8 +25,13 @@ Hbs.registerHelper('ifEquals', function(a, b, options) {
   return options.inverse(this);
 });
 
+Hbs.registerPartial(
+  'Copyright',
+  `Copyright © ${new Date().getFullYear()} [{{author.name}}]({{author.url}}).`
+);
+
 const generateHandlebar = (wrapper, data) => {
-  console.log(data);
+  console.log(data); //TODO: remove this
   const template = Hbs.compile(wrapper);
   return template(_.merge({}, _.omitBy(data, _.isEmpty || _.isNil)));
 };

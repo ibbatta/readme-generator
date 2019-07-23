@@ -115,7 +115,9 @@ not be a good fit for your project(s).
 
 ### **:robot: Author**
 
-Maurizio Battaghini> [github](https://github.com/ibbatta)
+_*Maurizio Battaghini*_
+
+> [github](https://github.com/ibbatta)
 &nbsp;&middot;&nbsp;[twitter](https://twitter.com/battago)
 
 ---
