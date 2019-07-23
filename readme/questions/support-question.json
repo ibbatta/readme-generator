@@ -1,0 +1,5 @@
+[{
+    "name": "support.patreon",
+    "type": "input",
+    "message": "Do you have a Patreon account? (insert username)"
+}]

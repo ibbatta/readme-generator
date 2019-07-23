@@ -20,7 +20,7 @@
 
 ---
 
-## **:wrench: DEVELOPER USAGE**
+## **:wrench: Developer usage**
 
 ### **Set up project**
 
@@ -94,6 +94,17 @@ works including a specific `.dotfile` in the root directory and making sure your
 
 This is just a personal project created for study / demonstration purpose and to simplify my working life, it may or may
 not be a good fit for your project(s).
+
+---
+
+### **:heart: Show your support**
+
+Please :star: this repository if you like it or this project helped you!\
+Feel free to open issues or submit pull-requests to help me improving my work.
+
+<a href="https://www.patreon.com/ibbatta" target="_blank">
+  <img alt="Patron logo" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="150px"/>
+</a>
 
 ---
 
