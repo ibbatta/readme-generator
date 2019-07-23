@@ -123,28 +123,41 @@ You can add the `--watch` flag if you want keep watching changes for test files.
 
 ---
 
-### **Editor setup**
+## **Editor setup**
 
-To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every project using some editors plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
+To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every
+project using some editors plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
 
-#### Basic Editor Configuration
+### Eslint
 
-I chose to use [EditorConfig](http://editorconfig.org/) to share the basic configuration like indentation and charset. It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin. You can find a list of downloads [here](http://editorconfig.org/#download). The choice to keep the indentation with 2 spaces is to be compliant with actual standards (major frameworks use this configuration both for JS and CSS).
+I have chose to use [Eslint](https://eslint.org/) to check on Javascript / React [.js / .jsx] syntax.
+It works including a `.eslintrc` file in the root directory and making sure your editor has the necessary plugin.
 
-#### Auto correction on save
+### Auto correction on save
 
-I have chose to use [js-beautify](https://github.com/beautify-web/js-beautify). Despite of his name it works as a beautifier also for HTML and CSS. Every editor has a plugin that implement it, es. [Sublime](https://github.com/victorporof/Sublime-HTMLPrettify), [Atom](https://atom.io/packages/atom-beautify) or [Visual studio](https://www.visualstudio.com/it/?rr=https%3A%2F%2Fwww.google.it%2F). The setup for js-beautify is controlled within a `.jsbeautifyrc` file that have to be included in the root directory of the project (.hbs are not completely supported yet).
+I have chose to use [js-beautify](https://github.com/beautify-web/js-beautify/) as a beautifier also for HTML and CSS.
+It works including a `.jsbeautifyrc` file in the root directory and making sure your editor has the necessary plugin.
 
-#### Eslint
+### Basic Editor Configuration
 
-To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.org/). The rules to detect errors are written in a `.eslintrc` file included in the root directory of the project (for best practices use `airbnb linter`).
+I have chose to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and
+charset.
+It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin.
+
+### Prettier
+
+I have chose to use [Prettier](https://prettier.io/) to ensure the codebase with a consistent style.
+It works including a `.prettierrc` file in the root directory and making sure your editor has the necessary plugin.
 
 ---
 
 ## **:handshake: Contributing**
 
+Contributions, issues and feature requests are welcome.\
+Feel free to check issues page if you want to contribute and follow these simple steps:
+
 - Fork it!
-- Create your feature branch: `git checkout -b my-new-feature`
+- Create your feature (or fix) branch: `git checkout -b my-new-feature`
 - Commit your changes: `git commit -am 'Add some feature'`
 - Push to the branch: `git push origin my-new-feature`
 - Submit a pull request
@@ -168,5 +181,13 @@ Feel free to open issues or submit pull-requests to help me improving my work.
 
 ---
 
+### **:robot: Author**
+
+Maurizio Battaghini
 > GitHub [@ibbatta](https://github.com/ibbatta) &nbsp;&middot;&nbsp;
 > Twitter [@battago](https://twitter.com/battago)
+
+---
+
+Copyright © 2019 [Maurizio Battaghini](https://github.com/ibbatta).\
+This project is covered by [MIT](https://github.com/ibbatta/readme-generator/blob/develop/LICENSE) license.
