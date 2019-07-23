@@ -12,8 +12,7 @@
 
 <br/>
 
-> This project was born mainly to satisfy my desire for knowledge and to simplify my workflow.
-> Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.
+> This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.
 
 ---
 
@@ -59,6 +58,7 @@ _NOTE_: To generate a complete `README.md`, be sure that the structure of your p
 ```
 
 I've added two custom fields inside the package.json:
+
 - SOCIAL (inside author)
 - REASON (inside each contributor)
 
@@ -176,7 +176,7 @@ Please :star: this repository if you like it or this project helped you!\
 Feel free to open issues or submit pull-requests to help me improving my work.
 
 <a href="https://www.patreon.com/ibbatta" target="_blank">
-  <img alt="Patron logo" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="150px"/>                                                    
+  <img alt="Patron logo" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="150px"/>
 </a>
 
 ---
@@ -184,6 +184,7 @@ Feel free to open issues or submit pull-requests to help me improving my work.
 ### **:robot: Author**
 
 Maurizio Battaghini
+
 > GitHub [@ibbatta](https://github.com/ibbatta) &nbsp;&middot;&nbsp;
 > Twitter [@battago](https://twitter.com/battago)
 

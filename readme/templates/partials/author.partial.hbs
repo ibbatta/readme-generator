@@ -1,0 +1,10 @@
+### **:robot: Author**
+
+_*{{author.name}}*_
+
+{{#if author.social}}
+> You can follow me on
+{{#each author.social~}}{{#unless @last}}[{{@key}}]({{{this}}})&nbsp;&middot;&nbsp;{{/unless}}{{#if @last}}[{{@key}}]({{{this}}}){{/if}}{{~/each}}
+{{/if}}
+
+---
