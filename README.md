@@ -1,4 +1,4 @@
-# **PERSONAL GITHUB REPOSITORY TEMPLATE**
+# **README GENERATOR**
 
 ![Version](https://img.shields.io/github/package-json/v/ibbatta/readme-generator.svg)
 ![License: MIT](https://img.shields.io/github/license/ibbatta/readme-generator.svg)
