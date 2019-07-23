@@ -53,13 +53,10 @@ const parseQuestions = async questionsPath => {
     );
     const { formatters } = await checkFormatterFiles(fileSettings.formatters);
 
-    await Promise.all(
-        files.map(async file => {
-            await fileUtils
-                .readFile(path.join(directory, file))
-                .then(res => questions.push(...JSON.parse(res)));
-        })
-    );
+    files.forEach(file => {
+        const data = require(path.join(directory, file))
+        questions.push(...data.default)
+    })
 
     questionEdited.push(
         questionUtils.injectChoices('formatters', questions, formatters)

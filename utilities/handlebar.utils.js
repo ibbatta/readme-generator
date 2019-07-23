@@ -34,6 +34,7 @@ const registerPartial = (name, partialTemplate) => {
 };
 
 const generateHandlebar = (wrapper, data) => {
+    console.log(data); //TODO: delete this
     const template = Hbs.compile(wrapper);
     return template(_.merge({}, _.omitBy(data, _.isEmpty || _.isNil)));
 };

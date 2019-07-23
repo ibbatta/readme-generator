@@ -1,4 +1,4 @@
-[{
+export default [{
     "name": "commands.start",
     "type": "input",
     "message": "What is the command to run the project?",
