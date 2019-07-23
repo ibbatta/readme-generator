@@ -4,8 +4,6 @@
 ![yarn version](https://img.shields.io/badge/yarn->=1.9.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.3.x-brightgreen.svg)
 
----
-
 > This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.
 
 ---
@@ -117,8 +115,7 @@ not be a good fit for your project(s).
 
 ### **:robot: Author**
 
-Maurizio Battaghini\
-> [github](https://github.com/ibbatta)
+Maurizio Battaghini> [github](https://github.com/ibbatta)
 &nbsp;&middot;&nbsp;[twitter](https://twitter.com/battago)
 
 ---
