@@ -28,7 +28,7 @@
 Before cloning the repo **be sure** you have installed:
 
 {{#each engines}}
-- [**{{uppercase @key}}**](https://www.google.com/search?q=how+to+install+{{lowercase @key}}) (version {{{this}}})
+- [**{{capitalize @key}}**](https://www.google.com/search?q=how+to+install+{{lowercase @key}}) (version {{{this}}})
 {{/each}}
 
 Then:
@@ -51,7 +51,7 @@ To install the project and all dependencies, enter in the project folder and run
 
 {{#if commands}}
 {{#each commands}}
-### {{capitalize @key}} the project
+### {{uppercase @key}} the project
 
 ```bash
 {{../manager}} {{this}}
@@ -65,38 +65,13 @@ To install the project and all dependencies, enter in the project folder and run
 ### **Editor setup**
 
 To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every
-project using some editors plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
-{{#each formatters}}
-{{#ifEquals this "editorconfig"}}
+project using some editors plugins. Plese be sure to disable / remove any other linters or custom configurations.
 
-#### Basic Editor Configuration
+I have chosen to use
+{{#each formatters}}[{{capitalize this}}](https://www.google.com/search?q=add+{{lowercase this}}+configuration)&nbsp;{{/each}}
 
-I have chose to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and
-charset.
-It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin.
-{{/ifEquals}}
-{{#ifEquals this "jsbeautify"}}
-
-#### Auto correction on save
-
-I have chose to use [js-beautify](https://github.com/beautify-web/js-beautify/) as a beautifier also for HTML and CSS.
-It works including a `.jsbeautifyrc` file in the root directory and making sure your editor has the necessary plugin.
-{{/ifEquals}}
-{{#ifEquals this "eslint"}}
-
-#### Eslint
-
-I have chose to use [Eslint](https://eslint.org/) to check on Javascript / React [.js / .jsx] syntax.
-It works including a `.eslintrc` file in the root directory and making sure your editor has the necessary plugin.
-{{/ifEquals}}
-{{#ifEquals this "prettier"}}
-
-#### Prettier
-
-I have chose to use [Prettier](https://prettier.io/) to ensure the codebase with a consistent style.
-It works including a `.prettierrc` file in the root directory and making sure your editor has the necessary plugin.
-{{/ifEquals}}
-{{/each}}
+It
+works including a specific `dotfile` in the root directory and making sure your editor has the necessary plugin.
 
 ---
 {{/if}}
@@ -133,7 +108,7 @@ not be a good fit for your project(s).
 _*{{author.name}}*_
 
 {{#if author.social}}
-> {{#each author.social}}{{#unless @last}}[{{@key}}]({{{this}}})
+> You can follow me on {{#each author.social}}{{#unless @last}}[{{@key}}]({{{this}}})
 &nbsp;&middot;&nbsp;{{/unless}}{{#if @last}}[{{@key}}]({{{this}}}){{/if}}{{/each}}
 {{/if}}
 
