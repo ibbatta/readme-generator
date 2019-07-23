@@ -1,0 +1,11 @@
+{{#if commands}}
+{{#each commands}}
+### {{capitalize @key}} the project
+
+```bash
+{{../manager}} {{this}}
+```
+
+{{/each}}
+---
+{{/if}}

@@ -1,0 +1,17 @@
+{{#if formatters}}
+### **Editor setup**
+
+To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every
+project using some editors plugins. Plese be sure to disable / remove any other linters or custom configurations.
+
+I have chosen to use
+
+{{#each formatters}}
+- [{{uppercase this}}](https://www.google.com/search?q={{lowercase this}})
+{{/each}}
+
+This
+works including a specific `.dotfile` in the root directory and making sure your editor has the necessary plugin.
+
+---
+{{/if}}

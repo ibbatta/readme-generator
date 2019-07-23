@@ -24,11 +24,13 @@
             "twitter": "https://twitter.com/battago"
         }
     },
-    "contributors": [{
-        "name": "Pietro Siccardi",
-        "url": "http://github.com/pietrosiccardi",
-        "reason": "Tactical support for the template engine"
-    }],
+    "contributors": [
+        {
+            "name": "Pietro Siccardi",
+            "url": "http://github.com/pietrosiccardi",
+            "reason": "Tactical support for the template engine"
+        }
+    ],
     "keywords": [
         "readme",
         "readme-template",
@@ -59,17 +61,20 @@
         "figlet": "^1.2.3",
         "handlebars": "^4.1.2",
         "inquirer": "^6.3.1",
-        "lodash": "^4.17.11",
+        "lodash": "^4.17.15",
         "sprintf-js": "^1.1.2"
     },
     "devDependencies": {
         "@babel/core": "^7.3.4",
         "@babel/node": "^7.4.5",
         "@babel/preset-env": "^7.3.4",
+        "@commitlint/cli": "^8.1.0",
+        "@commitlint/prompt": "^8.1.0",
         "auto-changelog": "^1.13.0",
         "babel-eslint": "^10.0.1",
         "babel-jest": "^24.1.0",
         "babel-loader": "^8.0.5",
+        "commitizen": "^4.0.3",
         "eslint": "^5.14.1",
         "eslint-config-airbnb": "17.1.0",
         "eslint-plugin-import": "^2.12.0",
@@ -81,6 +86,7 @@
     "husky": {
         "hooks": {
             "pre-commit": "yarn test",
+            "commit-msg": "echo HUSKY_GIT_PARAMS",
             "pre-push": "auto-changelog && git add CHANGELOG.md"
         }
     },

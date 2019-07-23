@@ -5,6 +5,7 @@ export default {
   readme: {
     questions: path.resolve(__dirname, '../readme/questions'),
     assets: path.resolve(__dirname, '../readme/assets'),
-    templates: path.resolve(__dirname, '../readme/templates')
+    templates: path.resolve(__dirname, '../readme/templates'),
+    hbsPartials: path.resolve(__dirname, '../readme/templates/partials')
   }
 };
