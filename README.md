@@ -36,9 +36,9 @@
 
 Just run `generate-readme` at the root of your project and answer questions.
 
-The tools will look for the **name**, **version**, **description**, **respository**, **author**, **engines**, **dependencies** and **contributors** informations inside you package.json and then will generate the README.md file based on that informations.
+The tools will look for the **name**, **version**, **description**, **respository**, **author**, **engines**, **dependencies** and **contributors** data inside you package.json and then will generate the README.md file based on that informations.
 
-_NOTE_: To generate a complete README.md, be sure that the structure of your package.json looks like this:
+_NOTE_: To generate a complete `README.md`, be sure that the structure of your package.json looks like this:
 
 ```json
 {
