@@ -7,9 +7,6 @@ const injectQuestionsData = ({ questions = [], name, param = null, data = null }
             if (!_.isNil(useDefault)) question['default'] = useDefault
         }
     });
-
-    console.log(questions)
-
     return questions
 };
 
