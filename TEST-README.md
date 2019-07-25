@@ -67,8 +67,8 @@ I have chosen to use
 
 - [ESLINT](https://www.google.com/search?q=eslint)
 - [JSBEAUTIFY](https://www.google.com/search?q=jsbeautify)
-- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 - [PRETTIER](https://www.google.com/search?q=prettier)
+- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 
 This
 works including a specific `.dotfile` in the root directory and making sure your editor has the necessary plugin.

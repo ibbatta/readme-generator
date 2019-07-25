@@ -51,14 +51,14 @@ const checkFormatterFiles = async fileArray => {
 };
 
 const checkSupportFile = async (supportFile) => {
-    let supports
-
-    try {
-        supports = await yamlUtils.parseData(await fileUtils.readFile(supportFile))
-    } catch (error) {
-        messageSettings.genericError(error)
-    }
-
+    const supports = await yamlUtils.parseData(
+        await fileUtils.readFile(supportFile)
+        .then(res => {
+            return res
+        }).catch(() => {
+            return false
+        })
+    )
     return supports
 };
 
