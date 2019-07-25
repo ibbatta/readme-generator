@@ -62,7 +62,6 @@ const checkSupportFile = async (supportFile) => {
     return supports
 };
 
-
 const parseQuestions = async questionsPath => {
     const questionsBulk = [];
     const questions = [];
