@@ -46,7 +46,7 @@ const checkFormatterFiles = async fileArray => {
 };
 
 const parseQuestions = async questionsPath => {
-    const questions = [];
+    const questionsBulk = [];
     const questionEdited = [];
     const { directory, files } = await fileUtils.readDirectoryFiles(
         questionsPath
@@ -55,11 +55,16 @@ const parseQuestions = async questionsPath => {
 
     files.forEach(file => {
         const data = require(path.join(directory, file))
-        questions.push(...data.default)
+        questionsBulk.push(...data.default)
     })
 
     questionEdited.push(
-        questionUtils.injectChoices('formatters', questions, formatters)
+        questionUtils.injectChoices({
+            name: 'formatters',
+            questionsBulk,
+            choices: formatters,
+            setDefaults: true
+        })
     );
 
     messageSettings.questionTitle('Extra questions');

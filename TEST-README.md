@@ -65,10 +65,10 @@ project using some editors plugins. Plese be sure to disable / remove any other 
 
 I have chosen to use
 
-- [JSBEAUTIFY](https://www.google.com/search?q=jsbeautify)
 - [ESLINT](https://www.google.com/search?q=eslint)
-- [PRETTIER](https://www.google.com/search?q=prettier)
 - [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
+- [JSBEAUTIFY](https://www.google.com/search?q=jsbeautify)
+- [PRETTIER](https://www.google.com/search?q=prettier)
 
 This
 works including a specific `.dotfile` in the root directory and making sure your editor has the necessary plugin.
@@ -103,6 +103,9 @@ not be a good fit for your project(s).
 Please :star: this repository if you like it or this project helped you!\
 Feel free to open issues or submit pull-requests to help me improving my work.
 
+<a href="https://www.patreon.com/ibbatta" target="_blank">
+  <img alt="Patron logo" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="150px"/>
+</a>
 
 ---
 
