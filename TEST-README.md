@@ -66,8 +66,8 @@ project using some editors plugins. Plese be sure to disable / remove any other 
 I have chosen to use
 
 - [ESLINT](https://www.google.com/search?q=eslint)
-- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 - [JSBEAUTIFY](https://www.google.com/search?q=jsbeautify)
+- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 - [PRETTIER](https://www.google.com/search?q=prettier)
 
 This

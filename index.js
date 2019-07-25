@@ -10,10 +10,16 @@ import {
     pathSettings,
     messageSettings
 } from './src/settings';
-import { fileUtils, questionUtils, hbsUtils } from './src/utilities';
+import {
+    fileUtils,
+    questionUtils,
+    hbsUtils,
+    yamlUtils
+} from './src/utilities';
 
 const inputFile = `${fileSettings.package.name}.${fileSettings.package.ext}`;
 const outputFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
+const supportFile = `${fileSettings.support.name}.${fileSettings.support.ext}`
 
 const registerHbsPartials = async partialsPath => {
     const { directory, files } = await fileUtils.readDirectoryFiles(partialsPath);
@@ -29,53 +35,73 @@ const registerHbsPartials = async partialsPath => {
 };
 
 const checkFormatterFiles = async fileArray => {
-    const check = [];
-
+    const formatters = [];
     await Promise.all(
         fileArray.map(async file => {
             await fileUtils
-                .checkFileExist(file.path)
+                .checkExist(file.path)
                 .then(() => {
-                    check.push(file.name);
+                    formatters.push(file.name);
                 })
                 .catch(() => null);
         })
     );
 
-    return { formatters: check };
+    return formatters;
+};
+
+const checkSupportFile = async (supportFile) => {
+    let supports
+
+    try {
+        supports = await yamlUtils.parseData(await fileUtils.readFile(supportFile))
+    } catch (error) {
+        messageSettings.genericError(error)
+    }
+
+    return supports
 };
 
 const parseQuestions = async questionsPath => {
     const questionsBulk = [];
-    const questionEdited = [];
+    const questions = [];
     const { directory, files } = await fileUtils.readDirectoryFiles(
         questionsPath
     );
-    const { formatters } = await checkFormatterFiles(fileSettings.formatters);
+
+    const formatters = await checkFormatterFiles(fileSettings.formatters);
+    const supports = await checkSupportFile(await fileUtils.checkExist(pathSettings.github) ? path.join(pathSettings.github, supportFile) : path.join(pathSettings.root, supportFile))
 
     files.forEach(file => {
-        const data = require(path.join(directory, file))
-        questionsBulk.push(...data.default)
+        questionsBulk.push(...require(path.join(directory, file)).default)
     })
 
-    questionEdited.push(
-        questionUtils.injectChoices({
+    questions.push(
+        questionUtils.injectQuestionsData({
+            questions: questionsBulk,
             name: 'formatters',
-            questionsBulk,
-            choices: formatters,
-            setDefaults: true
-        })
+            param: 'choices',
+            data: formatters
+        }, formatters),
+        questionUtils.injectQuestionsData({
+            questions: questionsBulk,
+            name: "support"
+        }, !_.isNil(supports.patreon)),
+        questionUtils.injectQuestionsData({
+            questions: questionsBulk,
+            name: "support.patreon"
+        }, !_.isNil(supports.patreon) && supports.patreon)
     );
 
     messageSettings.questionTitle('Extra questions');
-    return Inquirer.prompt(...questionEdited);
+    return Inquirer.prompt(...questions);
 };
 
 const run = async () => {
     messageSettings.mainTitle('Readme\nGenerator');
 
     try {
-        await fileUtils.checkFileExist(fileSettings.package.path);
+        await fileUtils.checkExist(fileSettings.package.path);
     } catch (error) {
         throw new Error(messageSettings.readFileError(inputFile, error));
     }
