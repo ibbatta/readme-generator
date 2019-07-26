@@ -15,6 +15,7 @@
 - [x] figlet
 - [x] handlebars
 - [x] inquirer
+- [x] js-yaml
 - [x] lodash
 - [x] sprintf-js
 
