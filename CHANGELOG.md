@@ -15,7 +15,6 @@
 
 ### Commits
 
-- upgrade dependencies and resolve vulnerabilites issues [`1ca35a2`](https://github.com/ibbatta/readme-generator/commit/1ca35a2d966ae62c395abcf689b1c7953f4666c6)
 - update repository base [`41485e9`](https://github.com/ibbatta/readme-generator/commit/41485e9bf704f3c22ea8c6a844da4c4676f13adb)
 - init repository [`ab38f6c`](https://github.com/ibbatta/readme-generator/commit/ab38f6cffd9f1f03efe03c58b25efd489b4530df)
 - update readme [`4919fb0`](https://github.com/ibbatta/readme-generator/commit/4919fb0f6205d7aa3f903bea7cb3938ebd876587)
@@ -25,3 +24,4 @@
 - upgrade dependencies [`8e970fd`](https://github.com/ibbatta/readme-generator/commit/8e970fde5f70349e77f828f5eaf9c2dea7334e62)
 - husky test [`fd98a2a`](https://github.com/ibbatta/readme-generator/commit/fd98a2a58cd835201601d88b80d4087903c2e4af)
 - create partialhbs reader [`8d3e6da`](https://github.com/ibbatta/readme-generator/commit/8d3e6da223fe133e0db291de444f32002e27e754)
+- update husky npm config [`009f522`](https://github.com/ibbatta/readme-generator/commit/009f52250a8f3a449587e48ecb2c5eaa5dc87405)

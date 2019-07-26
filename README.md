@@ -1,4 +1,4 @@
-# **README GENERATOR**
+# **:triangular_flag_on_post: README GENERATOR**
 
 ![Version](https://img.shields.io/github/package-json/v/ibbatta/readme-generator.svg)
 ![License: MIT](https://img.shields.io/github/license/ibbatta/readme-generator.svg)
@@ -6,17 +6,13 @@
 ![Opened issues](https://img.shields.io/bitbucket/issues/ibbatta/readme-generator.svg)
 ![Activity](https://img.shields.io/github/commit-activity/m/ibbatta/readme-generator.svg)
 
-<br/>
-
 [![Twitter follower](https://img.shields.io/twitter/follow/battago.svg?style=social)](https://twitter.com/battago)
-
-<br/>
 
 > This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.
 
 ---
 
-## **:clipboard: USER USAGE**
+## **:clipboard: User usage**
 
 Just run `generate-readme` at the root of your project and answer questions.
 
@@ -66,7 +62,7 @@ This allow the tool to create a better README with more cool informations.
 
 ---
 
-## **:wrench: DEVELOPER USAGE**
+## **:wrench: Developer usage**
 
 ### **Set up project**
 
