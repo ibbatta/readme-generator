@@ -1,5 +1,5 @@
 {
-    "name": "readme-generator",
+    "name": "@ibbatta/readme-generator",
     "version": "0.0.1",
     "description": "This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.",
     "main": "./index.js",
@@ -24,13 +24,11 @@
             "twitter": "https://twitter.com/battago"
         }
     },
-    "contributors": [
-        {
-            "name": "Pietro Siccardi",
-            "url": "http://github.com/pietrosiccardi",
-            "reason": "Tactical support for the template engine"
-        }
-    ],
+    "contributors": [{
+        "name": "Pietro Siccardi",
+        "url": "http://github.com/pietrosiccardi",
+        "reason": "Tactical support for the template engine"
+    }],
     "keywords": [
         "readme",
         "readme-template",
@@ -51,7 +49,6 @@
     "scripts": {
         "start": "clear && babel-node -- ./index.js",
         "build": "babel ./src -d ./dist",
-        "build:watch": "babel ./src -d ./dist -w",
         "test": "lint-staged",
         "changelog": "auto-changelog",
         "version": "auto-changelog -p && git add CHANGELOG.md"
