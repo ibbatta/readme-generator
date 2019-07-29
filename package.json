@@ -24,11 +24,13 @@
             "twitter": "https://twitter.com/battago"
         }
     },
-    "contributors": [{
-        "name": "Pietro Siccardi",
-        "url": "http://github.com/pietrosiccardi",
-        "reason": "Tactical support for the template engine"
-    }],
+    "contributors": [
+        {
+            "name": "Pietro Siccardi",
+            "url": "http://github.com/pietrosiccardi",
+            "reason": "Tactical support for the template engine"
+        }
+    ],
     "keywords": [
         "readme",
         "readme-template",
@@ -49,6 +51,7 @@
     "scripts": {
         "start": "clear && babel-node -- ./index.js",
         "build": "babel ./src -d ./dist",
+        "build:watch": "babel ./src -d ./dist -w",
         "test": "lint-staged",
         "changelog": "auto-changelog",
         "version": "auto-changelog -p && git add CHANGELOG.md"
