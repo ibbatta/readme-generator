@@ -10,8 +10,10 @@
 
 ## **:package: Main tools used**
 
+- [x] @babel/polyfill
 - [x] boxen
 - [x] chalk
+- [x] core-js
 - [x] figlet
 - [x] handlebars
 - [x] inquirer
@@ -40,20 +42,20 @@ Then:
 
 ### **Installation**
 
-In order to install the project and all dependencies, enter in the project folder and run `yarn install`
+In order to install the project and all dependencies, enter in the project folder and run `npm install`
 
 ---
 
 ### Start the project
 
 ```bash
-yarn start
+npm start
 ```
 
 ### Test the project
 
 ```bash
-yarn test
+npm test
 ```
 
 ---

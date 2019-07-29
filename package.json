@@ -4,7 +4,7 @@
     "description": "This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.",
     "main": "./index.js",
     "bin": {
-        "generate-readme": "./index.js"
+        "generate-readme": "./dist/cli.js"
     },
     "homepage": "https://github.com/ibbatta/readme-generator",
     "repository": {
@@ -24,13 +24,11 @@
             "twitter": "https://twitter.com/battago"
         }
     },
-    "contributors": [
-        {
-            "name": "Pietro Siccardi",
-            "url": "http://github.com/pietrosiccardi",
-            "reason": "Tactical support for the template engine"
-        }
-    ],
+    "contributors": [{
+        "name": "Pietro Siccardi",
+        "url": "http://github.com/pietrosiccardi",
+        "reason": "Tactical support for the template engine"
+    }],
     "keywords": [
         "readme",
         "readme-template",
@@ -50,14 +48,16 @@
     "private": true,
     "scripts": {
         "start": "clear && babel-node -- ./index.js",
-        "build": "exit 1",
+        "build": "babel ./src -d ./dist",
         "test": "lint-staged",
         "changelog": "auto-changelog",
         "version": "auto-changelog -p && git add CHANGELOG.md"
     },
     "dependencies": {
+        "@babel/polyfill": "^7.4.4",
         "boxen": "^4.1.0",
         "chalk": "^2.4.2",
+        "core-js": "^3.1.4",
         "figlet": "^1.2.3",
         "handlebars": "^4.1.2",
         "inquirer": "^6.3.1",
@@ -66,12 +66,14 @@
         "sprintf-js": "^1.1.2"
     },
     "devDependencies": {
+        "@babel/cli": "^7.5.5",
         "@babel/core": "^7.3.4",
         "@babel/node": "^7.4.5",
         "@babel/preset-env": "^7.3.4",
         "auto-changelog": "^1.13.0",
         "babel-eslint": "^10.0.1",
         "babel-jest": "^24.1.0",
+        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
         "eslint": "^5.14.1",
         "eslint-config-airbnb": "17.1.0",
         "eslint-plugin-import": "^2.12.0",
