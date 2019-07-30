@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import path from 'path';
-import Inquirer from 'inquirer';
+import inquirer from 'inquirer';
 import _ from 'lodash';
 
 import {
@@ -57,51 +57,62 @@ const checkSupportFile = async supportFile => {
 };
 
 const parseQuestions = async questionsPath => {
-  const questionsBulk = [];
-  const questions = [];
+  const bulkQuestions = [];
+  const extraQuestions = [];
   const { directory, files } = await fileUtils.readDirectoryFiles(
     questionsPath
   );
 
   const formatters = await checkFormatterFiles(fileSettings.formatters);
   const supports = await checkSupportFile(
-    (await fileUtils.checkExist(pathSettings.github))
-      ? path.join(pathSettings.github, supportFile)
-      : path.join(pathSettings.root, supportFile)
+    await fileUtils
+      .checkExist(pathSettings.github)
+      .then(() => path.join(pathSettings.github, supportFile))
+      .catch(() => path.join(pathSettings.root, supportFile))
   );
+
+  const hasFormatters = !_.isNil(formatters) && !_.isEmpty(formatters);
+  const hasSupports = !_.isNil(supports) && !_.isEmpty(supports);
 
   files.forEach(file => {
-    questionsBulk.push(...require(path.join(directory, file)).default);
+    bulkQuestions.push(...require(path.join(directory, file)));
   });
 
-  questions.push(
-    questionUtils.injectQuestionsData(
-      {
-        questions: questionsBulk,
-        name: 'formatters',
-        param: 'choices',
-        data: formatters
-      },
-      formatters
-    ),
-    questionUtils.injectQuestionsData(
-      {
-        questions: questionsBulk,
-        name: 'support'
-      },
-      !_.isNil(supports.patreon)
-    ),
-    questionUtils.injectQuestionsData(
-      {
-        questions: questionsBulk,
-        name: 'support.patreon'
-      },
-      !_.isNil(supports.patreon) && supports.patreon
-    )
+  extraQuestions.push(
+    hasFormatters &&
+      questionUtils.injectQuestion(
+        {
+          name: 'formatters',
+          type: 'checkbox',
+          message: 'What kind of formatter / linter are you using?',
+          choices: formatters,
+          default: formatters
+        },
+        bulkQuestions
+      ),
+
+    hasSupports &&
+      questionUtils.injectQuestion(
+        {
+          name: 'support',
+          default: true
+        },
+        bulkQuestions
+      ),
+
+    hasSupports &&
+      !_.isNil(supports.patreon) &&
+      questionUtils.injectQuestion(
+        {
+          name: 'support',
+          default: true
+        },
+        bulkQuestions
+      )
   );
 
-  messageSettings.questionTitle('Extra questions');
-  return Inquirer.prompt(...questions);
+  messageSettings.questionTitle('Just few more questions');
+  return inquirer.prompt(_.unionBy(bulkQuestions, ...extraQuestions, 'name'));
 };
 
 const Run = async () => {

@@ -1,4 +1,4 @@
-# **:triangular_flag_on_post: README-GENERATOR** (version 0.0.1)
+# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.0.1)
 
 ![node version](https://img.shields.io/badge/node->=9.10.x-brightgreen.svg)
 ![yarn version](https://img.shields.io/badge/yarn->=1.9.x-brightgreen.svg)
@@ -36,7 +36,7 @@ Before cloning the repo **be sure** you have installed:
 Then:
 
 - Choose a folder project in your system and switch in `cd [folder path]`
-- Clone the repo in your folder `git clone https://github.com/ibbatta/readme-generator.git`
+- Clone the repo in your folder path `git clone https://github.com/ibbatta/readme-generator.git`
 
 ---
 
@@ -68,9 +68,8 @@ project using some editors plugins. Plese be sure to disable / remove any other 
 I have chosen to use
 
 - [ESLINT](https://www.google.com/search?q=eslint)
-- [JSBEAUTIFY](https://www.google.com/search?q=jsbeautify)
-- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 - [PRETTIER](https://www.google.com/search?q=prettier)
+- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 
 This
 works including a specific `.dotfile` in the root directory and making sure your editor has the necessary plugin.
@@ -93,19 +92,13 @@ works including a specific `.dotfile` in the root directory and making sure your
 
 ---
 
-### **:anger: Troubleshootings**
-
-This is just a personal project created for study / demonstration purpose and to simplify my working life, it may or may
-not be a good fit for your project(s).
-
----
 
 ### **:heart: Show your support**
 
 Please :star: this repository if you like it or this project helped you!\
 Feel free to open issues or submit pull-requests to help me improving my work.
 
-<a href="https://www.patreon.com/ibbatta" target="_blank">
+<a href="https://www.patreon.com/" target="_blank">
   <img alt="Patron logo" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="150px"/>
 </a>
 

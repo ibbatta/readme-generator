@@ -1,58 +1,26 @@
-# **:triangular_flag_on_post: {{uppercase name}}** (version {{version}})
+{{> title}}
 
-{{#each engines}}
-![{{@key}} version](https://img.shields.io/badge/{{@key}}-{{{removeAllSpaces this}}}-brightgreen.svg)
-{{/each}}
+{{> badges}}
 
-> {{{description}}}
+{{> description}}
 
 ---
 
 {{> dependencies}}
 
-## **:wrench: Developer usage**
+{{> dev-instructions}}
 
-### **Set up project**
-
-Before cloning the repo **be sure** you have installed:
-
-{{> engines}}
-
-Then:
-
-- Choose a folder project in your system and switch in `cd [folder path]`
-- Clone the repo in your folder `git clone {{{repository.url}}}`
-
----
-
-### **Installation**
-
-In order to install the project and all dependencies, enter in the project folder and run `{{manager}} install`
-
----
+{{> installation}}
 
 {{> commands}}
 
 {{> formatters}}
 
-## **:handshake: Contributing**
-
-- Fork it!
-- Create your feature branch: `git checkout -b my-new-feature`
-- Commit your changes: `git commit -am 'Add some feature'`
-- Push to the branch: `git push origin my-new-feature`
-- Submit a pull request
-
----
+{{> contributing}}
 
 {{> contributors}}
 
-### **:anger: Troubleshootings**
-
-This is just a personal project created for study / demonstration purpose and to simplify my working life, it may or may
-not be a good fit for your project(s).
-
----
+{{> purpose}}
 
 {{> support}}
 

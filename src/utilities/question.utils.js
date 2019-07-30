@@ -1,15 +1,18 @@
 import _ from 'lodash';
 
-const injectQuestionsData = ({ questions = [], name, param = null, data = null }, useDefault = false) => {
-    questions.map(question => {
-        if (question.name === name) {
-            if (!_.isNil(param) && !_.isNil(param)) question[param] = data
-            if (!_.isNil(useDefault)) question['default'] = useDefault
-        }
+const injectQuestion = (question, bulkQuestions = []) => {
+  let exist = false;
+  if (!_.isNil(bulkQuestions) && !_.isEmpty(bulkQuestions)) {
+    bulkQuestions.map((existingQuestion, index) => {
+      if (existingQuestion.name === question.name) {
+        exist = true;
+        bulkQuestions[index] = _.assign({}, existingQuestion, question);
+      }
     });
-    return questions
+  }
+  return exist ? bulkQuestions : [_.merge({}, question)];
 };
 
 export default {
-    injectQuestionsData
+  injectQuestion
 };
