@@ -104,8 +104,8 @@ const parseQuestions = async questionsPath => {
       !_.isNil(supports.patreon) &&
       questionUtils.injectQuestion(
         {
-          name: 'support',
-          default: true
+          name: 'support.patreon',
+          default: supports.patreon
         },
         bulkQuestions
       )
