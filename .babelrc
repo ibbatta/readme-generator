@@ -1,3 +1,16 @@
 {
-    "presets": ["@babel/preset-env"]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": "3.0.0",
+        "shippedProposals": true,
+        "targets": {
+          "node": "current",
+        },
+      },
+    ],
+  ],
+  "plugins": ["transform-es2015-modules-commonjs"],
 }

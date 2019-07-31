@@ -1,12 +1,14 @@
 import path from 'path';
 
-export default {
-    root: path.resolve(__dirname, '../..'),
-    github: path.resolve(__dirname, '../../.github'),
-    readme: {
-        questions: path.resolve(__dirname, '../readme/questions'),
-        assets: path.resolve(__dirname, '../readme/assets'),
-        templates: path.resolve(__dirname, '../readme/templates'),
-        hbsPartials: path.resolve(__dirname, '../readme/templates/partials')
-    }
+const basePath = {
+  root: path.resolve(process.cwd()),
+  github: path.resolve(process.cwd(), './.github'),
+  readme: {
+    questions: path.resolve(__dirname, '../../src/readme/questions'),
+    assets: path.resolve(__dirname, '../../src/readme/assets'),
+    templates: path.resolve(__dirname, '../../src/readme/templates'),
+    hbsPartials: path.resolve(__dirname, '../../src/readme/templates/partials')
+  }
 };
+
+export default basePath;

@@ -1,4 +1,4 @@
-# **:triangular_flag_on_post: README-GENERATOR** (version 0.0.1)
+# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.0.1)
 
 ![node version](https://img.shields.io/badge/node->=9.10.x-brightgreen.svg)
 ![yarn version](https://img.shields.io/badge/yarn->=1.9.x-brightgreen.svg)
@@ -10,8 +10,10 @@
 
 ## **:package: Main tools used**
 
+- [x] @babel/polyfill
 - [x] boxen
 - [x] chalk
+- [x] core-js
 - [x] figlet
 - [x] handlebars
 - [x] inquirer
@@ -34,26 +36,26 @@ Before cloning the repo **be sure** you have installed:
 Then:
 
 - Choose a folder project in your system and switch in `cd [folder path]`
-- Clone the repo in your folder `git clone https://github.com/ibbatta/readme-generator.git`
+- Clone the repo in your folder path `git clone https://github.com/ibbatta/readme-generator.git`
 
 ---
 
 ### **Installation**
 
-In order to install the project and all dependencies, enter in the project folder and run `yarn install`
+In order to install the project and all dependencies, enter in the project folder and run `npm install`
 
 ---
 
 ### Start the project
 
 ```bash
-yarn start
+npm start
 ```
 
 ### Test the project
 
 ```bash
-yarn test
+npm test
 ```
 
 ---
@@ -66,9 +68,8 @@ project using some editors plugins. Plese be sure to disable / remove any other 
 I have chosen to use
 
 - [ESLINT](https://www.google.com/search?q=eslint)
-- [JSBEAUTIFY](https://www.google.com/search?q=jsbeautify)
-- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 - [PRETTIER](https://www.google.com/search?q=prettier)
+- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 
 This
 works including a specific `.dotfile` in the root directory and making sure your editor has the necessary plugin.
@@ -87,7 +88,7 @@ works including a specific `.dotfile` in the root directory and making sure your
 
 ### **:busts_in_silhouette: Credits**
 
-- [Pietro Siccardi](http://github.com/pietrosiccardi) (Tactical support for the template engine)
+- [Pietro Siccardi](http://github.com/pietrosiccardi) (Moral support for the template engine)
 
 ---
 
