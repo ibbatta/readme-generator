@@ -19,7 +19,6 @@
 - [x] inquirer
 - [x] js-yaml
 - [x] lodash
-- [x] sprintf-js
 
 ---
 
@@ -67,9 +66,9 @@ project using some editors plugins. Plese be sure to disable / remove any other 
 
 I have chosen to use
 
-- [ESLINT](https://www.google.com/search?q=eslint)
-- [PRETTIER](https://www.google.com/search?q=prettier)
 - [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
+- [PRETTIER](https://www.google.com/search?q=prettier)
+- [ESLINT](https://www.google.com/search?q=eslint)
 
 This
 works including a specific `.dotfile` in the root directory and making sure your editor has the necessary plugin.
@@ -92,12 +91,6 @@ works including a specific `.dotfile` in the root directory and making sure your
 
 ---
 
-### **:anger: Troubleshootings**
-
-This is just a personal project created for study / demonstration purpose and to simplify my working life, it may or may
-not be a good fit for your project(s).
-
----
 
 ### **:heart: Show your support**
 

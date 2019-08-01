@@ -4,6 +4,7 @@
 
 ### Merged
 
+- Npm packaging [`#25`](https://github.com/ibbatta/readme-generator/pull/25)
 - parse yaml file (FUNDING.yml) to autocomplete patreon questions [`#23`](https://github.com/ibbatta/readme-generator/pull/23)
 - Update readme template [`#18`](https://github.com/ibbatta/readme-generator/pull/18)
 - Develop [`#17`](https://github.com/ibbatta/readme-generator/pull/17)

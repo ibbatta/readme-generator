@@ -4,7 +4,7 @@
   "description": "This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.",
   "main": "./index.js",
   "bin": {
-    "readme-generator": "clear && ./dist/cli.js"
+    "readme-generator": "./dist/cli.js"
   },
   "homepage": "https://github.com/ibbatta/readme-generator",
   "repository": {
@@ -50,7 +50,7 @@
   "private": true,
   "scripts": {
     "start": "clear && babel-node -- ./index.js",
-    "build": "mkdir -p ./dist/ && cp -a ./src/. ./dist/ && babel ./dist -d ./dist",
+    "build": "rollup --config ./rollup.config.babel.js --environment INCLUDE_DEPS,BUILD:production",
     "test": "lint-staged",
     "changelog": "auto-changelog",
     "version": "auto-changelog -p && git add CHANGELOG.md",
@@ -65,8 +65,7 @@
     "handlebars": "^4.1.2",
     "inquirer": "^6.3.1",
     "js-yaml": "^3.13.1",
-    "lodash": "^4.17.15",
-    "sprintf-js": "^1.1.2"
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -76,14 +75,19 @@
     "auto-changelog": "^1.13.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-loader": "^8.0.6",
     "eslint": "^5.14.1",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "husky": "^3.0.0",
     "jest": "^24.8.0",
-    "lint-staged": "^8.2.1"
+    "lint-staged": "^8.2.1",
+    "rollup": "^1.18.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-copy-assets": "^2.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1"
   },
   "husky": {
     "hooks": {

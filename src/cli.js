@@ -1,8 +1,6 @@
-#!/usr/bin/env node
-
 import path from 'path';
-import inquirer from 'inquirer';
-import _ from 'lodash';
+const inquirer = require('inquirer');
+const _ = require('lodash');
 
 import {
   fileSettings,
@@ -11,6 +9,10 @@ import {
   messageSettings
 } from './settings';
 import { fileUtils, questionUtils, hbsUtils, yamlUtils } from './utilities';
+
+const partialDir = path.resolve(__dirname, pathSettings.readme.hbsPartials);
+const templateDir = path.resolve(__dirname, fileSettings.template.path);
+const questionDir = path.resolve(__dirname, pathSettings.readme.questions);
 
 const inputFile = `${fileSettings.package.name}.${fileSettings.package.ext}`;
 const outputFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
@@ -131,7 +133,7 @@ const Run = async () => {
    *
    */
   try {
-    await registerHbsPartials(pathSettings.readme.hbsPartials);
+    await registerHbsPartials(partialDir);
   } catch (error) {
     throw new Error(messageSettings.genericError(error));
   }
@@ -139,14 +141,14 @@ const Run = async () => {
   /** READ HANDLEBAR TEMPLATE FILE
    *  COLLECT DATA FROM PACKAGE.JSON AND QUESTION FILES
    */
-  const templateFile = await fileUtils.readFile(fileSettings.template.path);
+  const templateFile = await fileUtils.readFile(templateDir);
   const templateData = _.merge(
     {},
     _.pick(
       JSON.parse(await fileUtils.readFile(fileSettings.package.path)),
       dataSettings
     ),
-    await parseQuestions(pathSettings.readme.questions)
+    await parseQuestions(questionDir)
   );
 
   /** PARSE AND GENERATE THE HANDLEBAR TEMPLATE
