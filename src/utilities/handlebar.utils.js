@@ -1,4 +1,5 @@
 const hbs = require('handlebars');
+const _ = require('lodash');
 
 hbs.registerHelper('removeAllSpaces', text => {
   return text.replace(/\s/g, '');
@@ -20,21 +21,21 @@ hbs.registerHelper('getYear', () => {
   return new Date().getFullYear();
 });
 
-hbs.registerHelper('ifEquals', (a, b, options) => {
-  if (a === b) {
-    return options.fn(this);
-  }
-
-  return options.inverse(this);
-});
-
 const registerPartial = (name, partialTemplate) => {
   hbs.registerPartial(name, partialTemplate);
 };
 
 const generateHandlebar = (wrapper, data) => {
-  console.log(data); //TODO: delete this
+  for (let key of Object.keys(data)) {
+    if (
+      (_.isObject(data[key]) || _.isArray(data[key])) &&
+      _.isEmpty(data[key])
+    ) {
+      data[key] = null;
+    }
+  }
   const template = hbs.compile(wrapper);
+  console.log(data); //TODO: delete this
   return template(data);
 };
 
