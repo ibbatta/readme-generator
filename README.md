@@ -4,7 +4,7 @@
 ![License: MIT](https://img.shields.io/github/license/ibbatta/readme-generator.svg)
 ![Repository size](https://img.shields.io/github/repo-size/ibbatta/readme-generator.svg)
 ![Opened issues](https://img.shields.io/github/issues/ibbatta/readme-generator.svg)
-![Activity](https://img.shields.io/github/commit-activity/m/ibbatta/readme-generator.svg)
+![Activity](https://img.shields.io/github/commit-activity/m/ibbatta/readme-generator)
 
 [![Twitter follower](https://img.shields.io/twitter/follow/battago.svg?style=social)](https://twitter.com/battago)
 
