@@ -14,7 +14,8 @@
 
 ## **:clipboard: User usage**
 
-Install the package `@ibbatta/readme-generator`.\
+Install globally `npm i -g @ibbatta/readme-generator`.\
+Install locally `npm i --save-dev @ibbatta/readme-generator`.\
 Just run `readme-generator` at the root of your project and answer questions.
 
 You can add few options:
