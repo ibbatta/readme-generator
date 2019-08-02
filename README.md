@@ -14,7 +14,7 @@
 
 ## **:clipboard: User usage**
 
-Install the package `@ibbatta/readme-generator`\n
+Install the package `@ibbatta/readme-generator`.\
 Just run `readme-generator` at the root of your project and answer questions.
 
 You can add few options:
