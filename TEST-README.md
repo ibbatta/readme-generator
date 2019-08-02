@@ -13,6 +13,7 @@
 - [x] @babel/polyfill
 - [x] boxen
 - [x] chalk
+- [x] commander
 - [x] core-js
 - [x] figlet
 - [x] handlebars

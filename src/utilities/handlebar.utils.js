@@ -1,5 +1,6 @@
 const hbs = require('handlebars');
 const _ = require('lodash');
+import { messageSettings } from './../settings';
 
 hbs.registerHelper('removeAllSpaces', text => {
   return text.replace(/\s/g, '');
@@ -25,7 +26,7 @@ const registerPartial = (name, partialTemplate) => {
   hbs.registerPartial(name, partialTemplate);
 };
 
-const generateHandlebar = (wrapper, data) => {
+const generateHandlebar = (wrapper, data, debug = false) => {
   for (let key of Object.keys(data)) {
     if (
       (_.isObject(data[key]) || _.isArray(data[key])) &&
@@ -35,7 +36,7 @@ const generateHandlebar = (wrapper, data) => {
     }
   }
   const template = hbs.compile(wrapper);
-  console.log(data); //TODO: delete this
+  debug && messageSettings.debugMessage(data);
   return template(data);
 };
 

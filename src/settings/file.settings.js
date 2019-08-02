@@ -2,29 +2,34 @@ import path from 'path';
 import pathSettings from './path.settings';
 
 const settings = {
+  package: {
+    name: 'package',
+    ext: 'json'
+  },
   template: {
     name: 'README',
     ext: 'hbs'
   },
   readme: {
-    name: 'TEST-README',
+    name: 'README',
     ext: 'md'
   },
-  package: {
-    name: 'package',
-    ext: 'json'
+  support: {
+    name: 'FUNDING',
+    ext: 'yml'
   },
   formatters: [
     { name: 'eslint', ext: 'rc' },
     { name: 'jsbeautify', ext: 'rc' },
     { name: 'editorconfig', ext: null },
     { name: 'prettier', ext: 'rc' }
-  ],
-  support: {
-    name: 'FUNDING',
-    ext: 'yml'
-  }
+  ]
 };
+
+settings.package.path = path.join(
+  pathSettings.root,
+  `${settings.package.name}.${settings.package.ext}`
+);
 
 settings.template.path = path.join(
   pathSettings.readme.templates,
@@ -37,15 +42,5 @@ settings.formatters.forEach((val, index) => {
     `.${val.name}${val.ext ? val.ext : ''}`
   );
 });
-
-settings.readme.path = path.join(
-  pathSettings.root,
-  `${settings.readme.name}.${settings.readme.ext}`
-);
-
-settings.package.path = path.join(
-  pathSettings.root,
-  `${settings.package.name}.${settings.package.ext}`
-);
 
 export default settings;

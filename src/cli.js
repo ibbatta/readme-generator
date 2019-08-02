@@ -11,11 +11,10 @@ import {
 import { fileUtils, questionUtils, hbsUtils, yamlUtils } from './utilities';
 
 const partialDir = path.resolve(__dirname, pathSettings.readme.hbsPartials);
-const templateDir = path.resolve(__dirname, fileSettings.template.path);
 const questionDir = path.resolve(__dirname, pathSettings.readme.questions);
 
-const inputFile = `${fileSettings.package.name}.${fileSettings.package.ext}`;
-const outputFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
+const packageFile = `${fileSettings.package.name}.${fileSettings.package.ext}`;
+const readmeFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
 const supportFile = `${fileSettings.support.name}.${fileSettings.support.ext}`;
 
 const registerHbsPartials = async partialsPath => {
@@ -113,12 +112,20 @@ const parseQuestions = async questionsPath => {
       )
   );
 
-  messageSettings.questionTitle('Just few more questions');
+  messageSettings.questionTitle('Just few questions');
   return inquirer.prompt(_.unionBy(bulkQuestions, ...extraQuestions, 'name'));
 };
 
-const Run = async () => {
+const Run = async ({ output, template, debug }) => {
   messageSettings.mainTitle('Readme\nGenerator');
+
+  let templateFile, templateData;
+
+  const showDebugLog = !_.isNil(debug);
+  const outputFile = _.isNil(output) ? readmeFile : output;
+  const templatePath = _.isNil(template)
+    ? path.resolve(__dirname, fileSettings.template.path)
+    : path.resolve(pathSettings.root, template);
 
   /** CHECK IF PACKAGE.JSON EXISTS
    *
@@ -126,7 +133,7 @@ const Run = async () => {
   try {
     await fileUtils.checkExist(fileSettings.package.path);
   } catch (error) {
-    throw new Error(messageSettings.readFileError(inputFile, error));
+    throw new Error(messageSettings.readFileError(packageFile, error));
   }
 
   /** REGISTER ALL HANDLEBAR PARTIALS FOUND INSIDE THE FOLDER ./src/readme/templates/partials
@@ -139,25 +146,38 @@ const Run = async () => {
   }
 
   /** READ HANDLEBAR TEMPLATE FILE
-   *  COLLECT DATA FROM PACKAGE.JSON AND QUESTION FILES
+   *
    */
-  const templateFile = await fileUtils.readFile(templateDir);
-  const templateData = _.merge(
-    {},
-    _.pick(
-      JSON.parse(await fileUtils.readFile(fileSettings.package.path)),
-      dataSettings
-    ),
-    await parseQuestions(questionDir)
-  );
+
+  try {
+    templateFile = await fileUtils.readFile(templatePath);
+  } catch (error) {
+    throw new Error(messageSettings.readFileError(templatePath, error));
+  }
+
+  /** MERGE COLLECTED DATA FROM QUESTIONS AND PACKAGE.JSON
+   *  CREATE THE COLLECTION TO POPULATE HANDLEBAR TEMPLATE
+   */
+  try {
+    templateData = _.merge(
+      {},
+      _.pick(
+        JSON.parse(await fileUtils.readFile(fileSettings.package.path)),
+        dataSettings
+      ),
+      await parseQuestions(questionDir)
+    );
+  } catch (error) {
+    throw new Error(messageSettings.genericError(error));
+  }
 
   /** PARSE AND GENERATE THE HANDLEBAR TEMPLATE
    *  WRITE THE README.MD FILE
    */
   try {
     await fileUtils.writeFile(
-      fileSettings.readme.path,
-      hbsUtils.generateHandlebar(templateFile, templateData)
+      path.resolve(pathSettings.root, outputFile),
+      hbsUtils.generateHandlebar(templateFile, templateData, showDebugLog)
     );
     messageSettings.writeFileSuccess(outputFile);
   } catch (error) {
@@ -165,4 +185,4 @@ const Run = async () => {
   }
 };
 
-Run();
+export default Run;

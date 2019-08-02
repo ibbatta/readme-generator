@@ -8,13 +8,13 @@ const externalDependencies = Object.keys(
 );
 
 export default {
-  input: './src/cli.js',
+  input: './src/index.js',
   output: {
     banner: '#!/usr/bin/env node',
     name: 'readme-generator',
-    file: './dist/cli.js',
+    file: './dist/index.js',
     format: 'cjs',
-    assetFileNames: './src/readme'
+    assetFileNames: 'src/readme'
   },
   plugins: [
     resolve({
@@ -27,7 +27,7 @@ export default {
       exclude: 'node_modules/**' // only transpile our source code
     }),
     copy({
-      assets: ['src/readme']
+      assets: ['./src/readme']
     }),
     terser()
   ],
