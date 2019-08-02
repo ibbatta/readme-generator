@@ -8,6 +8,19 @@
 
 ---
 
+## **:package: Main tools used**
+
+- [x] @babel/polyfill
+- [x] boxen
+- [x] chalk
+- [x] core-js
+- [x] figlet
+- [x] handlebars
+- [x] inquirer
+- [x] js-yaml
+- [x] lodash
+
+---
 
 ## **:wrench: Developer usage**
 
@@ -53,8 +66,8 @@ project using some editors plugins. Plese be sure to disable / remove any other 
 
 I have chosen to use
 
-- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 - [ESLINT](https://www.google.com/search?q=eslint)
+- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 - [PRETTIER](https://www.google.com/search?q=prettier)
 
 This
@@ -78,6 +91,12 @@ works including a specific `.dotfile` in the root directory and making sure your
 
 ---
 
+### **:anger: Troubleshootings**
+
+This is just a personal project created for study / demonstration purpose and to simplify my working life, it may or may
+not be a good fit for your project(s).
+
+---
 
 ### **:heart: Show your support**
 
