@@ -1,46 +1,36 @@
-import { sprintf as Sprf } from 'sprintf-js';
-import chalk from 'chalk';
-import figlet from 'figlet';
-import boxen from 'boxen';
+const figlet = require('figlet');
+const chalk = require('chalk');
+const boxen = require('boxen');
 
 const { log, clear } = console;
 
-const labels = {
-  mainTitle: '%s',
-  questionTitle: '%s',
-  genericError: '%j',
-  readFileError: 'ERROR: The %s file is missing or not readable.\n%j',
-  writeFileError: 'ERROR: Unable to generate the %s file.\n%j',
-  writeFileSuccess: 'The %s file is generated with success'
-};
-
 const mainTitle = data => {
   clear();
-  log(chalk.greenBright(figlet.textSync(Sprf(labels.mainTitle, data))));
+  log(chalk.greenBright(figlet.textSync(data)));
 };
 
 const questionTitle = data => {
-  log(chalk.blueBright(Sprf(labels.questionTitle, data)));
+  log(chalk.blueBright(data));
 };
 
 const genericError = error => {
-  log(chalk.red(Sprf(labels.genericError, error)));
+  log(chalk.red(error));
 };
 
 const readFileError = (data, error) => {
-  log(chalk.red(Sprf(labels.readFileError, chalk.bold.underline(data), error)));
+  log(chalk.red(`ERROR: The ${data} file is missing or not readable.`));
+  log(chalk.red(error));
 };
 
 const writeFileError = (data, error) => {
-  log(
-    chalk.red(Sprf(labels.writeFileError, chalk.bold.underline(data), error))
-  );
+  log(chalk.red(`ERROR: Unable to generate the ${data} file.`));
+  log(chalk.red(error));
 };
 
 const writeFileSuccess = data => {
   log(
     chalk.green(
-      boxen(Sprf(labels.writeFileSuccess, chalk.bold.underline(data)), {
+      boxen(`The ${data} file is generated with success`, {
         padding: 1,
         margin: 1,
         borderStyle: 'classic'

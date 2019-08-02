@@ -1,10 +1,10 @@
-import _ from 'lodash';
-import Yaml from 'js-yaml';
+const yaml = require('js-yaml');
+const _ = require('lodash');
 
 const parseData = content => {
   return new Promise((resolve, reject) => {
     try {
-      resolve(_.omitBy(Yaml.safeLoad(content), _.isNil));
+      resolve(_.omitBy(yaml.safeLoad(content), _.isNil));
     } catch (error) {
       reject(error);
     }
