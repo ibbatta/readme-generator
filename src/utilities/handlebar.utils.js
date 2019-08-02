@@ -1,45 +1,46 @@
-import Hbs from 'handlebars';
-import _ from 'lodash';
+const hbs = require('handlebars');
+const _ = require('lodash');
+import { messageSettings } from './../settings';
 
-Hbs.registerHelper('removeAllSpaces', text => {
-    return text.replace(/\s/g, '');
+hbs.registerHelper('removeAllSpaces', text => {
+  return text.replace(/\s/g, '');
 });
 
-Hbs.registerHelper('uppercase', text => {
-    return text.toUpperCase();
+hbs.registerHelper('uppercase', text => {
+  return text.toUpperCase();
 });
 
-Hbs.registerHelper('lowercase', text => {
-    return text.toLowerCase();
+hbs.registerHelper('lowercase', text => {
+  return text.toLowerCase();
 });
 
-Hbs.registerHelper('capitalize', text => {
-    return `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
+hbs.registerHelper('capitalize', text => {
+  return `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
 });
 
-Hbs.registerHelper('getYear', () => {
-    return new Date().getFullYear();
-});
-
-Hbs.registerHelper('ifEquals', (a, b, options) => {
-    if (a === b) {
-        return options.fn(this);
-    }
-
-    return options.inverse(this);
+hbs.registerHelper('getYear', () => {
+  return new Date().getFullYear();
 });
 
 const registerPartial = (name, partialTemplate) => {
-    Hbs.registerPartial(name, partialTemplate);
+  hbs.registerPartial(name, partialTemplate);
 };
 
-const generateHandlebar = (wrapper, data) => {
-    console.log(data); //TODO: delete this
-    const template = Hbs.compile(wrapper);
-    return template(_.merge({}, _.omitBy(data, _.isEmpty || _.isNil)));
+const generateHandlebar = (wrapper, data, debug = false) => {
+  for (let key of Object.keys(data)) {
+    if (
+      (_.isObject(data[key]) || _.isArray(data[key])) &&
+      _.isEmpty(data[key])
+    ) {
+      data[key] = null;
+    }
+  }
+  const template = hbs.compile(wrapper);
+  debug && messageSettings.debugMessage(data);
+  return template(data);
 };
 
 export default {
-    registerPartial,
-    generateHandlebar
+  registerPartial,
+  generateHandlebar
 };

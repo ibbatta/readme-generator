@@ -1,58 +1,59 @@
-import { sprintf as Sprf } from 'sprintf-js';
-import Chalk from 'chalk';
-import Figlet from 'figlet';
-import Boxen from 'boxen';
+const figlet = require('figlet');
+const chalk = require('chalk');
+const boxen = require('boxen');
 
-const Log = showData => console.log(showData);
-
-const labels = {
-    mainTitle: '%s',
-    questionTitle: '%s',
-    genericError: '%j',
-    readFileError: 'ERROR: The %s file is missing or not readable.\n%j',
-    writeFileError: 'ERROR: Unable to generate the %s file.\n%j',
-    writeFileSuccess: 'The %s file is generated with success'
-};
+const { log, clear } = console;
 
 const mainTitle = data => {
-    Log(Chalk.greenBright(Figlet.textSync(Sprf(labels.mainTitle, data))));
+  clear();
+  log(chalk.greenBright(figlet.textSync(data)));
 };
 
 const questionTitle = data => {
-    Log(Chalk.blueBright(Sprf(labels.questionTitle, data)));
+  log(chalk.blueBright(data));
+};
+
+const debugMessage = data => {
+  log(data);
 };
 
 const genericError = error => {
-    Log(Chalk.red(Sprf(labels.genericError, error)));
+  log(chalk.red(error));
 };
 
 const readFileError = (data, error) => {
-    Log(Chalk.red(Sprf(labels.readFileError, Chalk.bold.underline(data), error)));
+  log(
+    chalk.red(`ERROR: The ${chalk.bold(data)} file is missing or not readable.`)
+  );
+  log(chalk.red(error));
 };
 
 const writeFileError = (data, error) => {
-    Log(
-        Chalk.red(Sprf(labels.writeFileError, Chalk.bold.underline(data), error))
-    );
+  log(chalk.red(`ERROR: Unable to generate the ${chalk.bold(data)} file.`));
+  log(chalk.red(error));
 };
 
 const writeFileSuccess = data => {
-    Log(
-        Chalk.green(
-            Boxen(Sprf(labels.writeFileSuccess, Chalk.bold.underline(data)), {
-                padding: 1,
-                margin: 1,
-                borderStyle: 'classic'
-            })
-        )
-    );
+  log(
+    chalk.green(
+      boxen(
+        `The ${chalk.bold.underline(data)} file is generated with success`,
+        {
+          padding: 1,
+          margin: 1,
+          borderStyle: 'classic'
+        }
+      )
+    )
+  );
 };
 
 export default {
-    mainTitle,
-    questionTitle,
-    genericError,
-    readFileError,
-    writeFileSuccess,
-    writeFileError
+  mainTitle,
+  questionTitle,
+  debugMessage,
+  genericError,
+  readFileError,
+  writeFileError,
+  writeFileSuccess
 };
