@@ -72,6 +72,8 @@ I've added two custom fields inside the package.json:
 
 This allow the tool to create a better README with more cool informations.
 
+Here is a generated [README example](https://github.com/ibbatta/readme-generator/blob/master/EXAMPLE-README.md).
+
 ---
 
 ## **:wrench: Developer usage**
