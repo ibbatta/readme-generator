@@ -69,8 +69,8 @@ _NOTE_: To generate a complete `README.md`, be sure that the structure of your p
 
 I've added two custom fields inside the package.json:
 
-- SOCIAL (inside author)
-- REASON (inside each contributor)
+- **SOCIAL** (inside author)
+- **REASON** (inside each contributor)
 
 This allow the tool to create a better README with more cool informations.
 
