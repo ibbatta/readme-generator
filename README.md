@@ -84,7 +84,7 @@ Here is a generated [README example](https://github.com/ibbatta/readme-generator
 
 Before cloning the repo **be sure** you have installed:
 
-- [**NODE**](https://www.google.com/search?q=how+to+install+node) (version >= 9.10.x)
+- [**NODE**](https://www.google.com/search?q=how+to+install+node) (version >= 8.9.x)
 - [**YARN**](https://www.google.com/search?q=how+to+install+yarn) (version >= 1.9.x)
 - [**NPM**](https://www.google.com/search?q=how+to+install+npm) (version >= 6.3.x)
 
