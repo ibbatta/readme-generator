@@ -24,13 +24,11 @@
       "twitter": "https://twitter.com/battago"
     }
   },
-  "contributors": [
-    {
-      "name": "Pietro Siccardi",
-      "url": "http://github.com/pietrosiccardi",
-      "reason": "Moral support for the template engine"
-    }
-  ],
+  "contributors": [{
+    "name": "Pietro Siccardi",
+    "url": "http://github.com/pietrosiccardi",
+    "reason": "Moral support for the template engine"
+  }],
   "keywords": [
     "readme",
     "readme-template",
@@ -52,7 +50,7 @@
     "start": "clear && babel-node -- ./src/index.js",
     "build": "rm -rf ./dist && rollup --config ./rollup.config.babel.js --environment INCLUDE_DEPS,BUILD:production",
     "build:watch": "rm -rf ./dist && rollup --config ./rollup.config.babel.js --watch",
-    "test": "lint-staged",
+    "test": "lint-staged && jest",
     "changelog": "auto-changelog",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "prepare": "npm run build"
@@ -80,6 +78,7 @@
     "eslint": "^5.14.1",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^22.14.1",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "husky": "^3.0.0",
     "jest": "^24.8.0",
@@ -92,7 +91,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && auto-changelog && git add CHANGELOG.md",
+      "pre-commit": "npm run test && auto-changelog && git add CHANGELOG.md",
       "commit-msg": "echo HUSKY_GIT_PARAMS"
     }
   },
