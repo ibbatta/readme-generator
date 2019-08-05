@@ -1,14 +1,16 @@
 # **:triangular_flag_on_post: README GENERATOR**
 
 ![Version](https://img.shields.io/github/package-json/v/ibbatta/readme-generator.svg)
-![License: MIT](https://img.shields.io/github/license/ibbatta/readme-generator.svg)
+![Npm downloads](https://img.shields.io/npm/dt/@ibbatta/readme-generator)
 ![Repository size](https://img.shields.io/github/repo-size/ibbatta/readme-generator.svg)
 ![Opened issues](https://img.shields.io/github/issues/ibbatta/readme-generator.svg)
-![Activity](https://img.shields.io/github/commit-activity/m/ibbatta/readme-generator)
+![License: MIT](https://img.shields.io/github/license/ibbatta/readme-generator.svg)
 
 [![Twitter follower](https://img.shields.io/twitter/follow/battago.svg?style=social)](https://twitter.com/battago)
 
 > This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how to avoid wasting my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.
+
+![Example gif](./.github/assets/example.gif)
 
 ---
 
@@ -82,7 +84,7 @@ Here is a generated [README example](https://github.com/ibbatta/readme-generator
 
 Before cloning the repo **be sure** you have installed:
 
-- [**NODE**](https://www.google.com/search?q=how+to+install+node) (version >= 9.10.x)
+- [**NODE**](https://www.google.com/search?q=how+to+install+node) (version >= 8.9.x)
 - [**YARN**](https://www.google.com/search?q=how+to+install+yarn) (version >= 1.9.x)
 - [**NPM**](https://www.google.com/search?q=how+to+install+npm) (version >= 6.3.x)
 

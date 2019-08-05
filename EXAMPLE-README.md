@@ -1,6 +1,6 @@
 # **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.0.1)
 
-![node version](https://img.shields.io/badge/node->=9.10.x-brightgreen.svg)
+![node version](https://img.shields.io/badge/node->=8.9.x-brightgreen.svg)
 ![yarn version](https://img.shields.io/badge/yarn->=1.9.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.3.x-brightgreen.svg)
 
@@ -10,11 +10,9 @@
 
 ## **:package: Main tools used**
 
-- [x] @babel/polyfill
 - [x] boxen
 - [x] chalk
 - [x] commander
-- [x] core-js
 - [x] figlet
 - [x] handlebars
 - [x] inquirer
@@ -29,7 +27,7 @@
 
 Before cloning the repo **be sure** you have installed:
 
-- [**NODE**](https://www.google.com/search?q=how+to+install+node) (version >= 9.10.x)
+- [**NODE**](https://www.google.com/search?q=how+to+install+node) (version >= 8.9.x)
 - [**YARN**](https://www.google.com/search?q=how+to+install+yarn) (version >= 1.9.x)
 - [**NPM**](https://www.google.com/search?q=how+to+install+npm) (version >= 6.3.x)
 
