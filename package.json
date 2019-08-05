@@ -42,7 +42,7 @@
     "readme-quality"
   ],
   "engines": {
-    "node": ">= 9.10.x",
+    "node": ">= 8.9.x",
     "yarn": ">= 1.9.x",
     "npm": ">= 6.3.x"
   },
@@ -58,11 +58,9 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
     "boxen": "^4.1.0",
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
-    "core-js": "^3.1.4",
     "figlet": "^1.2.3",
     "handlebars": "^4.1.2",
     "inquirer": "^6.3.1",
@@ -78,6 +76,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
     "babel-loader": "^8.0.6",
+    "core-js": "^3.1.4",
     "eslint": "^5.14.1",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-import": "^2.12.0",
