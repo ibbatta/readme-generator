@@ -1,5 +1,6 @@
 const hbs = require('handlebars');
 const _ = require('lodash');
+
 import { messageSettings } from './../settings';
 
 hbs.registerHelper('removeAllSpaces', text => {
@@ -23,6 +24,8 @@ hbs.registerHelper('getYear', () => {
 });
 
 const registerPartial = (name, partialTemplate) => {
+  if (!name) throw new Error('Template name must be specified');
+  if (!partialTemplate) throw new Error('Partial data must be specified');
   hbs.registerPartial(name, partialTemplate);
 };
 

@@ -1,6 +1,6 @@
 import path from 'path';
-const inquirer = require('inquirer');
 const _ = require('lodash');
+const inquirer = require('inquirer');
 
 import {
   fileSettings,
@@ -18,11 +18,12 @@ const readmeFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
 const supportFile = `${fileSettings.support.name}.${fileSettings.support.ext}`;
 
 const registerHbsPartials = async partialsPath => {
-  const { directory, files } = await fileUtils.readDirectoryFiles(partialsPath);
-  await files.forEach(async file => {
+  const { data } = await fileUtils.readDirectoryFiles(partialsPath);
+  await data.files.forEach(async file => {
     const partialName = file.split('.')[0];
-    fileUtils.readFile(path.join(directory, file)).then(partialContent => {
-      hbsUtils.registerPartial(partialName, partialContent);
+    fileUtils.readFile(path.join(data.directory, file)).then(partialContent => {
+      const { data } = partialContent;
+      hbsUtils.registerPartial(partialName, data.file);
     });
   });
 };
@@ -33,8 +34,8 @@ const checkFormatterFiles = async fileArray => {
     fileArray.map(async file => {
       await fileUtils
         .checkExist(file.path)
-        .then(() => {
-          formatters.push(file.name);
+        .then(({ success }) => {
+          success && formatters.push(file.name);
         })
         .catch(() => null);
     })
@@ -47,12 +48,10 @@ const checkSupportFile = async supportFile => {
   const supports = await yamlUtils.parseData(
     await fileUtils
       .readFile(supportFile)
-      .then(res => {
-        return res;
+      .then(({ success, data }) => {
+        return success && data;
       })
-      .catch(() => {
-        return false;
-      })
+      .catch(() => null)
   );
   return supports;
 };
@@ -60,9 +59,7 @@ const checkSupportFile = async supportFile => {
 const parseQuestions = async questionsPath => {
   const bulkQuestions = [];
   const extraQuestions = [];
-  const { directory, files } = await fileUtils.readDirectoryFiles(
-    questionsPath
-  );
+  const { data } = await fileUtils.readDirectoryFiles(questionsPath);
 
   const formatters = await checkFormatterFiles(fileSettings.formatters);
   const supports = await checkSupportFile(
@@ -75,8 +72,8 @@ const parseQuestions = async questionsPath => {
   const hasFormatters = !_.isNil(formatters) && !_.isEmpty(formatters);
   const hasSupports = !_.isNil(supports) && !_.isEmpty(supports);
 
-  files.forEach(file => {
-    bulkQuestions.push(...require(path.join(directory, file)));
+  data.files.forEach(file => {
+    bulkQuestions.push(...require(path.join(data.directory, file)));
   });
 
   extraQuestions.push(
@@ -119,7 +116,7 @@ const parseQuestions = async questionsPath => {
 const Run = async ({ output, template, debug }) => {
   messageSettings.mainTitle('Readme\nGenerator');
 
-  let templateFile, templateData;
+  const buildTemplate = {};
 
   const showDebugLog = !_.isNil(debug);
   const outputFile = _.isNil(output) ? readmeFile : output;
@@ -132,7 +129,7 @@ const Run = async ({ output, template, debug }) => {
    */
   try {
     await fileUtils.checkExist(fileSettings.package.path);
-  } catch (error) {
+  } catch ({ error }) {
     throw new Error(messageSettings.readFileError(packageFile, error));
   }
 
@@ -141,7 +138,7 @@ const Run = async ({ output, template, debug }) => {
    */
   try {
     await registerHbsPartials(partialDir);
-  } catch (error) {
+  } catch ({ error }) {
     throw new Error(messageSettings.genericError(error));
   }
 
@@ -150,8 +147,9 @@ const Run = async ({ output, template, debug }) => {
    */
 
   try {
-    templateFile = await fileUtils.readFile(templatePath);
-  } catch (error) {
+    const { data } = await fileUtils.readFile(templatePath);
+    buildTemplate.file = data.file;
+  } catch ({ error }) {
     throw new Error(messageSettings.readFileError(templatePath, error));
   }
 
@@ -159,15 +157,11 @@ const Run = async ({ output, template, debug }) => {
    *  CREATE THE COLLECTION TO POPULATE HANDLEBAR TEMPLATE
    */
   try {
-    templateData = _.merge(
-      {},
-      _.pick(
-        JSON.parse(await fileUtils.readFile(fileSettings.package.path)),
-        dataSettings
-      ),
-      await parseQuestions(questionDir)
-    );
-  } catch (error) {
+    const { data } = await fileUtils.readFile(fileSettings.package.path);
+    const pickedData = _.pick(JSON.parse(data.file), dataSettings); // TODO: insert here the swap if package.json not exists
+    const parseQuestion = await parseQuestions(questionDir);
+    buildTemplate.data = _.merge({}, pickedData, parseQuestion);
+  } catch ({ error }) {
     throw new Error(messageSettings.genericError(error));
   }
 
@@ -175,12 +169,12 @@ const Run = async ({ output, template, debug }) => {
    *  WRITE THE README.MD FILE
    */
   try {
-    await fileUtils.writeFile(
-      path.resolve(pathSettings.root, outputFile),
-      hbsUtils.generateHandlebar(templateFile, templateData, showDebugLog)
-    );
+    const { file, data } = buildTemplate;
+    const outputPath = path.resolve(pathSettings.root, outputFile);
+    const hbsGenerated = hbsUtils.generateHandlebar(file, data, showDebugLog);
+    await fileUtils.writeFile(outputPath, hbsGenerated);
     messageSettings.writeFileSuccess(outputFile);
-  } catch (error) {
+  } catch ({ error }) {
     throw new Error(messageSettings.writeFileError(outputFile, error));
   }
 };

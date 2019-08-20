@@ -3,7 +3,8 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest/globals": true
   },
   "parserOptions": {
     "ecmaVersion": 8,
@@ -16,6 +17,11 @@
     "no-console": "warn"
   },
   "extends": [
-    "eslint:recommended"
-  ]
+    "eslint:recommended",
+    "plugin:jest/recommended",
+  ],
+  "plugins": [
+    "import",
+    "jest",
+  ],
 }

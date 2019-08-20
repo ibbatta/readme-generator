@@ -1,6 +1,6 @@
 {
   "name": "@ibbatta/readme-generator",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.",
   "main": "./src/index.js",
   "bin": {
@@ -24,13 +24,11 @@
       "twitter": "https://twitter.com/battago"
     }
   },
-  "contributors": [
-    {
-      "name": "Pietro Siccardi",
-      "url": "http://github.com/pietrosiccardi",
-      "reason": "Moral support for the template engine"
-    }
-  ],
+  "contributors": [{
+    "name": "Pietro Siccardi",
+    "url": "http://github.com/pietrosiccardi",
+    "reason": "Moral support for the template engine"
+  }],
   "keywords": [
     "readme",
     "readme-template",
@@ -52,7 +50,8 @@
     "start": "clear && babel-node -- ./src/index.js",
     "build": "rm -rf ./dist && rollup --config ./rollup.config.babel.js --environment INCLUDE_DEPS,BUILD:production",
     "build:watch": "rm -rf ./dist && rollup --config ./rollup.config.babel.js --watch",
-    "test": "lint-staged",
+    "test": "lint-staged && jest",
+    "test:watch": "jest --watch",
     "changelog": "auto-changelog",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "prepare": "npm run build"
@@ -80,6 +79,7 @@
     "eslint": "^5.14.1",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^22.14.1",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "husky": "^3.0.0",
     "jest": "^24.8.0",
@@ -92,7 +92,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && auto-changelog && git add CHANGELOG.md",
+      "pre-commit": "npm run test && auto-changelog && git add CHANGELOG.md",
       "commit-msg": "echo HUSKY_GIT_PARAMS"
     }
   },

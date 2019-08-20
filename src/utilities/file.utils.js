@@ -2,29 +2,65 @@ import fs, { constants } from 'fs';
 
 const checkExist = target =>
   new Promise((resolve, reject) => {
-    fs.access(target, constants.F_OK | constants.W_OK, err => {
-      err ? reject(err) : resolve(true);
+    !target &&
+      reject({
+        success: false,
+        error: new Error('Path must be specified')
+      });
+    fs.access(target, constants.F_OK | constants.W_OK, error => {
+      error ? reject({ success: false, error }) : resolve({ success: true });
     });
   });
 
 const readDirectoryFiles = directory =>
   new Promise((resolve, reject) => {
-    fs.readdir(directory, (err, files) => {
-      err ? reject(err) : resolve({ directory, files });
+    !directory &&
+      reject({
+        success: false,
+        error: new Error('Directory must be specified')
+      });
+    fs.readdir(directory, (error, files) => {
+      error
+        ? reject({ success: false, error })
+        : resolve({ success: true, data: { directory, files } });
     });
   });
 
 const readFile = file =>
   new Promise((resolve, reject) => {
-    fs.readFile(file, 'utf8', (err, fileData) => {
-      err ? reject(err) : resolve(fileData);
+    !file &&
+      reject({
+        success: false,
+        error: new Error('File must be specified')
+      });
+    fs.readFile(file, 'utf8', (error, fileData) => {
+      error
+        ? reject({ success: false, error })
+        : resolve({ success: true, data: { file: fileData } });
     });
   });
 
 const writeFile = (file, data) => {
   new Promise((resolve, reject) => {
-    fs.writeFile(file, data, err => {
-      err ? reject(err) : resolve(file);
+    !file &&
+      reject({
+        success: false,
+        error: new Error('File must be specified')
+      });
+
+    !data &&
+      reject({
+        success: false,
+        error: new Error('Data must be specified')
+      });
+
+    fs.writeFile(file, data, error => {
+      error
+        ? reject({ success: false, error })
+        : resolve({
+            success: true,
+            data: { file }
+          });
     });
   });
 };
