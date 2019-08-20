@@ -33,8 +33,8 @@ You can add few options:
 
 The tools will look for the **name**, **version**, **description**, **respository**, **author**, **engines**, **dependencies** and **contributors** data inside you package.json and then will generate the README.md file based on that informations.
 
-Due to this tool was create mainly for node based project it will take the package.json by default.
-If you project doesn't have a package.json, you can specify another json file (with the specified structure).
+Due to this tool was create mainly for node based project it will take the package.json by default.\
+If you project doesn't have a package.json, you can specify another json file (with the specified structure).\
 If no entry file is specified, and package.json is missing, the tool will ask you some questions.
 
 _NOTE_: To generate a complete `README.md`, be sure that the structure of your package.json looks like this:
