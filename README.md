@@ -71,7 +71,7 @@ _NOTE_: To generate a complete `README.md`, be sure that the structure of your p
 
 ```
 
-If no entry file is specified, and package.json is missing, the tool will ask you some questions.
+_If no entry file is specified, and package.json is missing, the tool will ask you some questions._
 
 I've added two custom fields inside the package.json:
 
