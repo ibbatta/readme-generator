@@ -33,6 +33,10 @@ const writeFileError = (data, error) => {
   log(chalk.red(error));
 };
 
+const readFileSuccess = data => {
+  log(chalk.green(`The ${data} file was successfully read`));
+};
+
 const writeFileSuccess = data => {
   log(
     chalk.green(
@@ -55,5 +59,6 @@ export default {
   genericError,
   readFileError,
   writeFileError,
+  readFileSuccess,
   writeFileSuccess
 };
