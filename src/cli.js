@@ -49,7 +49,7 @@ const checkSupportFile = async supportFile => {
     await fileUtils
       .readFile(supportFile)
       .then(({ success, data }) => {
-        return success && data;
+        return success && data.file;
       })
       .catch(() => null)
   );
@@ -109,29 +109,23 @@ const parseQuestions = async questionsPath => {
       )
   );
 
-  messageSettings.questionTitle('Just few questions');
+  messageSettings.questionTitle('\nJust few questions');
   return inquirer.prompt(_.unionBy(bulkQuestions, ...extraQuestions, 'name'));
 };
 
-const Run = async ({ output, template, debug }) => {
+const Run = async ({ entry, output, template, debug }) => {
   messageSettings.mainTitle('Readme\nGenerator');
 
   const buildTemplate = {};
 
-  const showDebugLog = !_.isNil(debug);
+  let entryFile = _.isNil(entry)
+    ? fileSettings.package.path
+    : path.resolve(pathSettings.root, entry);
   const outputFile = _.isNil(output) ? readmeFile : output;
   const templatePath = _.isNil(template)
     ? path.resolve(__dirname, fileSettings.template.path)
     : path.resolve(pathSettings.root, template);
-
-  /** CHECK IF PACKAGE.JSON EXISTS
-   *
-   */
-  try {
-    await fileUtils.checkExist(fileSettings.package.path);
-  } catch ({ error }) {
-    throw new Error(messageSettings.readFileError(packageFile, error));
-  }
+  const showDebugLog = !_.isNil(debug);
 
   /** REGISTER ALL HANDLEBAR PARTIALS FOUND INSIDE THE FOLDER ./src/readme/templates/partials
    *
@@ -153,14 +147,53 @@ const Run = async ({ output, template, debug }) => {
     throw new Error(messageSettings.readFileError(templatePath, error));
   }
 
+  let pickedData;
+  try {
+    await fileUtils.checkExist(entryFile);
+    const { data } = await fileUtils.readFile(entryFile);
+    pickedData = _.pick(JSON.parse(data.file), dataSettings);
+  } catch (error) {
+    messageSettings.questionTitle('\nMain questions');
+    pickedData = await inquirer.prompt([
+      {
+        name: 'name',
+        type: 'input',
+        message: 'What is the name of the project?',
+        default: 'Title'
+      },
+      {
+        name: 'version',
+        type: 'input',
+        message: 'What is the version?',
+        default: '0.1.0'
+      },
+      {
+        name: 'description',
+        type: 'input',
+        message: 'Describe your project'
+      },
+      {
+        name: 'repository.url',
+        type: 'input',
+        message: "Insert the url of your project's repository"
+      },
+      {
+        name: 'author.name',
+        type: 'input',
+        message: 'Insert the author name'
+      }
+    ]);
+  }
+
   /** MERGE COLLECTED DATA FROM QUESTIONS AND PACKAGE.JSON
    *  CREATE THE COLLECTION TO POPULATE HANDLEBAR TEMPLATE
    */
   try {
-    const { data } = await fileUtils.readFile(fileSettings.package.path);
-    const pickedData = _.pick(JSON.parse(data.file), dataSettings); // TODO: insert here the swap if package.json not exists
-    const parseQuestion = await parseQuestions(questionDir);
-    buildTemplate.data = _.merge({}, pickedData, parseQuestion);
+    buildTemplate.data = _.merge(
+      {},
+      pickedData,
+      await parseQuestions(questionDir)
+    );
   } catch ({ error }) {
     throw new Error(messageSettings.genericError(error));
   }

@@ -26,13 +26,17 @@ You can add few options:
 | -------------- | -------------------------------------------- | --------------------------- |
 | -V, --version  | output the version number                    |                             |
 | -h, --help     | output usage information                     |                             |
+| -e, --entry    | specify the entry file                       | `package.json`              |
 | -o, --output   | specify the output file                      | `README.md`                 |
 | -t, --template | specify the path for you own README template | `internal default template` |
 | -d, --debug    | log output readme data                       | `false`                     |
 
 The tools will look for the **name**, **version**, **description**, **respository**, **author**, **engines**, **dependencies** and **contributors** data inside you package.json and then will generate the README.md file based on that informations.
 
-_NOTE_: To generate a complete `README.md`, be sure that the structure of your package.json looks like this:
+Due to this tool was create mainly for node based project it will take the package.json by default.\
+If you project doesn't have a package.json, you can specify another json file.
+
+_NOTE_: To generate a complete `README.md`, be sure that the structure of your package.json (or you entry file) looks like this:
 
 ```js
 {
@@ -66,6 +70,8 @@ _NOTE_: To generate a complete `README.md`, be sure that the structure of your p
 }
 
 ```
+
+_If no entry file is specified, and package.json is missing, the tool will ask you some questions._
 
 I've added two custom fields inside the package.json:
 
