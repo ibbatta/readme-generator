@@ -109,7 +109,7 @@ const parseQuestions = async questionsPath => {
       )
   );
 
-  messageSettings.questionTitle('Just few questions');
+  messageSettings.questionTitle('\nJust few questions');
   return inquirer.prompt(_.unionBy(bulkQuestions, ...extraQuestions, 'name'));
 };
 
@@ -126,47 +126,6 @@ const Run = async ({ entry, output, template, debug }) => {
     ? path.resolve(__dirname, fileSettings.template.path)
     : path.resolve(pathSettings.root, template);
   const showDebugLog = !_.isNil(debug);
-
-  /** IF ENTR FILE NOT EXIST CHECK FOR PACKAGE JSON, OTHERWISE ASK QUESTIONS
-   *
-   */
-  // TODO: insert in parse questions
-  try {
-    await fileUtils.checkExist(entryFile);
-  } catch (error) {
-    const mainQuestions = [];
-    mainQuestions.push(
-      questionUtils.injectQuestion({
-        name: 'name',
-        type: 'input',
-        message: 'What is the name of the project?'
-      }),
-      questionUtils.injectQuestion({
-        name: 'version',
-        type: 'input',
-        message: 'What is the version?',
-        default: '0.1.0'
-      }),
-      questionUtils.injectQuestion({
-        name: 'description',
-        type: 'input',
-        message: 'Describe your project'
-      }),
-      questionUtils.injectQuestion({
-        name: 'repository.url',
-        type: 'input',
-        message: "Insert the url of your project's repository"
-      }),
-      questionUtils.injectQuestion({
-        name: 'author.name',
-        type: 'input',
-        message: 'Insert the author name'
-      })
-    );
-
-    messageSettings.questionTitle('Main few questions');
-    return inquirer.prompt(...mainQuestions);
-  }
 
   /** REGISTER ALL HANDLEBAR PARTIALS FOUND INSIDE THE FOLDER ./src/readme/templates/partials
    *
@@ -188,14 +147,53 @@ const Run = async ({ entry, output, template, debug }) => {
     throw new Error(messageSettings.readFileError(templatePath, error));
   }
 
+  let pickedData;
+  try {
+    await fileUtils.checkExist(entryFile);
+    const { data } = await fileUtils.readFile(entryFile);
+    pickedData = _.pick(JSON.parse(data.file), dataSettings);
+  } catch (error) {
+    messageSettings.questionTitle('\nMain questions');
+    pickedData = await inquirer.prompt([
+      {
+        name: 'name',
+        type: 'input',
+        message: 'What is the name of the project?',
+        default: 'Title'
+      },
+      {
+        name: 'version',
+        type: 'input',
+        message: 'What is the version?',
+        default: '0.1.0'
+      },
+      {
+        name: 'description',
+        type: 'input',
+        message: 'Describe your project'
+      },
+      {
+        name: 'repository.url',
+        type: 'input',
+        message: "Insert the url of your project's repository"
+      },
+      {
+        name: 'author.name',
+        type: 'input',
+        message: 'Insert the author name'
+      }
+    ]);
+  }
+
   /** MERGE COLLECTED DATA FROM QUESTIONS AND PACKAGE.JSON
    *  CREATE THE COLLECTION TO POPULATE HANDLEBAR TEMPLATE
    */
   try {
-    const { data } = await fileUtils.readFile(entryFile);
-    const pickedData = _.pick(JSON.parse(data.file), dataSettings); // TODO: insert here the swap if package.json not exists
-    const parseQuestion = await parseQuestions(questionDir);
-    buildTemplate.data = _.merge({}, pickedData, parseQuestion);
+    buildTemplate.data = _.merge(
+      {},
+      pickedData,
+      await parseQuestions(questionDir)
+    );
   } catch ({ error }) {
     throw new Error(messageSettings.genericError(error));
   }
