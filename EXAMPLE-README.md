@@ -1,4 +1,4 @@
-# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.1.0)
+# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.1.1)
 
 ![node version](https://img.shields.io/badge/node->=8.9.x-brightgreen.svg)
 ![yarn version](https://img.shields.io/badge/yarn->=1.9.x-brightgreen.svg)
