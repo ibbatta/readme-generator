@@ -1,4 +1,4 @@
-# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.0.1)
+# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.1.0)
 
 ![node version](https://img.shields.io/badge/node->=8.9.x-brightgreen.svg)
 ![yarn version](https://img.shields.io/badge/yarn->=1.9.x-brightgreen.svg)
@@ -86,7 +86,7 @@ works including a specific `.dotfile` in the root directory and making sure your
 
 ### **:busts_in_silhouette: Credits**
 
-- [Pietro Siccardi](http://github.com/pietrosiccardi) (Moral support for the template engine)
+- [Maurizio Battaghini](http://github.com/ibbatta) (Project management)
 
 ---
 
