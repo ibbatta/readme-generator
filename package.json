@@ -25,9 +25,9 @@
     }
   },
   "contributors": [{
-    "name": "Pietro Siccardi",
-    "url": "http://github.com/pietrosiccardi",
-    "reason": "Moral support for the template engine"
+    "name": "Maurizio Battaghini",
+    "url": "http://github.com/ibbatta",
+    "reason": "Project management"
   }],
   "keywords": [
     "readme",
@@ -52,9 +52,9 @@
     "build:watch": "rm -rf ./dist && rollup --config ./rollup.config.babel.js --watch",
     "test": "lint-staged && jest",
     "test:watch": "jest --watch",
+    "prepare": "npm run build",
     "changelog": "auto-changelog",
-    "version": "auto-changelog -p && git add CHANGELOG.md",
-    "prepare": "npm run build"
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "dependencies": {
     "boxen": "^4.1.0",

@@ -8,61 +8,20 @@ import {
   pathSettings,
   messageSettings
 } from './settings';
-import { fileUtils, questionUtils, hbsUtils, yamlUtils } from './utilities';
+import { fileUtils, questionUtils, hbsUtils, systemUtils } from './utilities';
 
 const partialDir = path.resolve(__dirname, pathSettings.readme.hbsPartials);
 const questionDir = path.resolve(__dirname, pathSettings.readme.questions);
 
-const packageFile = `${fileSettings.package.name}.${fileSettings.package.ext}`;
 const readmeFile = `${fileSettings.readme.name}.${fileSettings.readme.ext}`;
 const supportFile = `${fileSettings.support.name}.${fileSettings.support.ext}`;
-
-const registerHbsPartials = async partialsPath => {
-  const { data } = await fileUtils.readDirectoryFiles(partialsPath);
-  await data.files.forEach(async file => {
-    const partialName = file.split('.')[0];
-    fileUtils.readFile(path.join(data.directory, file)).then(partialContent => {
-      const { data } = partialContent;
-      hbsUtils.registerPartial(partialName, data.file);
-    });
-  });
-};
-
-const checkFormatterFiles = async fileArray => {
-  const formatters = [];
-  await Promise.all(
-    fileArray.map(async file => {
-      await fileUtils
-        .checkExist(file.path)
-        .then(({ success }) => {
-          success && formatters.push(file.name);
-        })
-        .catch(() => null);
-    })
-  );
-
-  return formatters;
-};
-
-const checkSupportFile = async supportFile => {
-  const supports = await yamlUtils.parseData(
-    await fileUtils
-      .readFile(supportFile)
-      .then(({ success, data }) => {
-        return success && data.file;
-      })
-      .catch(() => null)
-  );
-  return supports;
-};
 
 const parseQuestions = async questionsPath => {
   const bulkQuestions = [];
   const extraQuestions = [];
   const { data } = await fileUtils.readDirectoryFiles(questionsPath);
-
-  const formatters = await checkFormatterFiles(fileSettings.formatters);
-  const supports = await checkSupportFile(
+  const formatters = await systemUtils.checkFormatters(fileSettings.formatters);
+  const supports = await systemUtils.checkSupports(
     await fileUtils
       .checkExist(pathSettings.github)
       .then(() => path.join(pathSettings.github, supportFile))
@@ -131,7 +90,7 @@ const Run = async ({ entry, output, template, debug }) => {
    *
    */
   try {
-    await registerHbsPartials(partialDir);
+    await systemUtils.registerHbsPartials(partialDir);
   } catch ({ error }) {
     throw new Error(messageSettings.genericError(error));
   }
@@ -151,38 +110,13 @@ const Run = async ({ entry, output, template, debug }) => {
   try {
     await fileUtils.checkExist(entryFile);
     const { data } = await fileUtils.readFile(entryFile);
-    pickedData = _.pick(JSON.parse(data.file), dataSettings);
+    pickedData = _.pick(
+      JSON.parse(data.file),
+      dataSettings.packageJsonFilterData
+    );
   } catch (error) {
     messageSettings.questionTitle('\nMain questions');
-    pickedData = await inquirer.prompt([
-      {
-        name: 'name',
-        type: 'input',
-        message: 'What is the name of the project?',
-        default: 'Title'
-      },
-      {
-        name: 'version',
-        type: 'input',
-        message: 'What is the version?',
-        default: '0.1.0'
-      },
-      {
-        name: 'description',
-        type: 'input',
-        message: 'Describe your project'
-      },
-      {
-        name: 'repository.url',
-        type: 'input',
-        message: "Insert the url of your project's repository"
-      },
-      {
-        name: 'author.name',
-        type: 'input',
-        message: 'Insert the author name'
-      }
-    ]);
+    pickedData = await inquirer.prompt(dataSettings.fallbackQuestionData);
   }
 
   /** MERGE COLLECTED DATA FROM QUESTIONS AND PACKAGE.JSON
