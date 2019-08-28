@@ -1,6 +1,17 @@
 # Changelog
 
-## 0.1.1 - 2019-08-27
+## [v0.1.2](https://github.com/ibbatta/readme-generator/compare/v0.1.1...v0.1.2) - 2019-08-28
+
+### Merged
+
+- Refactory [`#36`](https://github.com/ibbatta/readme-generator/pull/36)
+
+### Commits
+
+- update node version to 10.16 (lts) and upgrade all dependencies [`0966e6d`](https://github.com/ibbatta/readme-generator/commit/0966e6d961c499422eade1277bde09650cabe083)
+- update example readme [`c3ab7bf`](https://github.com/ibbatta/readme-generator/commit/c3ab7bf6756084e2a9e7c5ad6845846ba2a46803)
+
+## v0.1.1 - 2019-08-27
 
 ### Merged
 
