@@ -1,8 +1,7 @@
-# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.1.1)
+# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.1.2)
 
-![node version](https://img.shields.io/badge/node->=8.9.x-brightgreen.svg)
-![yarn version](https://img.shields.io/badge/yarn->=1.9.x-brightgreen.svg)
-![npm version](https://img.shields.io/badge/npm->=6.3.x-brightgreen.svg)
+![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
+![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
 
 > This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.
 
@@ -27,9 +26,8 @@
 
 Before cloning the repo **be sure** you have installed:
 
-- [**NODE**](https://www.google.com/search?q=how+to+install+node) (version >= 8.9.x)
-- [**YARN**](https://www.google.com/search?q=how+to+install+yarn) (version >= 1.9.x)
-- [**NPM**](https://www.google.com/search?q=how+to+install+npm) (version >= 6.3.x)
+- [**NODE**](https://www.google.com/search?q=how+to+install+node) (version >= 10.16.x)
+- [**NPM**](https://www.google.com/search?q=how+to+install+npm) (version >= 6.9.x)
 
 Then:
 
