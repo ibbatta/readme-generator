@@ -31,7 +31,7 @@ You can add few options:
 | -t, --template | specify the path for you own README template | `internal default template` |
 | -d, --debug    | log output readme data                       | `false`                     |
 
-The tools will look for the **name**, **version**, **description**, **respository**, **author**, **engines**, **dependencies** and **contributors** data inside you package.json and then will generate the README.md file based on that informations.
+The tools will look for the **name**, **version**, **description**, **respository**, **author**, **engines**, **dependencies** and **contributors** data inside you package.json and then will generate the README.md file based on that information.
 
 Due to this reason, this tool was create mainly for a node based project as it will take the package.json by default.\
 If your project doesn't have a package.json, you can specify another json file.
@@ -53,7 +53,7 @@ _NOTE_: To generate a complete `README.md`, be sure that the structure of your p
         "social": {
             "github": "...",
             "twitter": "...",
-            "ADD MORE SOCIAL IF YOU WANT": "..."
+            "ADD MORE SOCIAL ACCOUNTS IF YOU WANT": "..."
         }
     },
     "contributors": [{
@@ -78,7 +78,7 @@ I've added two custom fields inside the package.json:
 - **SOCIAL** (inside author)
 - **REASON** (inside each contributor)
 
-This allows the tool to create a better README.md with cooler informations.
+This allows the tool to create a better README.md with cooler information.
 
 Here is a generated [README example](https://github.com/ibbatta/readme-generator/blob/master/EXAMPLE-README.md).
 
@@ -148,23 +148,23 @@ project using some editors plugins. Plese be sure to disable / remove any other 
 
 ### Eslint
 
-I have chose to use [Eslint](https://eslint.org/) to check on Javascript / React [.js / .jsx] syntax.
+I have chosen to use [Eslint](https://eslint.org/) to check on Javascript / React [.js / .jsx] syntax.
 It works including a `.eslintrc` file in the root directory and making sure your editor has the necessary plugin.
 
 ### Auto correction on save
 
-I have chose to use [js-beautify](https://github.com/beautify-web/js-beautify/) as a beautifier also for HTML and CSS.
+I have chosen to use [js-beautify](https://github.com/beautify-web/js-beautify/) as a beautifier also for HTML and CSS.
 It works including a `.jsbeautifyrc` file in the root directory and making sure your editor has the necessary plugin.
 
 ### Basic Editor Configuration
 
-I have chose to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and
+I have chosen to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and
 charset.
 It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin.
 
 ### Prettier
 
-I have chose to use [Prettier](https://prettier.io/) to ensure the codebase with a consistent style.
+I have chosen to use [Prettier](https://prettier.io/) to ensure the codebase with a consistent style.
 It works including a `.prettierrc` file in the root directory and making sure your editor has the necessary plugin.
 
 ---
