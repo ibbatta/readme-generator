@@ -1,4 +1,4 @@
-import dataSettings from './data.settings';
+import dataSettings from '../../src/settings/data.settings';
 
 const packagejsonFilterData = [
   'name',
