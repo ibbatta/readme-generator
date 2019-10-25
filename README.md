@@ -14,12 +14,10 @@
 
 ---
 
-## Instalation
+## **:clipboard: User usage**
 
 - To install globally: `npm i -g @ibbatta/readme-generator`.
 - To install locally: `npm i --save-dev @ibbatta/readme-generator`.
-
-## Usage
 
 Just run `readme-generator` (or `npx readme-generator`) at the root of your project and follow the prompts!
 
@@ -34,9 +32,9 @@ You can add the following options:
 | -t, --template | specify the path for you own README template | `internal default template` |
 | -d, --debug    | log output readme data                       | `false`                     |
 
-The tool will look for the **name**, **version**, **description**, **respository**, **author**, **engines**, **dependencies** and **contributors** data inside you package.json and then will generate the README.md file based on this information.
+The tools will look for the **name**, **version**, **description**, **respository**, **author**, **engines**, **dependencies** and **contributors** data inside you package.json and then will generate the README.md file based on that informations.
 
-Due to this tool being mainly created for node based projects, it will take the package.json by default.
+Due to this reason, this tool was create mainly for a node based project as it will take the package.json by default.\
 If your project doesn't have a package.json, you can specify another json file.
 
 _NOTE_: To generate a complete `README.md`, make sure that the structure of your `package.json` (or you entry file) looks like this:
@@ -87,7 +85,7 @@ Here is a generated [README example](https://github.com/ibbatta/readme-generator
 
 ---
 
-## **:wrench: Development**
+## **:wrench: Developer usage**
 
 ### **Set up project**
 
