@@ -33,8 +33,8 @@ You can add few options:
 
 The tools will look for the **name**, **version**, **description**, **respository**, **author**, **engines**, **dependencies** and **contributors** data inside you package.json and then will generate the README.md file based on that informations.
 
-Due to this tool was create mainly for node based project it will take the package.json by default.\
-If you project doesn't have a package.json, you can specify another json file.
+Due to this reason, this tool was create mainly for a node based project as it will take the package.json by default.\
+If your project doesn't have a package.json, you can specify another json file.
 
 _NOTE_: To generate a complete `README.md`, be sure that the structure of your package.json (or you entry file) looks like this:
 
@@ -78,7 +78,7 @@ I've added two custom fields inside the package.json:
 - **SOCIAL** (inside author)
 - **REASON** (inside each contributor)
 
-This allow the tool to create a better README with more cool informations.
+This allows the tool to create a better README.md with cooler informations.
 
 Here is a generated [README example](https://github.com/ibbatta/readme-generator/blob/master/EXAMPLE-README.md).
 
@@ -103,7 +103,7 @@ Then:
 
 ### **Installation**
 
-First of all enter in the project folder and run `nvm use` to have the right node version for the project, then run `yarn install` to install all the dependencies.
+First of all, enter the project folder and run `nvm use` to have the right node version for the project, then run `yarn install` to install all the dependencies.
 
 ---
 
@@ -127,7 +127,7 @@ npm build
 yarn build
 ```
 
-You can add the `--watch` flag if you want keep watching changes for test files.
+You can add the `--watch` flag if you want to keep watching the changes made for test files.
 
 #### Run the tests
 
@@ -137,7 +137,7 @@ npm test
 yarn test
 ```
 
-You can add the `--watch` flag if you want keep watching changes for test files.
+You can add the `--watch` flag if you to want keep watching the changes made for test files.
 
 ---
 
