@@ -210,4 +210,4 @@ Maurizio Battaghini
 ---
 
 Copyright © 2019 [Maurizio Battaghini](https://github.com/ibbatta).\
-This project is covered by the [MIT](https://github.com/ibbatta/readme-generator/blob/develop/LICENSE) license.
+This project is covered by [MIT](https://github.com/ibbatta/readme-generator/blob/master/LICENSE) license.
