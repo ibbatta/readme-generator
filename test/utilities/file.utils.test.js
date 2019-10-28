@@ -1,4 +1,4 @@
-import fileUtils from '../../src/utilities/file.utils';
+import fileUtils from '../../src/utilities/file';
 
 test('check if fileUtils exists and is not empty', () => {
   expect(fileUtils).not.toBeNull();

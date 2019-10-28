@@ -1,4 +1,4 @@
-import questionUtils from '../../src/utilities/question.utils';
+import questionUtils from '../../src/utilities/question';
 
 test('check if fileUtils exists and is not empty', () => {
   expect(questionUtils).not.toBeNull();

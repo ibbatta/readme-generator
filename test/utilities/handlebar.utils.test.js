@@ -1,4 +1,4 @@
-import hbsUtils from '../../src/utilities/handlebar.utils';
+import hbsUtils from '../../src/utilities/handlebar';
 
 test('check if fileUtils exists and is not empty', () => {
   expect(hbsUtils).not.toBeNull();

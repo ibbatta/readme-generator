@@ -1,5 +1,5 @@
-export { default as fileUtils } from './file.utils';
-export { default as hbsUtils } from './handlebar.utils';
-export { default as questionUtils } from './question.utils';
-export { default as systemUtils } from './system.utils';
-export { default as yamlUtils } from './yaml.utils';
+export { default as fileUtils } from './file';
+export { default as hbsUtils } from './handlebar';
+export { default as questionUtils } from './question';
+export { default as systemUtils } from './system';
+export { default as yamlUtils } from './yaml';

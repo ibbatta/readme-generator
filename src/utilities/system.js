@@ -1,7 +1,7 @@
 import path from 'path';
-import fileUtils from './file.utils';
-import hbsUtils from './handlebar.utils';
-import yamlUtils from './yaml.utils';
+import fileUtils from './file';
+import hbsUtils from './handlebar';
+import yamlUtils from './yaml';
 
 const registerHbsPartials = async partialsPath => {
   const { data } = await fileUtils.readDirectoryFiles(partialsPath);

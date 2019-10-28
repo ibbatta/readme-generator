@@ -1,4 +1,4 @@
-import fileSettings from '../../src/settings/file.settings';
+import fileSettings from '../../src/settings/file';
 
 test('check if fileSettings exists and is not empty', () => {
   expect(fileSettings).not.toBeNull();
