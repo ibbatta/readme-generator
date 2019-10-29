@@ -19,7 +19,7 @@ test('should throw error if try to register partial with missing template', asyn
   expect.assertions(1);
   try {
     await hbsUtils.registerPartial(
-      './src/readme/templates/partials/title.partial.hbs'
+      './src/readme/templates/partials/title.hbs'
     );
   } catch (error) {
     expect(error).toEqual(new Error('Partial data must be specified'));
