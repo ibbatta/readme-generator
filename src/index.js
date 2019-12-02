@@ -1,9 +1,10 @@
 const program = require('commander');
+const {version} = require('../package.json');
 
 import Run from './cli';
 
 program
-  .version('0.0.1')
+  .version(version)
   .name('readme-generator')
   .option('-e, --entry <file>', 'specify the entry file')
   .option('-o, --output <file>', 'specify the output file')
