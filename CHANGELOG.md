@@ -4,6 +4,7 @@
 
 ### Merged
 
+- update dependencies, update readme example [`#51`](https://github.com/ibbatta/readme-generator/pull/51)
 - Set --version to read the package.json file [`#50`](https://github.com/ibbatta/readme-generator/pull/50)
 - fixin 404 on MIT link [`#45`](https://github.com/ibbatta/readme-generator/pull/45)
 - Grammar fixes [`#40`](https://github.com/ibbatta/readme-generator/pull/40)
