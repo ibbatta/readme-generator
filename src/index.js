@@ -1,5 +1,5 @@
 const program = require('commander');
-const {version} = require('../package.json');
+const { version } = require('../package.json');
 
 import Run from './cli';
 
