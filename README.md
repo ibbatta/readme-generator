@@ -32,7 +32,7 @@ You can add the following options:
 | -t, --template | specify the path for you own README template | `internal default template` |
 | -d, --debug    | log output readme data                       | `false`                     |
 
-The tools will look for the **name**, **version**, **description**, **respository**, **author**, **engines**, **dependencies** and **contributors** data inside you package.json and then will generate the README.md file based on that informations.
+The tools will look for the **name**, **version**, **description**, **respository**, **author**, **engines**, **dependencies** and **contributors** data inside you package.json and then will generate the README.md file based on that information.
 
 Due to this reason, this tool was create mainly for a node based project as it will take the package.json by default.\
 If your project doesn't have a package.json, you can specify another json file.
@@ -54,7 +54,7 @@ _NOTE_: To generate a complete `README.md`, make sure that the structure of your
         "social": {
             "github": "...",
             "twitter": "...",
-            "ADD MORE SOCIAL IF YOU WANT": "..."
+            "ADD MORE SOCIAL ACCOUNTS IF YOU WANT": "..."
         }
     },
     "contributors": [{
