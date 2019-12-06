@@ -1,4 +1,4 @@
-import pathSettings from './path.settings';
+import pathSettings from '../../src/settings/path';
 import path from 'path';
 
 test('check if pathSettings exists and is not empty', () => {

@@ -1,4 +1,4 @@
-import systemUtils from './system.utils';
+import systemUtils from '../../src/utilities/system';
 
 test('check if fileUtils exists and is not empty', () => {
   expect(systemUtils).not.toBeNull();

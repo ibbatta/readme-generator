@@ -1,4 +1,4 @@
-export { default as fileSettings } from './file.settings';
-export { default as pathSettings } from './path.settings';
-export { default as dataSettings } from './data.settings';
-export { default as messageSettings } from './message.settings';
+export { default as fileSettings } from './file';
+export { default as pathSettings } from './path';
+export { default as dataSettings } from './data';
+export { default as messageSettings } from './message';

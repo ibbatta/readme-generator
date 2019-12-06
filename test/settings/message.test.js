@@ -1,4 +1,4 @@
-import messageSettings from './message.settings';
+import messageSettings from '../../src/settings/message';
 
 test('check if messageSettings exists and is not empty', () => {
   expect(messageSettings).not.toBeNull();
