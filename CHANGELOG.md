@@ -4,6 +4,8 @@
 
 ### Merged
 
+- Audreylopes template renaming [`#53`](https://github.com-personal/ibbatta/readme-generator/pull/53)
+- update dependencies, update readme example [`#51`](https://github.com-personal/ibbatta/readme-generator/pull/51)
 - Set --version to read the package.json file [`#50`](https://github.com-personal/ibbatta/readme-generator/pull/50)
 - fixin 404 on MIT link [`#45`](https://github.com-personal/ibbatta/readme-generator/pull/45)
 - Grammar fixes [`#40`](https://github.com-personal/ibbatta/readme-generator/pull/40)
@@ -30,6 +32,7 @@
 
 ### Commits
 
+- resolve merge conflicts [`8bee100`](https://github.com-personal/ibbatta/readme-generator/commit/8bee100f8e84c6ff3e294cfec8492ccbdf8f80f6)
 - switch to npm [`08b4509`](https://github.com-personal/ibbatta/readme-generator/commit/08b450974bad10a5a3fd9f4b2a1e9f8a45561bb5)
 - clean dependencies [`f38323b`](https://github.com-personal/ibbatta/readme-generator/commit/f38323b809db4e8b6fb29a59c529e0ef6b677816)
 - update husky npm config [`10bc250`](https://github.com-personal/ibbatta/readme-generator/commit/10bc250ff2cbef9b5cf61e10f5aae867f40b9e9c)
@@ -39,5 +42,3 @@
 - refactory and add tests [`4936dca`](https://github.com-personal/ibbatta/readme-generator/commit/4936dcad4c9d757806b1730c1ce077dc93a47b03)
 - create partialhbs reader [`8d3e6da`](https://github.com-personal/ibbatta/readme-generator/commit/8d3e6da223fe133e0db291de444f32002e27e754)
 - update husky npm config [`009f522`](https://github.com-personal/ibbatta/readme-generator/commit/009f52250a8f3a449587e48ecb2c5eaa5dc87405)
-- split code and add more test [`60e6a5b`](https://github.com-personal/ibbatta/readme-generator/commit/60e6a5b179e48c2be2b654fe6601dfa2ed6ec481)
-
