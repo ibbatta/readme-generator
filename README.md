@@ -8,7 +8,7 @@
 
 [![Twitter follower](https://img.shields.io/twitter/follow/battago.svg?style=social)](https://twitter.com/battago)
 
-> This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how to avoid wasting my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.
+> This project was born to simplify my workflow and satisfy my desire for knowledge. Being a curious (and also lazy) developer, I've always wandered how to avoid wasting time writing README.md files that fit perfectly project after project. That's why I wrote this tool to help simplify and speed up this process!
 
 ![Example gif](./.github/assets/example.gif)
 
@@ -16,11 +16,12 @@
 
 ## **:clipboard: User usage**
 
-Install globally `npm i -g @ibbatta/readme-generator`.\
-Install locally `npm i --save-dev @ibbatta/readme-generator`.\
-Just run `readme-generator` (or `npx readme-generator`) at the root of your project and answer questions.
+- To install globally: `npm i -g @ibbatta/readme-generator`.
+- To install locally: `npm i --save-dev @ibbatta/readme-generator`.
 
-You can add few options:
+Just run `readme-generator` (or `npx readme-generator`) at the root of your project and follow the prompts!
+
+You can add the following options:
 
 | Option         | Description                                  | Default                     |
 | -------------- | -------------------------------------------- | --------------------------- |
@@ -36,7 +37,7 @@ The tools will look for the **name**, **version**, **description**, **respositor
 Due to this reason, this tool was create mainly for a node based project as it will take the package.json by default.\
 If your project doesn't have a package.json, you can specify another json file.
 
-_NOTE_: To generate a complete `README.md`, be sure that the structure of your package.json (or you entry file) looks like this:
+_NOTE_: To generate a complete `README.md`, make sure that the structure of your `package.json` (or you entry file) looks like this:
 
 ```js
 {
@@ -71,14 +72,14 @@ _NOTE_: To generate a complete `README.md`, be sure that the structure of your p
 
 ```
 
-_If no entry file is specified, and package.json is missing, the tool will ask you some questions._
+_If no entry file is specified, and package.json is missing, the tool will prompt you for information instead._
 
-I've added two custom fields inside the package.json:
+I've added two custom fields inside `package.json`:
 
 - **SOCIAL** (inside author)
 - **REASON** (inside each contributor)
 
-This allows the tool to create a better README.md with cooler informations.
+This allows the tool to create a better `README.md` with more information.
 
 Here is a generated [README example](https://github.com/ibbatta/readme-generator/blob/master/EXAMPLE-README.md).
 
@@ -88,7 +89,7 @@ Here is a generated [README example](https://github.com/ibbatta/readme-generator
 
 ### **Set up project**
 
-Before cloning the repo **be sure** you have installed:
+Before cloning the repo **make sure** you have installed:
 
 - [**NODE**](https://www.google.com/search?q=how+to+install+node) (version >= 8.9.x)
 - [**YARN**](https://www.google.com/search?q=how+to+install+yarn) (version >= 1.9.x)
@@ -97,19 +98,19 @@ Before cloning the repo **be sure** you have installed:
 Then:
 
 - Choose a folder project in your system and switch in `cd [folder path]`
-- Clone the repo in your folder `git clone https://github.com/ibbatta/readme-generator.git`
+- Clone the repo in your folder: `git clone https://github.com/ibbatta/readme-generator.git`
 
 ---
 
 ### **Installation**
 
-First of all, enter the project folder and run `nvm use` to have the right node version for the project, then run `yarn install` to install all the dependencies.
+First, enter the project folder and run `nvm use` to check you have the right node version, then run `yarn install` to install all the dependencies.
 
 ---
 
 #### Start the project
 
-It will run the cli of the project locally
+To run the cli of the project locally:
 
 ```bash
 npm start
@@ -119,7 +120,7 @@ yarn start
 
 #### Build the project for production
 
-It will create a folder `/lib` and compile the es6 / es7 js syntax
+This will create a folder `/lib` and compile the es6 / es7 js syntax:
 
 ```bash
 npm build
@@ -143,55 +144,55 @@ You can add the `--watch` flag if you to want keep watching the changes made for
 
 ## **Editor setup**
 
-To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every
+To keep the style of resources consistent, I decided to stick to some shared rules that have to be applied to every
 project using some editors plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
 
 ### Eslint
 
-I have chose to use [Eslint](https://eslint.org/) to check on Javascript / React [.js / .jsx] syntax.
-It works including a `.eslintrc` file in the root directory and making sure your editor has the necessary plugin.
+I have chosen to use [Eslint](https://eslint.org/) to lint the Javascript / React [.js / .jsx] syntax.
+It includes a `.eslintrc` file in the root directory. Make sure your editor has the right plugins.
 
 ### Auto correction on save
 
-I have chose to use [js-beautify](https://github.com/beautify-web/js-beautify/) as a beautifier also for HTML and CSS.
-It works including a `.jsbeautifyrc` file in the root directory and making sure your editor has the necessary plugin.
+I have chosen to use [js-beautify](https://github.com/beautify-web/js-beautify/) as the beautifier for the HTML and CSS.
+It includes a `.jsbeautifyrc` file in the root directory. Make sure your editor has the right plugins.
 
 ### Basic Editor Configuration
 
-I have chose to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and
+I have chosen to use [EditorConfig](https://editorconfig.org/) to share the basic configuration like indentation and
 charset.
-It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin.
+It includes a `.editorconfig` file in the root directory. Make sure your editor has the right plugins.
 
 ### Prettier
 
-I have chose to use [Prettier](https://prettier.io/) to ensure the codebase with a consistent style.
-It works including a `.prettierrc` file in the root directory and making sure your editor has the necessary plugin.
+I have chosen to use [Prettier](https://prettier.io/) to ensure the codebase has a consistent style.
+It includes a `.prettierrc` file in the root directory. Make sure your editor has the right plugin.
 
 ---
 
 ## **:handshake: Contributing**
 
-Contributions, issues and feature requests are welcome.\
-Feel free to check issues page if you want to contribute and follow these simple steps:
+Contributions, issues and feature requests are welcome.
+Feel free to check the issues page if you want to contribute, and follow these simple steps:
 
 - Fork it!
 - Create your feature (or fix) branch: `git checkout -b my-new-feature`
 - Commit your changes: `git commit -am 'Add some feature'`
 - Push to the branch: `git push origin my-new-feature`
-- Submit a pull request
+- Submit a pull request!
 
 ---
 
-### **:anger: Troubleshootings**
+### **:anger: Troubleshooting**
 
-This is just a personal project created for study / demonstration purpose and to simplify my working life, it may or may not be a good fit for your project(s).
+This is just a personal project created for study / demonstration purposes and to simplify my working life, it may or may not be a good fit for your project!
 
 ---
 
 ### **:heart: Show your support**
 
 Please :star: this repository if you like it or this project helped you!\
-Feel free to open issues or submit pull-requests to help me improving my work.
+Feel free to open issues or submit pull-requests to help me improve my work.
 
 <a href="https://www.patreon.com/ibbatta" target="_blank">
   <img alt="Patron logo" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="150px"/>
