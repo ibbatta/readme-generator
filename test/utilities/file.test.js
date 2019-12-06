@@ -1,4 +1,4 @@
-import fileUtils from './file.utils';
+import fileUtils from '../../src/utilities/file';
 
 test('check if fileUtils exists and is not empty', () => {
   expect(fileUtils).not.toBeNull();
@@ -53,7 +53,7 @@ test('check if empty directory path throw error', async () => {
 test('check if a non existing folder throw error', async () => {
   expect.assertions(1);
   try {
-    await fileUtils.checkExist('test/');
+    await fileUtils.checkExist('fake/');
   } catch ({ success }) {
     expect(success).toBe(false);
   }

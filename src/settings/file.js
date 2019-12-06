@@ -1,5 +1,5 @@
 import path from 'path';
-import pathSettings from './path.settings';
+import pathSettings from './path';
 
 const settings = {
   package: {
