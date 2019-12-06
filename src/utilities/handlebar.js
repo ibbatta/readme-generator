@@ -1,7 +1,7 @@
 const hbs = require('handlebars');
 const _ = require('lodash');
 
-import { messageSettings } from './../settings';
+import { messageSettings } from '../settings';
 
 hbs.registerHelper('removeAllSpaces', text => {
   return text.replace(/\s/g, '');

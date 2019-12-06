@@ -1,4 +1,4 @@
-import ymlUtils from './yaml.utils';
+import ymlUtils from '../../src/utilities/yaml';
 
 test('check if fileUtils exists and is not empty', () => {
   expect(ymlUtils).not.toBeNull();
