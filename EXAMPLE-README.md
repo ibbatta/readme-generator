@@ -1,4 +1,4 @@
-# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.1.2)
+# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.1.3)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -38,20 +38,20 @@ Then:
 
 ### **Installation**
 
-In order to install the project and all dependencies, enter in the project folder and run `npm install`
+In order to install the project and all dependencies, enter in the project folder and run `yarn install`
 
 ---
 
 ### Start the project
 
 ```bash
-npm start
+yarn start
 ```
 
 ### Test the project
 
 ```bash
-npm test
+yarn test
 ```
 
 ---
@@ -64,8 +64,8 @@ project using some editors plugins. Plese be sure to disable / remove any other 
 I have chosen to use
 
 - [ESLINT](https://www.google.com/search?q=eslint)
-- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 - [PRETTIER](https://www.google.com/search?q=prettier)
+- [EDITORCONFIG](https://www.google.com/search?q=editorconfig)
 
 This
 works including a specific `.dotfile` in the root directory and making sure your editor has the necessary plugin.
