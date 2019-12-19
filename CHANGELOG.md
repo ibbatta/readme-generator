@@ -4,6 +4,7 @@
 
 ### Merged
 
+- Update configuration [`#56`](https://github.com/ibbatta/readme-generator/pull/56)
 - Encino man01 patch 1 [`#55`](https://github.com/ibbatta/readme-generator/pull/55)
 - Toby56 master [`#54`](https://github.com/ibbatta/readme-generator/pull/54)
 - Fix the README [`#42`](https://github.com/ibbatta/readme-generator/pull/42)
@@ -35,13 +36,13 @@
 
 ### Commits
 
-- switch to npm [`08b4509`](https://github.com/ibbatta/readme-generator/commit/08b450974bad10a5a3fd9f4b2a1e9f8a45561bb5)
-- update readme and update version before release [`0c2fa7b`](https://github.com/ibbatta/readme-generator/commit/0c2fa7be80c15ea3323a616a9d3023cb3231cd91)
-- update version [`4f0d50c`](https://github.com/ibbatta/readme-generator/commit/4f0d50c5f00fa9913feac698d287333538ba6b10)
-- fix merge conflicts [`843c306`](https://github.com/ibbatta/readme-generator/commit/843c306b0a30c079bdb270bac34fc268d3f55e88)
 - fix the formatter message inside partials template [`b7a9c25`](https://github.com/ibbatta/readme-generator/commit/b7a9c254e8c0389667177c59c8dc6560f1e57394)
-- resolve merge conflicts [`8bee100`](https://github.com/ibbatta/readme-generator/commit/8bee100f8e84c6ff3e294cfec8492ccbdf8f80f6)
+- switch to npm [`08b4509`](https://github.com/ibbatta/readme-generator/commit/08b450974bad10a5a3fd9f4b2a1e9f8a45561bb5)
 - clean dependencies [`f38323b`](https://github.com/ibbatta/readme-generator/commit/f38323b809db4e8b6fb29a59c529e0ef6b677816)
 - update husky npm config [`10bc250`](https://github.com/ibbatta/readme-generator/commit/10bc250ff2cbef9b5cf61e10f5aae867f40b9e9c)
 - refactor code and inject question dinamically [`eca6d32`](https://github.com/ibbatta/readme-generator/commit/eca6d323d4efc40dc57d1f742f79a790b86b7780)
 - minor [`6543b64`](https://github.com/ibbatta/readme-generator/commit/6543b644aaea4cd0bfbb2f1ec8c8873004b42f93)
+- fix [`4af7ad6`](https://github.com/ibbatta/readme-generator/commit/4af7ad61337b5537dcf5bebff8b1545e5bc4aea2)
+- create partialhbs reader [`8d3e6da`](https://github.com/ibbatta/readme-generator/commit/8d3e6da223fe133e0db291de444f32002e27e754)
+- update husky npm config [`009f522`](https://github.com/ibbatta/readme-generator/commit/009f52250a8f3a449587e48ecb2c5eaa5dc87405)
+- add comments and generate new test-readme [`eaa5cdf`](https://github.com/ibbatta/readme-generator/commit/eaa5cdf4908f1ebf7e6c713fdeb8ea77f784d8ad)
