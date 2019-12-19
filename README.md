@@ -68,7 +68,7 @@ _NOTE_: To generate a complete `README.md`, make sure that the structure of your
 
 _If no entry file is specified, and package.json is missing, the tool will prompt you for information instead._
 
-You can add a custom field for your social accounts by adding a `readmeGenerator` param inside `package.json`:
+You can include a custom field for your social accounts simply adding a `readmeGenerator` param inside `package.json`, like in this following example:
 
 ```js
 {
