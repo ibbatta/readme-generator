@@ -1,3 +1,4 @@
+export { default as dataUtils } from './data';
 export { default as fileUtils } from './file';
 export { default as hbsUtils } from './handlebar';
 export { default as questionUtils } from './question';

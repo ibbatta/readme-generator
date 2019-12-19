@@ -41,26 +41,20 @@ _NOTE_: To generate a complete `README.md`, make sure that the structure of your
 
 ```js
 {
-    "name": "PROJECT NAME",
-    "version": "PROJECT VERSION",
-    "description": "LONG PROJECT DESCRIPTION",
+    "name": ...,
+    "version": ...,
+    "description": ...,
     "repository": {
-        "url": "REPOSITORY URL"
+        "url": ...
     },
     "author": {
-        "name": "AUTHOR FULL NAME",
-        "email": "AUTHOR EMAIL ADDRESS",
-        "url": "AUTHOR URL",
-        "social": {
-            "github": "...",
-            "twitter": "...",
-            "ADD MORE SOCIAL ACCOUNTS IF YOU WANT": "..."
-        }
+        "name": ...,
+        "email": ...,
+        "url": ...
     },
     "contributors": [{
-        "name": "CONTRIBUTOR FULL NAME",
-        "url": "CONTRIBUTOR URL",
-        "reason": "THE REASON WHY YOU HAVE ADDED THIS CONTRIBUTOR AND/OR HIS HELP TO THE PROJECT"
+        "name": ...,
+        "url": ...
     }],
     "engines": {
        ...
@@ -74,10 +68,25 @@ _NOTE_: To generate a complete `README.md`, make sure that the structure of your
 
 _If no entry file is specified, and package.json is missing, the tool will prompt you for information instead._
 
-I've added two custom fields inside `package.json`:
+You can include a custom field for your social accounts simply adding a `readmeGenerator` param inside `package.json`, like in this following example:
 
-- **SOCIAL** (inside author)
-- **REASON** (inside each contributor)
+```js
+{
+  "name": ...,
+  "version": ...,
+  "description": ...,
+  ...,
+  ...,
+  ...,
+  "readmeGenerator": {
+    "social": {
+        "github": "http://github.com/...",
+        "twitter": "http://twitter.com/...",
+        "ADD MORE SOCIAL ACCOUNTS IF YOU WANT": "..."
+    }
+  }
+}
+```
 
 This allows the tool to create a better `README.md` with more information.
 
