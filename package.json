@@ -1,6 +1,6 @@
 {
   "name": "@ibbatta/readme-generator",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.",
   "main": "./src/index.js",
   "bin": {
@@ -9,27 +9,15 @@
   "homepage": "https://github.com/ibbatta/readme-generator",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ibbatta/readme-generator.git"
+    "url": "git+https://github.com/ibbatta/readme-generator.git"
   },
   "bugs": {
     "url": "https://github.com/ibbatta/readme-generator/issues",
     "email": "maurizio.battaghini+tech@gmail.com"
   },
-  "author": {
-    "name": "Maurizio Battaghini",
-    "email": "maurizio.battaghini+tech@gmail.com",
-    "url": "https://twitter.com/battago",
-    "social": {
-      "github": "https://github.com/ibbatta",
-      "twitter": "https://twitter.com/battago"
-    }
-  },
+  "author": "Maurizio Battaghini <maurizio.battaghini+tech@gmail.com> (https://twitter.com/battago)",
   "contributors": [
-    {
-      "name": "Maurizio Battaghini",
-      "url": "http://github.com/ibbatta",
-      "reason": "Project management"
-    }
+    "Maurizio Battaghini (http://github.com/ibbatta)"
   ],
   "keywords": [
     "readme",
@@ -53,7 +41,7 @@
     "build:watch": "rm -rf ./dist && rollup --config ./rollup.config.babel.js --watch",
     "test": "lint-staged && jest",
     "test:watch": "jest --watch",
-    "prepare": "npm run build",
+    "prepare": "npm run build && npm run version",
     "changelog": "auto-changelog",
     "version": "auto-changelog -p && git add CHANGELOG.md"
   },
@@ -63,6 +51,7 @@
     "commander": "^3.0.0",
     "figlet": "^1.2.3",
     "handlebars": "^4.1.2",
+    "immer": "^5.0.2",
     "inquirer": "^7.0.0",
     "js-yaml": "^3.13.1",
     "lodash": "^4.17.15"
@@ -113,5 +102,14 @@
       "develop",
       "*"
     ]
+  },
+  "readmeGenerator": {
+    "social": {
+      "twitter": "https://twitter.com/battago",
+      "github": "https://github.com/ibbatta"
+    }
+  },
+  "directories": {
+    "test": "test"
   }
 }

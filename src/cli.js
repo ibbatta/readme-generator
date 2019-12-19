@@ -1,4 +1,5 @@
 import path from 'path';
+import produce from 'immer';
 const _ = require('lodash');
 const inquirer = require('inquirer');
 
@@ -8,7 +9,14 @@ import {
   pathSettings,
   messageSettings
 } from './settings';
-import { fileUtils, questionUtils, hbsUtils, systemUtils } from './utilities';
+
+import {
+  dataUtils,
+  fileUtils,
+  questionUtils,
+  hbsUtils,
+  systemUtils
+} from './utilities';
 
 const partialDir = path.resolve(__dirname, pathSettings.readme.hbsPartials);
 const questionDir = path.resolve(__dirname, pathSettings.readme.questions);
@@ -72,6 +80,29 @@ const parseQuestions = async questionsPath => {
   return inquirer.prompt(_.unionBy(bulkQuestions, ...extraQuestions, 'name'));
 };
 
+const parseData = packageData => {
+  const packageDataParsed = produce(packageData, draftState => {
+    const { author, contributors, readmeGenerator } = draftState;
+    draftState.author = _.isString(author)
+      ? dataUtils.convertInfoToObject(author)
+      : author;
+
+    if (!_.isNil(readmeGenerator) && !_.isNil(readmeGenerator.social)) {
+      draftState.author.social = readmeGenerator.social;
+      delete draftState.readmeGenerator;
+    }
+
+    if (!_.isNil(contributors)) {
+      contributors.forEach((value, index) => {
+        contributors[index] = _.isString(value)
+          ? dataUtils.convertInfoToObject(value)
+          : value;
+      });
+    }
+  });
+  return packageDataParsed;
+};
+
 const Run = async ({ entry, output, template, debug }) => {
   messageSettings.mainTitle('Readme\nGenerator');
 
@@ -110,6 +141,7 @@ const Run = async ({ entry, output, template, debug }) => {
   try {
     await fileUtils.checkExist(entryFile);
     const { data } = await fileUtils.readFile(entryFile);
+
     pickedData = _.pick(
       JSON.parse(data.file),
       dataSettings.packageJsonFilterData
@@ -125,7 +157,7 @@ const Run = async ({ entry, output, template, debug }) => {
   try {
     buildTemplate.data = _.merge(
       {},
-      pickedData,
+      parseData(pickedData),
       await parseQuestions(questionDir)
     );
   } catch ({ error }) {

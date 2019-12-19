@@ -1,4 +1,4 @@
-# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.1.3)
+# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.1.5)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -14,6 +14,7 @@
 - [x] commander
 - [x] figlet
 - [x] handlebars
+- [x] immer
 - [x] inquirer
 - [x] js-yaml
 - [x] lodash
@@ -32,34 +33,34 @@ Before cloning the repo **be sure** you have installed:
 Then:
 
 - Choose a folder project in your system and switch in `cd [folder path]`
-- Clone the repo in your folder path `git clone https://github.com/ibbatta/readme-generator.git`
+- Clone the repo in your folder path `git clone git+https://github.com/ibbatta/readme-generator.git`
 
 ---
 
 ### **Installation**
 
-In order to install the project and all dependencies, enter in the project folder and run `yarn install`
+In order to install the project and all dependencies, enter in the project folder and run `npm install`
 
 ---
 
 ### Start the project
 
 ```bash
-yarn start
+npm start
 ```
 
 ### Test the project
 
 ```bash
-yarn test
+npm test
 ```
 
 ---
 
 ### **Editor setup**
 
-To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every
-project using some editors plugins. Plese be sure to disable / remove any other linters or custom configurations.
+To keep the style of resources consistent, I decided to stick to some shared rules that have to be applied to every
+project using some editors plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
 
 I have chosen to use
 
@@ -84,7 +85,7 @@ works including a specific `.dotfile` in the root directory and making sure your
 
 ### **:busts_in_silhouette: Credits**
 
-- [Maurizio Battaghini](http://github.com/ibbatta) (Project management)
+- [Maurizio Battaghini](http://github.com/ibbatta)
 
 ---
 
@@ -111,7 +112,7 @@ Feel free to open issues or submit pull-requests to help me improving my work.
 _*Maurizio Battaghini*_
 
 > You can follow me on
-[github](https://github.com/ibbatta)&nbsp;&middot;&nbsp;[twitter](https://twitter.com/battago)
+[twitter](https://twitter.com/battago)&nbsp;&middot;&nbsp;[github](https://github.com/ibbatta)
 
 ---
 

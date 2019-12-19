@@ -6,7 +6,8 @@ const packageJsonFilterData = [
   'author',
   'engines',
   'dependencies',
-  'contributors'
+  'contributors',
+  'readmeGenerator'
 ];
 
 const fallbackQuestionData = [
