@@ -43,6 +43,6 @@
 - refactor code and inject question dinamically [`eca6d32`](https://github.com/ibbatta/readme-generator/commit/eca6d323d4efc40dc57d1f742f79a790b86b7780)
 - minor [`6543b64`](https://github.com/ibbatta/readme-generator/commit/6543b644aaea4cd0bfbb2f1ec8c8873004b42f93)
 - fix [`4af7ad6`](https://github.com/ibbatta/readme-generator/commit/4af7ad61337b5537dcf5bebff8b1545e5bc4aea2)
+- refactory and add tests [`4936dca`](https://github.com/ibbatta/readme-generator/commit/4936dcad4c9d757806b1730c1ce077dc93a47b03)
 - create partialhbs reader [`8d3e6da`](https://github.com/ibbatta/readme-generator/commit/8d3e6da223fe133e0db291de444f32002e27e754)
 - update husky npm config [`009f522`](https://github.com/ibbatta/readme-generator/commit/009f52250a8f3a449587e48ecb2c5eaa5dc87405)
-- add comments and generate new test-readme [`eaa5cdf`](https://github.com/ibbatta/readme-generator/commit/eaa5cdf4908f1ebf7e6c713fdeb8ea77f784d8ad)

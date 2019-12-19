@@ -1,0 +1,6 @@
+{
+  "name": "Publish",
+  "description": "Push the package on NPM and GITUBPACKAGE registries",
+  "iconName": "octicon smiley",
+  "categories": ["Automation", "Package"]
+}

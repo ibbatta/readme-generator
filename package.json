@@ -1,6 +1,6 @@
 {
   "name": "@ibbatta/readme-generator",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "This project was born mainly to satisfy my desire for knowledge and to simplify my workflow. Being a curious (and also lazy) developer I have always wondered how avoid to waste my working time to write README.md files who fits perfectly project by project and that's why I wrote a tool to help me simplify and speed up these processes.",
   "main": "./src/index.js",
   "bin": {
