@@ -1,6 +1,6 @@
 # **:triangular_flag_on_post: @IBBATTA/README GENERATOR**
 
-![Version](https://img.shields.io/github/package-json/v/ibbatta/readme-generator.svg)
+![Version](https://img.shields.io/npm/v/@ibbatta/readme-generator)
 ![Npm downloads](https://img.shields.io/npm/dt/@ibbatta/readme-generator)
 ![Repository size](https://img.shields.io/github/repo-size/ibbatta/readme-generator.svg)
 ![Opened issues](https://img.shields.io/github/issues/ibbatta/readme-generator.svg)
