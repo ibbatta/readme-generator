@@ -1,4 +1,4 @@
-# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.1.5)
+# **:triangular_flag_on_post: @IBBATTA/README-GENERATOR** (version 0.1.7)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -116,4 +116,4 @@ _*Maurizio Battaghini*_
 
 ---
 
-Copyright © 2019 [Maurizio Battaghini](https://twitter.com/battago).
+Copyright © 2020 [Maurizio Battaghini](https://twitter.com/battago).

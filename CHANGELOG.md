@@ -45,4 +45,4 @@
 - fix [`4af7ad6`](https://github.com/ibbatta/readme-generator/commit/4af7ad61337b5537dcf5bebff8b1545e5bc4aea2)
 - refactory and add tests [`4936dca`](https://github.com/ibbatta/readme-generator/commit/4936dcad4c9d757806b1730c1ce077dc93a47b03)
 - create partialhbs reader [`8d3e6da`](https://github.com/ibbatta/readme-generator/commit/8d3e6da223fe133e0db291de444f32002e27e754)
-- update husky npm config [`009f522`](https://github.com/ibbatta/readme-generator/commit/009f52250a8f3a449587e48ecb2c5eaa5dc87405)
+- split code and add more test [`60e6a5b`](https://github.com/ibbatta/readme-generator/commit/60e6a5b179e48c2be2b654fe6601dfa2ed6ec481)
