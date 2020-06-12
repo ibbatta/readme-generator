@@ -3,10 +3,6 @@
 ![Version](https://img.shields.io/npm/v/@ibbatta/readme-generator)
 ![Npm downloads](https://img.shields.io/npm/dt/@ibbatta/readme-generator)
 ![Repository size](https://img.shields.io/github/repo-size/ibbatta/readme-generator.svg)
-![Opened issues](https://img.shields.io/github/issues/ibbatta/readme-generator.svg)
-![License: MIT](https://img.shields.io/github/license/ibbatta/readme-generator.svg)
-
-[![Twitter follower](https://img.shields.io/twitter/follow/battago.svg?style=social)](https://twitter.com/battago)
 
 > This project was born to simplify my workflow and satisfy my desire for knowledge. Being a curious (and also lazy) developer, I've always wandered how to avoid wasting time writing README.md files that fit perfectly project after project. That's why I wrote this tool to help simplify and speed up this process!
 
@@ -27,10 +23,10 @@ You can add the following options:
 | -------------- | -------------------------------------------- | --------------------------- |
 | -V, --version  | output the version number                    |                             |
 | -h, --help     | output usage information                     |                             |
-| -e, --entry    | specify the entry file                       | `package.json`              |
-| -o, --output   | specify the output file                      | `README.md`                 |
-| -t, --template | specify the path for you own README template | `internal default template` |
-| -d, --debug    | log output readme data                       | `false`                     |
+| -E, --entry    | specify the entry file                       | `package.json`              |
+| -O, --output   | specify the output file                      | `README.md`                 |
+| -T, --template | specify the path for you own README template | `internal default template` |
+| -D, --debug    | log output readme data                       | `false`                     |
 
 The tools will look for the **name**, **version**, **description**, **respository**, **author**, **engines**, **dependencies** and **contributors** data inside you package.json and then will generate the README.md file based on that information.
 

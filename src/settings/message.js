@@ -4,20 +4,20 @@ const boxen = require('boxen');
 
 const { log, clear } = console;
 
-const mainTitle = data => {
+const mainTitle = (data) => {
   clear();
-  log(chalk.greenBright(figlet.textSync(data)));
+  log(chalk.magentaBright(figlet.textSync(data)));
 };
 
-const questionTitle = data => {
-  log(chalk.blueBright(data));
+const questionTitle = (data) => {
+  log(chalk.yellow(data));
 };
 
-const debugMessage = data => {
+const debugMessage = (data) => {
   log(data);
 };
 
-const genericError = error => {
+const genericError = (error) => {
   log(chalk.red(error));
 };
 
@@ -33,11 +33,11 @@ const writeFileError = (data, error) => {
   log(chalk.red(error));
 };
 
-const readFileSuccess = data => {
+const readFileSuccess = (data) => {
   log(chalk.green(`The ${data} file was successfully read`));
 };
 
-const writeFileSuccess = data => {
+const writeFileSuccess = (data) => {
   log(
     chalk.green(
       boxen(
@@ -45,7 +45,7 @@ const writeFileSuccess = data => {
         {
           padding: 1,
           margin: 1,
-          borderStyle: 'classic'
+          borderStyle: 'classic',
         }
       )
     )
@@ -60,5 +60,5 @@ export default {
   readFileError,
   writeFileError,
   readFileSuccess,
-  writeFileSuccess
+  writeFileSuccess,
 };
