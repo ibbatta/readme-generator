@@ -1,16 +1,13 @@
-const program = require('commander');
+const yargs = require('yargs');
 const { version } = require('../package.json');
+import { configFile, configOptions } from './configurations';
+import RunGenerator from './cli';
 
-import Run from './cli';
-
-program
+const argv = yargs
   .version(version)
-  .name('readme-generator')
-  .option('-E, --entry <file>', 'specify the entry file')
-  .option('-O, --output <file>', 'specify the output file')
-  .option('-T, --template <path>', 'specity a custom template')
-  .option('-D, --debug', 'log output readme data');
+  .pkgConf('readme-generator')
+  .config(configFile)
+  // TODO: aggiungere tutti i file di coerce per ENTRY, OUTPUT e TEMPLATE
+  .options(configOptions).argv;
 
-program.parse(process.argv);
-
-Run(program);
+RunGenerator(argv);
