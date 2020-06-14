@@ -1,0 +1,4 @@
+ "hooks": {
+    "pre-commit": "npm run test",
+    "commit-msg": "echo HUSKY_GIT_PARAMS"
+  }

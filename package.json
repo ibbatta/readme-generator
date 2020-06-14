@@ -41,9 +41,7 @@
     "build:watch": "rm -rf ./dist && rollup --config ./rollup.config.babel.js --watch",
     "test": "lint-staged && jest",
     "test:watch": "jest --watch",
-    "prepare": "npm run build",
-    "changelog": "auto-changelog",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "prepare": "npm run build"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -58,7 +56,6 @@
     "@babel/core": "^7.10.2",
     "@babel/node": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
-    "auto-changelog": "^2.0.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.0.1",
     "babel-loader": "^8.1.0",
@@ -79,16 +76,5 @@
   },
   "directories": {
     "test": "test"
-  },
-  "auto-changelog": {
-    "output": "CHANGELOG.md",
-    "template": "changelog.tpl.hbs",
-    "unreleased": true,
-    "commitLimit": 10,
-    "includeBranch": [
-      "master",
-      "develop",
-      "*"
-    ]
   }
 }
