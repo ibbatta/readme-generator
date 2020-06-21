@@ -25,6 +25,8 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
           scope: '@ibbatta'
+      - run: npm install
+      - run: npm test
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
@@ -38,6 +40,8 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/ibbatta
+      - run: npm install
+      - run: npm test
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_AUTH_TOKEN}}
