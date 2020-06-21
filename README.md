@@ -3,6 +3,7 @@
 ![Version](https://img.shields.io/npm/v/@ibbatta/readme-generator)
 ![Npm downloads](https://img.shields.io/npm/dt/@ibbatta/readme-generator)
 ![Repository size](https://img.shields.io/github/repo-size/ibbatta/readme-generator.svg)
+![Release (0.1.9)](https://github.com/ibbatta/readme-generator/workflows/Publish%20pkg%20(NPM%20+%20GITHUB)/badge.svg)
 
 > This project was born to simplify my workflow and satisfy my desire for knowledge. Being a curious (and also lazy) developer, I've always wandered how to avoid wasting time writing README.md files that fit perfectly project after project. That's why I wrote this tool to help simplify and speed up this process!
 
