@@ -1,4 +1,4 @@
-name: Publish package (NPM + GITHUB)
+name: Publish pkg (NPM + GITHUB)
 
 on:
   release:
