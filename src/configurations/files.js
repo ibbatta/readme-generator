@@ -4,5 +4,5 @@ const findUp = require('find-up');
 const configPath = findUp.sync(['.readmerc', 'readme.config.json']);
 
 export const configFile = configPath
-  ? JSON.parse(fs.readFileSync(configPath))
+  ? JSON.parse(fs.readFileSync(configPath, 'utf8'))
   : {};

@@ -1,18 +1,16 @@
 const yargs = require('yargs');
-const ora = require('ora');
-const { version } = require('../package.json');
 
-import { configFile, configOptions, configSpinner } from './configurations';
+import { configFile, configOptions } from './configurations';
 import RunGenerator from './cli';
 
-const readmeSpinner = ora(configSpinner);
-
 const argv = yargs
-  .version(version)
+  .version()
+  .scriptName('readme-generator')
+  .usage('$0 <cmd> [args]')
   .pkgConf('readme-generator')
   .config(configFile)
-  // TODO: aggiungere tutti i file di coerce per ENTRY, OUTPUT e TEMPLATE
-  .options(configOptions).argv;
+  .options(configOptions)
+  .epilog(`Copyright © Maurizio Battaghini ${new Date().getFullYear()}`)
+  .help().argv;
 
-readmeSpinner.start('Loading...');
-RunGenerator(argv, readmeSpinner);
+RunGenerator(argv);

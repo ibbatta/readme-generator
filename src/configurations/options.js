@@ -19,7 +19,7 @@ export const configOptions = {
     alias: 'T',
     describe: 'specify the path for you own README template',
     demandOption: false,
-    default: './readme/template/README.md',
+    default: './readme/template/README.hbs',
     type: 'string',
   },
   debug: {
@@ -29,8 +29,8 @@ export const configOptions = {
     default: false,
     type: 'boolean',
   },
-  yes: {
-    alias: 'Y',
+  all: {
+    alias: 'A',
     describe: 'accept all default values',
     demandOption: false,
     default: false,
